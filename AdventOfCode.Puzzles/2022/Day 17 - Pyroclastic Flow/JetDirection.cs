@@ -1,0 +1,8 @@
+﻿namespace AdventOfCode.Puzzles._2022.Day_17___Pyroclastic_Flow
+{
+    public enum JetDirection
+    {
+        Left,
+        Right
+    }
+}

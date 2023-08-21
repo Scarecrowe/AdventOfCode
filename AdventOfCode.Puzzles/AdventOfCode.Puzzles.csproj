@@ -1,0 +1,838 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="2015\Day 01 - Not Quite Lisp\input.txt" />
+    <None Remove="2015\Day 10 - Elves Look, Elves Say\input.txt" />
+    <None Remove="2015\Day 11 - Corporate Policy\input.txt" />
+    <None Remove="2015\Day 12 - JSAbacusFramework.io\input.txt" />
+    <None Remove="2015\Day 13 - Knights of the Dinner Table\input.txt" />
+    <None Remove="2015\Day 14 - Reindeer Olympics\input.txt" />
+    <None Remove="2015\Day 15 - Science for Hungry People\input.txt" />
+    <None Remove="2015\Day 16 - Aunt Sue\input.txt" />
+    <None Remove="2015\Day 17 - No Such Thing as Too Much\input.txt" />
+    <None Remove="2015\Day 18 - Like a GIF For Your Yard\input.txt" />
+    <None Remove="2015\Day 19 - Medicine for Rudolph\input.txt" />
+    <None Remove="2015\Day 02 - I Was Told There Would Be No Math\input.txt" />
+    <None Remove="2015\Day 20 - Infinite Elves and Infinite Houses\input.txt" />
+    <None Remove="2015\Day 21 - RPG Simulator 20XX\input.txt" />
+    <None Remove="2015\Day 22 - Wizard Simulator 20XX\input.txt" />
+    <None Remove="2015\Day 23 - Opening the Turing Lock\input.txt" />
+    <None Remove="2015\Day 24 - It Hangs in the Balance\input.txt" />
+    <None Remove="2015\Day 25 - Let It Snow\input.txt" />
+    <None Remove="2015\Day 03 - Perfectly Spherical Houses in a Vacuum\input.txt" />
+    <None Remove="2015\Day 04 - The Ideal Stocking Stuffer\input.txt" />
+    <None Remove="2015\Day 05 - Doesn%27t He Have Intern-Elves For This\input.txt" />
+    <None Remove="2015\Day 06 - Probably a Fire Hazard\input.txt" />
+    <None Remove="2015\Day 07 - Some Assembly Required\input.txt" />
+    <None Remove="2015\Day 08 - Matchsticks\input.txt" />
+    <None Remove="2015\Day 09 - All in a Single Night\input.txt" />
+    <None Remove="2016\Day 12 - Leonardo%27s Monorail\input.txt" />
+    <None Remove="2016\Day 11 - Radioisotope Thermoelectric Generators\input.txt" />
+    <None Remove="2016\Day 10 - Balance Bots\input.txt" />
+    <None Remove="2016\Day 12 - Leonardo's Monorail - Copy\input.txt" />
+    <None Remove="2016\Day 21 - Scrambled Letters and Hash\input.txt" />
+    <None Remove="2016\Day 25 - Clock Signal\input.txt" />
+    <None Remove="2016\Day 24 - Air Duct Spelunking\input.txt" />
+    <None Remove="2016\Day 23 - Safe Cracking\input.txt" />
+    <None Remove="2016\Day 22 - Grid Computing\input.txt" />
+    <None Remove="2016\Day 20 - Firewall Rules\input.txt" />
+    <None Remove="2016\Day 19 - An Elephant Named Joseph\input.txt" />
+    <None Remove="2016\Day 18 - Like a Rogue\input.txt" />
+    <None Remove="2016\Day 17 - Two Steps Forward\input.txt" />
+    <None Remove="2016\Day 16 - Dragon Checksum\input.txt" />
+    <None Remove="2016\Day 15 - Timing is Everything\input.txt" />
+    <None Remove="2016\Day 14 - One-Time Pad\input.txt" />
+    <None Remove="2016\Day 09 - Explosives in Cyberspace\input.txt" />
+    <None Remove="2016\Day 08 - Two-Factor Authentication\input.txt" />
+    <None Remove="2016\Day 07 - Internet Protocol Version 7\input.txt" />
+    <None Remove="2016\Day 06 - Signals and Noise\input.txt" />
+    <None Remove="2016\Day 05 - How About a Nice Game of Chess\input.txt" />
+    <None Remove="2016\Day 04 - Security Through Obscurity\input.txt" />
+    <None Remove="2016\Day 03 - Squares With Three Sides\input.txt" />
+    <None Remove="2016\Day 02 - Bathroom Security\input.txt" />
+    <None Remove="2016\Day 01 - No Time for a Taxicab\input.txt" />
+    <None Remove="2017\Day 15 - Dueling Generators\input.txt" />
+    <None Remove="2017\Day 14 - Disk Defragmentation\input.txt" />
+    <None Remove="2017\Day 13 - Packet Scanners\input.txt" />
+    <None Remove="2017\Day 12 - Digital Plumber\input.txt" />
+    <None Remove="2017\Day 11 - Hex Ed\input.txt" />
+    <None Remove="2017\Day 25 - The Halting Problem\input.txt" />
+    <None Remove="2017\Day 24 - Electromagnetic Moat\input.txt" />
+    <None Remove="2017\Day 23 - Coprocessor Conflagration\input.txt" />
+    <None Remove="2017\Day 22 - Sporifica Virus\input.txt" />
+    <None Remove="2017\Day 21 - Fractal Art\input.txt" />
+    <None Remove="2017\Day 20 - Particle Swarm\input.txt" />
+    <None Remove="2017\Day 19 - A Series of Tubes\input.txt" />
+    <None Remove="2017\Day 18 - Duet\input.txt" />
+    <None Remove="2017\Day 17 - Spinlock\input.txt" />
+    <None Remove="2017\Day 16 - Permutation Promenade\input.txt" />
+    <None Remove="2017\Day 10 - Knot Hash\input.txt" />
+    <None Remove="2017\Day 09 - Stream Processing\input.txt" />
+    <None Remove="2017\Day 08 - I Heard You Like Registers\input.txt" />
+    <None Remove="2017\Day 07 - Recursive Circus\input.txt" />
+    <None Remove="2017\Day 06 - Memory Reallocation\input.txt" />
+    <None Remove="2017\Day 05 - A Maze of Twisty Trampolines, All Alike\input.txt" />
+    <None Remove="2017\Day 04 - High-Entropy Passphrases\input.txt" />
+    <None Remove="2017\Day 03 - Spiral Memory\input.txt" />
+    <None Remove="2017\Day 02 - Corruption Checksum\input.txt" />
+    <None Remove="2017\Day 01 - Inverse Captcha\input.txt" />
+    <None Remove="2018\Day 25 - Four-Dimensional Adventure\input.txt" />
+    <None Remove="2018\Day 24 - Immune System Simulator 20XX\input.txt" />
+    <None Remove="2018\Day 23 - Experimental Emergency Teleportation\input.txt" />
+    <None Remove="2018\Day 22 - Mode Maze\input.txt" />
+    <None Remove="2018\Day 21 - Chronal Conversion\input.txt" />
+    <None Remove="2018\Day 20 - A Regular Map\input.txt" />
+    <None Remove="2018\Day 19 - Go With The Flow\input.txt" />
+    <None Remove="2018\Day 18 - Settlers of The North Pole\input.txt" />
+    <None Remove="2018\Day 17 - Reservoir Research\input.txt" />
+    <None Remove="2018\Day 16 - Chronal Classification\input.txt" />
+    <None Remove="2018\Day 15 - Beverage Bandits\input.txt" />
+    <None Remove="2018\Day 14 - Chocolate Charts\input.txt" />
+    <None Remove="2018\Day 13 - Mine Cart Madness\input.txt" />
+    <None Remove="2018\Day 12 - Subterranean Sustainability\input.txt" />
+    <None Remove="2018\Day 11 - Chronal Charge\input.txt" />
+    <None Remove="2018\Day 10 - The Stars Align\input.txt" />
+    <None Remove="2018\Day 09 - Marble Mania\input.txt" />
+    <None Remove="2018\Day 08 - Memory Maneuver\input.txt" />
+    <None Remove="2018\Day 07 - The Sum of Its Parts\input.txt" />
+    <None Remove="2018\Day 06 - Chronal Coordinates\input.txt" />
+    <None Remove="2018\Day 05 - Alchemical Reduction\input.txt" />
+    <None Remove="2018\Day 04 - Repose Record\input.txt" />
+    <None Remove="2018\Day 03 - No Matter How You Slice It\input.txt" />
+    <None Remove="2018\Day 02 - Inventory Management System\input.txt" />
+    <None Remove="2018\Day 01 - Chronal Calibration\input.txt" />
+    <None Remove="2019\Day 25 - Cryostasis\input.txt" />
+    <None Remove="2019\Day 24 - Planet of Discord\input.txt" />
+    <None Remove="2019\Day 23 - Category Six\input.txt" />
+    <None Remove="2019\Day 22 - Slam Shuffle\input.txt" />
+    <None Remove="2019\Day 21 - Springdroid Adventure\input.txt" />
+    <None Remove="2019\Day 20 - Donut Maze\input.txt" />
+    <None Remove="2019\Day 19 - Tractor Beam\input.txt" />
+    <None Remove="2019\Day 18 - Many-Worlds Interpretation\input.txt" />
+    <None Remove="2019\Day 17 - Set and Forget\input.txt" />
+    <None Remove="2019\Day 16 - Flawed Frequency Transmission\input.txt" />
+    <None Remove="2019\Day 15 - Oxygen System\input.txt" />
+    <None Remove="2019\Day 14 - Space Stoichiometry\input.txt" />
+    <None Remove="2019\Day 13 - Care Package\input.txt" />
+    <None Remove="2019\Day 12 - The N-Body Problem\input.txt" />
+    <None Remove="2019\Day 11 - Space Police\input.txt" />
+    <None Remove="2019\Day 10 - Monitoring Station\input.txt" />
+    <None Remove="2019\Day 09 - Sensor Boost\input.txt" />
+    <None Remove="2019\Day 08 - Space Image Format\input.txt" />
+    <None Remove="2019\Day 07 - Amplification Circuit\input.txt" />
+    <None Remove="2019\Day 06 - Universal Orbit Map\input.txt" />
+    <None Remove="2019\Day 05 - Sunny with a Chance of Asteroids\input.txt" />
+    <None Remove="2019\Day 04 - Secure Container\input.txt" />
+    <None Remove="2019\Day 03 - Crossed Wires\input.txt" />
+    <None Remove="2019\Day 02 - 1202 Program Alarm\input.txt" />
+    <None Remove="2019\Day 01 - The Tyranny of the Rocket Equation\input.txt" />
+    <None Remove="2020\Day 11 - Seating System\input.txt" />
+    <None Remove="2020\Day 21 - Allergen Assessment\input.txt" />
+    <None Remove="2020\Day 25 - Combo Breaker\input.txt" />
+    <None Remove="2020\Day 24 - Lobby Layout\input.txt" />
+    <None Remove="2020\Day 23 - Crab Cups\input.txt" />
+    <None Remove="2020\Day 22 - Crab Combat\input.txt" />
+    <None Remove="2020\Day 20 - Jurassic Jigsaw\input.txt" />
+    <None Remove="2020\Day 19 - Monster Messages\input.txt" />
+    <None Remove="2020\Day 18 - Operation Order\input.txt" />
+    <None Remove="2020\Day 17 - Conway Cubes\input.txt" />
+    <None Remove="2020\Day 16 - Ticket Translation\input.txt" />
+    <None Remove="2020\Day 15 - Rambunctious Recitation\input.txt" />
+    <None Remove="2020\Day 14 - Docking Data\input.txt" />
+    <None Remove="2020\Day 13 - Shuttle Search\input.txt" />
+    <None Remove="2020\Day 12 - Rain Risk\input.txt" />
+    <None Remove="2020\Day 10 - Adapter Array\input.txt" />
+    <None Remove="2020\Day 09 - Encoding Error\input.txt" />
+    <None Remove="2020\Day 08 - Handheld Halting\input.txt" />
+    <None Remove="2020\Day 07 - Handy Haversacks\input.txt" />
+    <None Remove="2020\Day 06 - Custom Customs\input.txt" />
+    <None Remove="2020\Day 05 - Binary Boarding\input.txt" />
+    <None Remove="2020\Day 04 - Passport Processing\input.txt" />
+    <None Remove="2020\Day 03 - Toboggan Trajectory\input.txt" />
+    <None Remove="2020\Day 02 - Password Philosophy\input.txt" />
+    <None Remove="2020\Day 01 - Report Repair\input.txt" />
+    <None Remove="2021\Day 25 - Sea Cucumber\input.txt" />
+    <None Remove="2021\Day 24 - Arithmetic Logic Unit\input.txt" />
+    <None Remove="2021\Day 23 - Amphipod\input.txt" />
+    <None Remove="2021\Day 22 - Reactor Reboot\input.txt" />
+    <None Remove="2021\Day 21 - Dirac Dice\input.txt" />
+    <None Remove="2021\Day 20 - Trench Map\input.txt" />
+    <None Remove="2021\Day 19 - Beacon Scanner\input.txt" />
+    <None Remove="2021\Day 18 - Snailfish\input.txt" />
+    <None Remove="2021\Day 17 - Trick Shot\input.txt" />
+    <None Remove="2021\Day 16 - Packet Decoder\input.txt" />
+    <None Remove="2021\Day 15 - Chiton\input.txt" />
+    <None Remove="2021\Day 14 - Extended Polymerization\input.txt" />
+    <None Remove="2021\Day 13 - Transparent Origami\input.txt" />
+    <None Remove="2021\Day 12 - Passage Pathing\input.txt" />
+    <None Remove="2021\Day 11 - Dumbo Octopus\input.txt" />
+    <None Remove="2021\Day 10 - Syntax Scoring\input.txt" />
+    <None Remove="2021\Day 09 - Smoke Basin\input.txt" />
+    <None Remove="2021\Day 08 - Seven Segment Search\input.txt" />
+    <None Remove="2021\Day 07 - The Treachery of Whales\input.txt" />
+    <None Remove="2021\Day 06 - Lanternfish\input.txt" />
+    <None Remove="2021\Day 05 - Hydrothermal Venture\input.txt" />
+    <None Remove="2021\Day 04 - Giant Squid\input.txt" />
+    <None Remove="2021\Day 03 - Binary Diagnostic\input.txt" />
+    <None Remove="2021\Day 02 - Dive\input.txt" />
+    <None Remove="2021\Day 01 - Sonar Sweep\input.txt" />
+    <None Remove="2022\Day 25 - Full of Hot Air\input.txt" />
+    <None Remove="2022\Day 24 - Blizzard Basin\input.txt" />
+    <None Remove="2022\Day 23 - Unstable Diffusion\input.txt" />
+    <None Remove="2022\Day 22 - Monkey Map\input.txt" />
+    <None Remove="2022\Day 21 - Monkey Math\input.txt" />
+    <None Remove="2022\Day 20 - Grove Positioning System\input.txt" />
+    <None Remove="2022\Day 19 - Not Enough Minerals\input.txt" />
+    <None Remove="2022\Day 18 - Boiling Boulders\input.txt" />
+    <None Remove="2022\Day 17 - Pyroclastic Flow\input.txt" />
+    <None Remove="2022\Day 16 - Proboscidea Volcanium\input.txt" />
+    <None Remove="2022\Day 15 - Beacon Exclusion Zone\input.txt" />
+    <None Remove="2022\Day 14 - Regolith Reservoir\input.txt" />
+    <None Remove="2022\Day 13 - Distress Signal\input.txt" />
+    <None Remove="2022\Day 12 - Hill Climbing Algorithm\input.txt" />
+    <None Remove="2022\Day 11 - Monkey in the Middle\input.txt" />
+    <None Remove="2022\Day 10 - Cathode-Ray Tube\input.txt" />
+    <None Remove="2022\Day 09 - Rope Bridge\input.txt" />
+    <None Remove="2022\Day 08 - Treetop Tree House\input.txt" />
+    <None Remove="2022\Day 07 - No Space Left On Device\input.txt" />
+    <None Remove="2022\Day 06 - Tuning Trouble\input.txt" />
+    <None Remove="2022\Day 05 - Supply Stacks\input.txt" />
+    <None Remove="2022\Day 04 - Camp Cleanup\input.txt" />
+    <None Remove="2022\Day 03 - Rucksack Reorganization\input.txt" />
+    <None Remove="2022\Day 02 - Rock Paper Scissors\input.txt" />
+    <None Remove="2022\Day 01 - Calorie Counting\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="2015\Day 01 - Not Quite Lisp\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 10 - Elves Look, Elves Say\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 11 - Corporate Policy\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 12 - JSAbacusFramework.io\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 13 - Knights of the Dinner Table\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 14 - Reindeer Olympics\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 15 - Science for Hungry People\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 16 - Aunt Sue\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 17 - No Such Thing as Too Much\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 18 - Like a GIF For Your Yard\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 19 - Medicine for Rudolph\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 02 - I Was Told There Would Be No Math\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 20 - Infinite Elves and Infinite Houses\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 21 - RPG Simulator 20XX\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 22 - Wizard Simulator 20XX\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 23 - Opening the Turing Lock\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 24 - It Hangs in the Balance\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 25 - Let It Snow\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 03 - Perfectly Spherical Houses in a Vacuum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 04 - The Ideal Stocking Stuffer\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 05 - Doesn%27t He Have Intern-Elves For This\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 06 - Probably a Fire Hazard\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 07 - Some Assembly Required\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 08 - Matchsticks\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2015\Day 09 - All in a Single Night\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 12 - Leonardo%27s Monorail\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 11 - Radioisotope Thermoelectric Generators\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 10 - Balance Bots\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 21 - Scrambled Letters and Hash\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 25 - Clock Signal\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 24 - Air Duct Spelunking\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 23 - Safe Cracking\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 22 - Grid Computing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 20 - Firewall Rules\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 19 - An Elephant Named Joseph\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 18 - Like a Rogue\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 17 - Two Steps Forward\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 16 - Dragon Checksum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 15 - Timing is Everything\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 14 - One-Time Pad\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 13 - A Maze of Twisty Little Cubicles\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 09 - Explosives in Cyberspace\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 08 - Two-Factor Authentication\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 07 - Internet Protocol Version 7\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 06 - Signals and Noise\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 05 - How About a Nice Game of Chess\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 04 - Security Through Obscurity\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 03 - Squares With Three Sides\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 02 - Bathroom Security\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2016\Day 01 - No Time for a Taxicab\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 15 - Dueling Generators\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 14 - Disk Defragmentation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 13 - Packet Scanners\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 12 - Digital Plumber\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 11 - Hex Ed\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 25 - The Halting Problem\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 24 - Electromagnetic Moat\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 23 - Coprocessor Conflagration\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 22 - Sporifica Virus\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 21 - Fractal Art\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 20 - Particle Swarm\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 19 - A Series of Tubes\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 18 - Duet\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 17 - Spinlock\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 16 - Permutation Promenade\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 10 - Knot Hash\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 09 - Stream Processing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 08 - I Heard You Like Registers\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 07 - Recursive Circus\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 06 - Memory Reallocation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 05 - A Maze of Twisty Trampolines, All Alike\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 04 - High-Entropy Passphrases\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 03 - Spiral Memory\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 02 - Corruption Checksum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2017\Day 01 - Inverse Captcha\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 25 - Four-Dimensional Adventure\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 24 - Immune System Simulator 20XX\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 23 - Experimental Emergency Teleportation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 22 - Mode Maze\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 21 - Chronal Conversion\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 20 - A Regular Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 19 - Go With The Flow\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 18 - Settlers of The North Pole\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 17 - Reservoir Research\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 16 - Chronal Classification\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 15 - Beverage Bandits\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 14 - Chocolate Charts\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 13 - Mine Cart Madness\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 12 - Subterranean Sustainability\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 11 - Chronal Charge\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 10 - The Stars Align\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 09 - Marble Mania\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 08 - Memory Maneuver\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 07 - The Sum of Its Parts\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 06 - Chronal Coordinates\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 05 - Alchemical Reduction\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 04 - Repose Record\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 03 - No Matter How You Slice It\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 02 - Inventory Management System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2018\Day 01 - Chronal Calibration\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 25 - Cryostasis\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 24 - Planet of Discord\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 23 - Category Six\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 22 - Slam Shuffle\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 21 - Springdroid Adventure\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 20 - Donut Maze\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 19 - Tractor Beam\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 18 - Many-Worlds Interpretation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 17 - Set and Forget\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 16 - Flawed Frequency Transmission\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 15 - Oxygen System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 14 - Space Stoichiometry\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 13 - Care Package\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 12 - The N-Body Problem\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 11 - Space Police\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 10 - Monitoring Station\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 09 - Sensor Boost\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 08 - Space Image Format\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 07 - Amplification Circuit\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 06 - Universal Orbit Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 05 - Sunny with a Chance of Asteroids\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 04 - Secure Container\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 03 - Crossed Wires\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 02 - 1202 Program Alarm\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2019\Day 01 - The Tyranny of the Rocket Equation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 11 - Seating System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 21 - Allergen Assessment\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 25 - Combo Breaker\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 24 - Lobby Layout\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 23 - Crab Cups\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 22 - Crab Combat\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 20 - Jurassic Jigsaw\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 19 - Monster Messages\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 18 - Operation Order\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 17 - Conway Cubes\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 16 - Ticket Translation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 15 - Rambunctious Recitation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 14 - Docking Data\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 13 - Shuttle Search\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 12 - Rain Risk\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 10 - Adapter Array\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 09 - Encoding Error\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 08 - Handheld Halting\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 07 - Handy Haversacks\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 06 - Custom Customs\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 05 - Binary Boarding\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 04 - Passport Processing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 03 - Toboggan Trajectory\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 02 - Password Philosophy\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2020\Day 01 - Report Repair\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 25 - Sea Cucumber\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 24 - Arithmetic Logic Unit\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 23 - Amphipod\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 22 - Reactor Reboot\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 21 - Dirac Dice\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 20 - Trench Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 19 - Beacon Scanner\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 18 - Snailfish\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 17 - Trick Shot\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 16 - Packet Decoder\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 15 - Chiton\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 14 - Extended Polymerization\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 13 - Transparent Origami\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 12 - Passage Pathing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 11 - Dumbo Octopus\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 10 - Syntax Scoring\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 09 - Smoke Basin\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 08 - Seven Segment Search\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 07 - The Treachery of Whales\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 06 - Lanternfish\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 05 - Hydrothermal Venture\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 04 - Giant Squid\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 03 - Binary Diagnostic\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 02 - Dive\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2021\Day 01 - Sonar Sweep\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 25 - Full of Hot Air\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 24 - Blizzard Basin\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 23 - Unstable Diffusion\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 22 - Monkey Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 21 - Monkey Math\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 20 - Grove Positioning System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 19 - Not Enough Minerals\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 18 - Boiling Boulders\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 17 - Pyroclastic Flow\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 16 - Proboscidea Volcanium\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 15 - Beacon Exclusion Zone\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 14 - Regolith Reservoir\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 13 - Distress Signal\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 12 - Hill Climbing Algorithm\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 11 - Monkey in the Middle\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 10 - Cathode-Ray Tube\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 09 - Rope Bridge\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 08 - Treetop Tree House\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 07 - No Space Left On Device\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 06 - Tuning Trouble\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 05 - Supply Stacks\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 04 - Camp Cleanup\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 03 - Rucksack Reorganization\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 02 - Rock Paper Scissors\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2022\Day 01 - Calorie Counting\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	<WarningsAsErrors />
+	<CodeAnalysisRuleSet>..\AdventOfCode.ruleset</CodeAnalysisRuleSet>
+	<NoWarn>1701;1702;S3247;</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	<WarningsAsErrors />
+	<CodeAnalysisRuleSet>..\AdventOfCode.ruleset</CodeAnalysisRuleSet>
+	<NoWarn>1701;1702;S3247;</NoWarn>
+  </PropertyGroup>
+</Project>

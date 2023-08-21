@@ -1,0 +1,1 @@
+﻿var runner = new AdventOfCode.Runner.PuzzleRunner(Environment.GetCommandLineArgs());
