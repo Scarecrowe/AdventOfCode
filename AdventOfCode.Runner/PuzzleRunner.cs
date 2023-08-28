@@ -11,44 +11,73 @@
 
             if (!this.Args.Valid)
             {
+                PuzzleMenu menu = new();
                 return;
             }
 
-            this.Puzzle = Core.Puzzle.GetPuzzle(this.Args.Year, this.Args.Day);
-
-            if (this.Puzzle == null)
-            {
-                return;
-            }
-
-            SetupProcess();
-            this.RunPreBatch();
-            CollectAndFinalize();
-            this.PrintTitle();
-            this.RunPuzzle();
+            PrintTree(13);
+            RunPuzzle(this.Args.Year, this.Args.Day, this.Args.BatchCount);
 
             Console.ReadLine();
         }
 
         private ICommandArguments Args { get; }
 
-        private IPuzzle? Puzzle { get; }
-
-        private static void SetupProcess()
+        public static void RunPuzzle(int year, int day, int batchCount = 1)
         {
-            Process.GetCurrentProcess().ProcessorAffinity = new IntPtr(1); // consistent timing // single processor // single cache
-            Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.High;
-            Thread.CurrentThread.Priority = ThreadPriority.Highest;
+            string silver = string.Empty;
+            string gold = string.Empty;
+            PuzzleTimer timer = new();
+            IPuzzle? puzzle = Core.Puzzle.GetPuzzle(year, day);
+
+            if (puzzle == null)
+            {
+                throw new InvalidOperationException($"No puzzle found with the year: {year} and day: {day}");
+            }
+
+            SetupProcess();
+            CollectAndFinalize();
+            PrintTitle(day, year, puzzle);
+
+            for (int i = 1; i <= batchCount; i++)
+            {
+                timer.Restart();
+                silver = puzzle?.Silver() ?? string.Empty;
+                timer.Stop();
+
+                if (i != batchCount)
+                {
+                    PuzzleConsole.Clear();
+                }
+            }
+
+            PrintResult($"Silver: {silver}", timer);
+
+            timer.Reset();
+
+            for (int i = 1; i <= batchCount; i++)
+            {
+                timer.Restart();
+                gold = puzzle?.Gold() ?? string.Empty;
+                timer.Stop();
+
+                if (i > 1 && string.IsNullOrEmpty(gold))
+                {
+                    break;
+                }
+
+                if (i != batchCount)
+                {
+                    PuzzleConsole.Clear();
+                }
+            }
+
+            PrintResult($"Gold: {gold}", timer);
+            Console.WriteLine($" Executed {(batchCount > 1 ? $"{batchCount} times" : "once")}:");
+            CopyResultToClipboard(string.IsNullOrEmpty(gold) ? silver : gold);
         }
 
-        private static void CollectAndFinalize()
-        {
-            GC.Collect();
-            GC.Collect(); // 2nd forces root objects to 2nd level
-            GC.WaitForPendingFinalizers(); // wait until collection has happened
-        }
-
-        private static void PrintTree(int count = 1)
+        public static void PrintTree(int count = 1)
         {
             string[] tokens = new string[9];
             tokens[0] = @"         ";
@@ -77,6 +106,20 @@
             }
         }
 
+        private static void SetupProcess()
+        {
+            Process.GetCurrentProcess().ProcessorAffinity = new IntPtr(1); // consistent timing // single processor // single cache
+            Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.High;
+            Thread.CurrentThread.Priority = ThreadPriority.Highest;
+        }
+
+        private static void CollectAndFinalize()
+        {
+            GC.Collect();
+            GC.Collect(); // 2nd forces root objects to 2nd level
+            GC.WaitForPendingFinalizers(); // wait until collection has happened
+        }
+
         private static void PrintResult(string result, PuzzleTimer timer)
         {
             Console.WriteLine($" {result}");
@@ -101,67 +144,10 @@
             thread.Join();
         }
 
-        private void RunPuzzle()
+        private static void PrintTitle(int day, int year, IPuzzle? puzzle)
         {
-            string silver = string.Empty;
-            string gold = string.Empty;
-            PuzzleTimer timer = new();
-
-            for (int i = 1; i <= this.Args.BatchCount; i++)
-            {
-                timer.Restart();
-                silver = this.Puzzle?.Silver() ?? string.Empty;
-                timer.Stop();
-
-                if (i != this.Args.BatchCount)
-                {
-                    PuzzleConsole.Clear();
-                }
-            }
-
-            PrintResult($"Silver: {silver}", timer);
-
-            timer.Reset();
-
-            for (int i = 1; i <= this.Args.BatchCount; i++)
-            {
-                timer.Restart();
-                gold = this.Puzzle?.Gold() ?? string.Empty;
-                timer.Stop();
-
-                if (i > 1 && string.IsNullOrEmpty(gold))
-                {
-                    break;
-                }
-
-                if (i != this.Args.BatchCount)
-                {
-                    PuzzleConsole.Clear();
-                }
-            }
-
-            PrintResult($"Gold: {gold}", timer);
-            Console.WriteLine($" Executed {(this.Args.BatchCount > 1 ? $"{this.Args.BatchCount} times" : "once")}:");
-            CopyResultToClipboard(string.IsNullOrEmpty(gold) ? silver : gold);
-        }
-
-        private void RunPreBatch()
-        {
-            if (this.Args.BatchCount > 1)
-            {
-                for (int i = 1; i <= 2; i++)
-                {
-                    this.Puzzle?.Silver();
-                    this.Puzzle?.Gold();
-                }
-            }
-        }
-
-        private void PrintTitle()
-        {
-            PrintTree(13);
             Console.WriteLine();
-            Console.WriteLine($" {$"Advent Of Code {this.Args.Year} Day {this.Args.Day}: {this.Puzzle?.DayTitle}"}");
+            Console.WriteLine($" {$"Advent Of Code {year} Day {day}: {puzzle?.DayTitle}"}");
             Console.WriteLine();
         }
     }
