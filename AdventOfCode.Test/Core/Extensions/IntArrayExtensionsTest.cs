@@ -250,6 +250,5 @@
                 result.Should().Be(0);
             }
         }
-
     }
 }
