@@ -47,27 +47,6 @@
             return result;
         }
 
-        public static bool Equals<T>(this T[,] a, T[,] b)
-        {
-            if (a.GetLength(0) != b.GetLength(0) || a.GetLength(1) != b.GetLength(1))
-            {
-                return false;
-            }
-
-            for (int y = 0; y < a.GetLength(0); y++)
-            {
-                for (int x = 0; x < a.GetLength(0); x++)
-                {
-                    if (!a[y, x]?.Equals(b[y, x]) ?? false)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
-        }
-
         public static int[,] Trim(this int[,] array, int row, int column)
         {
             int[,] result = new int[array.GetLength(0) - 1, array.GetLength(1) - 1];
@@ -102,7 +81,10 @@
 
             foreach(int index in indexes)
             {
-                result += array[index];
+                if (index >= 0 && index < array.Length)
+                {
+                    result += array[index];
+                }
             }
 
             return result;
@@ -110,11 +92,19 @@
 
         public static int ProductByIndex(this int[] array, params int[] indexes)
         {
+            if (array.Length == 0)
+            {
+                return 0;
+            }
+
             int result = array[indexes[0]];
 
             for(int i = 1; i < indexes.Length; i++)
             {
-                result *= array[indexes[i]];
+                if (i >= 1 && i < array.Length)
+                {
+                    result *= array[indexes[i]];
+                }
             }
 
             return result;
@@ -126,7 +116,10 @@
 
             for (int i = start; i <= end; i++)
             {
-                result += array[i];
+                if (i >= start && i < array.Length)
+                {
+                    result += array[i];
+                }
             }
 
             return result;
@@ -134,11 +127,19 @@
 
         public static int ProductRange(this int[] array, int start, int end)
         {
+            if (array.Length == 0)
+            {
+                return 0;
+            }
+
             int result = array[start];
 
             for (int i = start + 1; i <= end; i++)
             {
-                result *= array[i];
+                if (i >= start && i < array.Length)
+                {
+                    result *= array[i];
+                }
             }
 
             return result;

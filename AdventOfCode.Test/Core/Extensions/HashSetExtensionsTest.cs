@@ -18,7 +18,7 @@
         public class AddRange : HashSetExtensionsTestBase
         {
             [Test]
-            public void AddRange_ShouldAddAllValuesToHashSet()
+            public void When_told_to_add_values_to_a_hashset()
             {
                 HashSet<int> hashSet = new() { 1, 2, 3 };
                 HashSet<int> valuesToAdd = new() { 3, 4, 5 };
@@ -33,10 +33,10 @@
             }
 
             [Test]
-            public void AddRange_WhenEmptyValuesToAdd_ShouldNotChangeHashSet()
+            public void When_told_to_add_an_empty_collection_to_a_hashset()
             {
-                HashSet<int> hashSet = new HashSet<int> { 1, 2, 3 };
-                HashSet<int> valuesToAdd = new HashSet<int>();
+                HashSet<int> hashSet = new() { 1, 2, 3 };
+                HashSet<int> valuesToAdd = new();
 
                 hashSet.AddRange(valuesToAdd);
 
