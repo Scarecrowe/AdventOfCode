@@ -8,7 +8,10 @@
             if (!dict.ContainsKey(key))
             {
                 dict.Add(key, value);
+                return;
             }
+
+            dict[key] = value;
         }
 
         public static void AddRange<TKey, TValue>(this Dictionary<TKey, TValue> dict, Dictionary<TKey, TValue> value)

@@ -85,7 +85,10 @@
         {
             this.Position += CardinalHelper.CardinalTransform<int>()[this.Direction];
 
-            this.Map.TryAddValue(this.Position, EntityType.Clean);
+            if (!this.Map.ContainsKey(this.Position))
+            {
+                this.Map.Add(this.Position, EntityType.Clean);
+            }
         }
 
         private void TurnMutated()
