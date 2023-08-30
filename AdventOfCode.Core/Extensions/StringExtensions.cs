@@ -29,6 +29,12 @@
 
         public static string SwapPosition(this string value, int x, int y)
         {
+            if ((x < 0 || x > value.Length - 1)
+                || (y < 0 || y > value.Length - 1))
+            {
+                return value;
+            }
+
             char[] result = value.ToCharArray();
             char buffer = value[x];
 
@@ -40,9 +46,27 @@
 
         public static string SwapLetter(this string value, char x, char y) => value.SwapPosition(value.IndexOf(x), value.IndexOf(y));
 
-        public static string RotateLeft(this string value, int count) => string.Concat(value[count..], value.AsSpan(0, count));
+        public static string RotateLeft(this string value, int count)
+        {
+            if (count > value.Length - 1
+                || count < 0)
+            {
+                return value;
+            }
 
-        public static string RotateRight(this string value, int count) => RotateLeft(value, value.Length - count);
+            return string.Concat(value[count..], value.AsSpan(0, count));
+        }
+
+        public static string RotateRight(this string value, int count)
+        {
+            if (count > value.Length - 1
+                || count < 0)
+            {
+                return value;
+            }
+
+            return RotateLeft(value, value.Length - count);
+        }
 
         public static string RotateAroundChar(this string value, char c)
         {
@@ -73,10 +97,23 @@
             return value.Insert(y, first.ToString());
         }
 
-        public static string Remove(this string value, string remove) => value.Replace(remove, string.Empty);
+        public static string Remove(this string value, string remove)
+        {
+            if (string.IsNullOrEmpty(remove))
+            {
+                return value;
+            }
+
+            return value.Replace(remove, string.Empty);
+        }
 
         public static string Strip(this string value, char strip)
         {
+            if (string.IsNullOrEmpty(value))
+            {
+                return string.Empty;
+            }
+
             while (value[0] == strip)
             {
                 value = value.Remove(0, 1);
@@ -120,7 +157,7 @@
 
         public static List<int> ToAscii(this string value)
         {
-            List<int> result = value.Select(x => int.Parse(x.ToString())).ToList();
+            List<int> result = value.Select(x => (int)char.Parse(x.ToString())).ToList();
 
             return result;
         }
@@ -210,17 +247,65 @@
             return uint.Parse(value);
         }
 
-        public static float ToFloat(this string value) => float.Parse(value);
+        public static float ToFloat(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
 
-        public static double ToDouble(this string value) => double.Parse(value);
+            return float.Parse(value);
+        }
 
-        public static decimal ToDecimal(this string value) => decimal.Parse(value);
+        public static double ToDouble(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
 
-        public static byte ToByte(this string value) => byte.Parse(value);
+            return double.Parse(value);
+        }
 
-        public static DateTime ToDateTime(this string value) => DateTime.Parse(value);
+        public static decimal ToDecimal(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
 
-        public static string Replace(this string value, string search) => value.Replace(search, string.Empty);
+            return decimal.Parse(value);
+        }
+
+        public static byte ToByte(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return 0;
+            }
+
+            return byte.Parse(value);
+        }
+
+        public static DateTime ToDateTime(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return default(DateTime);
+            }
+
+            return DateTime.Parse(value);
+        }
+
+        public static string Replace(this string value, string search)
+        {
+            if (string.IsNullOrEmpty(search))
+            {
+                return value;
+            }
+
+            return value.Replace(search, string.Empty);
+        }
 
         public static string Numbers(this string value)
         {
@@ -251,7 +336,10 @@
 
         public static bool ContainsSpecialCharacters(this string value)
         {
-            value.Should().Not().BeNullOrEmpty(paramName: nameof(value));
+            if (string.IsNullOrEmpty(value))
+            {
+                return false;
+            }
 
             Regex expression = new("^[a-zA-Z0-9 ]*$");
 
