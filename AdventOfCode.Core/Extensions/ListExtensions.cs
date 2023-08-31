@@ -22,6 +22,11 @@
 
         public static void FillWith(this List<int> list, int value, int max)
         {
+            if (max == 0)
+            {
+                return;
+            }
+
             for (int i = 0; i <= max; i++)
             {
                 list.Add(value);
@@ -30,6 +35,11 @@
 
         public static List<List<T>> Permutations<T>(this List<T> list, int length)
         {
+            if (length == 0)
+            {
+                throw new ArgumentException();
+            }
+
             if (length == 1)
             {
                 return list
@@ -89,19 +99,19 @@
             }
         }
 
-        public static IEnumerable Combinations<T>(this List<T> elements, int k)
+        public static IEnumerable Combinations<T>(this List<T> elements, int length)
         {
             var elem = elements.ToArray();
             var size = elem.Length;
 
-            if (k > size)
+            if (length > size)
             {
                 yield break;
             }
 
-            var numbers = new int[k];
+            var numbers = new int[length];
 
-            for (var i = 0; i < k; i++)
+            for (var i = 0; i < length; i++)
             {
                 numbers[i] = i;
             }
@@ -110,12 +120,17 @@
             {
                 yield return numbers.Select(n => elem[n]);
             }
-            while (NextCombination(numbers, size, k));
+            while (NextCombination(numbers, size, length));
         }
 
         public static List<List<T>> Combinations<T>(this List<T> list)
         {
             List<List<T>> result = new();
+
+            if (list.Count == 0)
+            {
+                return result;
+            }
 
             for (int i = 0; i < (1 << list.Count); ++i)
             {
@@ -177,23 +192,11 @@
             }
         }
 
-        public static List<T> Reverse<T>(this List<T> list)
-        {
-            list.Reverse();
-
-            return list;
-        }
-
         private static bool NextCombination(IList<int> num, int n, int k)
         {
             bool finished;
 
             var changed = finished = false;
-
-            if (k <= 0)
-            {
-                return false;
-            }
 
             for (var i = k - 1; !finished && !changed; i--)
             {
