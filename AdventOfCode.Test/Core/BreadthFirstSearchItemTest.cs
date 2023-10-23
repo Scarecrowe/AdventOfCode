@@ -61,6 +61,7 @@
                 Subject.Path.First().Should().Be(new Vector<int>(0, 0));
             }
 
+            [Test]
             public void When_told_to_create_with_a_null_point_a_distance_and_path()
             {
                 Action action = () => Subject = new BreadthFirstSearchItem<int>(null, 0, Path);
@@ -76,7 +77,6 @@
                 action.Should().Throw<ArgumentException>();
             }
 
-            // TODO, distance potentially count of path same as result class
             [Test]
             public void When_told_to_create_with_a_point_a_distance_and_path()
             {

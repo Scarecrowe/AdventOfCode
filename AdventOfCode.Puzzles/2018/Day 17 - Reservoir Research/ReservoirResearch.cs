@@ -30,13 +30,17 @@
                     }
                 }
             }
+
+            this.Queue = new();
         }
 
         public Vector<long> ClayMin { get; }
 
         public Vector<long> ClayMax { get; }
 
-        private VectorArray<long, EntityType> Map { get; }
+        public VectorArray<long, EntityType> Map { get; private set; }
+
+        private Queue<Stream> Queue { get; set; }
 
         public long Settle(bool countWater = true)
         {
@@ -58,6 +62,11 @@
                 stream.Move(this.Map, ref queue);
             }
 
+            return this.WaterCount(countWater);
+        }
+
+        public long WaterCount(bool countWater = true)
+        {
             long count = 0;
             for (int y = 1; y < this.ClayMax.Y - this.ClayMin.Y; y++)
             {
@@ -71,6 +80,33 @@
             }
 
             return count;
+        }
+
+        public Vector<long> Animate()
+        {
+            if (!this.Queue.Any())
+            {
+                this.Queue.Enqueue(new(new(500 - this.ClayMin.X, 1)));
+            }
+
+            Stream? stream;
+
+            while (this.Queue.Count > 0)
+            {
+                stream = this.Queue.Dequeue();
+
+                if (!this.Map.IsVectorInRange(stream.Point.X, stream.Point.Y))
+                {
+                    continue;
+                }
+
+                var queue = this.Queue;
+                stream.Move(this.Map, ref queue);
+
+                return stream.Point;
+            }
+
+            return new Vector<long>(-1, -1);
         }
 
         private static List<(Vector<long> Min, Vector<long> Max)> Parse(string[] input)
@@ -162,7 +198,7 @@
                         case EntityType.Water:
                             sb.Append('|');
                             break;
-                        case EntityType.Sand:
+                        case EntityType.Air:
                             sb.Append('.');
                             break;
                         case EntityType.Clay:

@@ -19,6 +19,11 @@
 
         public static T ToGeneric<T>(this int value)
         {
+            if (typeof(T) == typeof(double))
+            {
+                return (T)(object)Convert.ToDouble(value);
+            }
+
             if (typeof(T) == typeof(int))
             {
                 return (T)(object)Convert.ToInt32(value);
@@ -29,6 +34,11 @@
 
         public static T ToGeneric<T>(this long value)
         {
+            if (typeof(T) == typeof(double))
+            {
+                return (T)(object)Convert.ToDouble(value);
+            }
+
             if (typeof(T) == typeof(int))
             {
                 return (T)(object)Convert.ToInt32(value);

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.Core", "Advent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.Puzzles", "AdventOfCode.Puzzles\AdventOfCode.Puzzles.csproj", "{4446E01E-36DE-45EF-B22F-204BC02F83EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Test", "AdventOfCode.Test\AdventOfCode.Test.csproj", "{CD2C527D-EB9F-4A67-8AFA-05CDC98532DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdventOfCode.Test", "AdventOfCode.Test\AdventOfCode.Test.csproj", "{CD2C527D-EB9F-4A67-8AFA-05CDC98532DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Animation", "AdventOfCode.Animation\AdventOfCode.Animation.csproj", "{2692F46A-8D12-41EB-9990-73C3E2E37634}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CD2C527D-EB9F-4A67-8AFA-05CDC98532DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD2C527D-EB9F-4A67-8AFA-05CDC98532DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD2C527D-EB9F-4A67-8AFA-05CDC98532DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2692F46A-8D12-41EB-9990-73C3E2E37634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2692F46A-8D12-41EB-9990-73C3E2E37634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2692F46A-8D12-41EB-9990-73C3E2E37634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2692F46A-8D12-41EB-9990-73C3E2E37634}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -22,12 +22,12 @@
                 return;
             }
 
-            if (adjacent[Cardinal.South].Value == EntityType.Sand)
+            if (adjacent[Cardinal.South].Value == EntityType.Air)
             {
                 queue.Enqueue(new Stream(this.MoveSouth(ref map)));
             }
 
-            if (adjacent[Cardinal.South].Value == EntityType.Water && above == EntityType.Sand)
+            if (adjacent[Cardinal.South].Value == EntityType.Water && above == EntityType.Air)
             {
                 queue.Enqueue(new Stream(this.MoveSouth(ref map)));
             }
@@ -42,7 +42,7 @@
 
             long eastClayIndex = adjacent[Cardinal.East].Value == EntityType.Clay ? this.Point.X : -1;
 
-            if ((adjacent[Cardinal.West].Value == EntityType.Sand || adjacent[Cardinal.West].Value == EntityType.Water)
+            if ((adjacent[Cardinal.West].Value == EntityType.Air || adjacent[Cardinal.West].Value == EntityType.Water)
               && (below == EntityType.Clay || below == EntityType.Settled))
             {
                 point = this.MoveWest(ref map, ref westClayIndex);
@@ -53,7 +53,7 @@
                 }
             }
 
-            if ((adjacent[Cardinal.East].Value == EntityType.Sand || adjacent[Cardinal.East].Value == EntityType.Water)
+            if ((adjacent[Cardinal.East].Value == EntityType.Air || adjacent[Cardinal.East].Value == EntityType.Water)
               && (below == EntityType.Clay || below == EntityType.Settled))
             {
                 point = this.MoveEast(ref map, ref eastClayIndex);
@@ -110,7 +110,7 @@
                             break;
                         }
 
-                        if (value == EntityType.Sand)
+                        if (value == EntityType.Air)
                         {
                             break;
                         }
@@ -143,7 +143,7 @@
                             break;
                         }
 
-                        if (value == EntityType.Sand)
+                        if (value == EntityType.Air)
                         {
                             break;
                         }

@@ -38,6 +38,16 @@
 
         public Vector(int x, int y)
         {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(0);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
             if (typeof(TSize) == typeof(int))
             {
                 this.X = (TSize)(object)Convert.ToInt32(x);
@@ -56,6 +66,44 @@
 
         public Vector(long x, long y)
         {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(0);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
+            if (typeof(TSize) == typeof(int))
+            {
+                this.X = (TSize)(object)Convert.ToInt32(x);
+                this.Y = (TSize)(object)Convert.ToInt32(y);
+                this.Z = (TSize)(object)Convert.ToInt32(0);
+                this.T = (TSize)(object)Convert.ToInt32(0);
+
+                return;
+            }
+
+            this.X = (TSize)(object)Convert.ToInt64(x);
+            this.Y = (TSize)(object)Convert.ToInt64(y);
+            this.Z = (TSize)(object)Convert.ToInt64(0);
+            this.T = (TSize)(object)Convert.ToInt64(0);
+        }
+
+        public Vector(double x, double y)
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(0);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
             if (typeof(TSize) == typeof(int))
             {
                 this.X = (TSize)(object)Convert.ToInt32(x);
@@ -74,6 +122,16 @@
 
         public Vector(int x, int y, int z)
         {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(z);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
             if (typeof(TSize) == typeof(int))
             {
                 this.X = (TSize)(object)Convert.ToInt32(x);
@@ -92,6 +150,43 @@
 
         public Vector(long x, long y, long z)
         {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(z);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
+            if (typeof(TSize) == typeof(int))
+            {
+                this.X = (TSize)(object)Convert.ToInt32(x);
+                this.Y = (TSize)(object)Convert.ToInt32(y);
+                this.Z = (TSize)(object)Convert.ToInt32(z);
+                this.T = 0.ToGeneric<TSize>();
+                return;
+            }
+
+            this.X = (TSize)(object)Convert.ToInt64(x);
+            this.Y = (TSize)(object)Convert.ToInt64(y);
+            this.Z = (TSize)(object)Convert.ToInt64(z);
+            this.T = 0.ToGeneric<TSize>();
+        }
+
+        public Vector(double x, double y, double z)
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(z);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
             if (typeof(TSize) == typeof(int))
             {
                 this.X = (TSize)(object)Convert.ToInt32(x);
@@ -109,6 +204,16 @@
 
         public Vector(int x, int y, int z, int t)
         {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(z);
+                this.T = (TSize)(object)Convert.ToDouble(t);
+
+                return;
+            }
+
             if (typeof(TSize) == typeof(int))
             {
                 this.X = (TSize)(object)Convert.ToInt32(x);
@@ -127,6 +232,43 @@
 
         public Vector(long x, long y, long z, long t)
         {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(z);
+                this.T = (TSize)(object)Convert.ToDouble(t);
+
+                return;
+            }
+
+            if (typeof(TSize) == typeof(int))
+            {
+                this.X = (TSize)(object)Convert.ToInt32(x);
+                this.Y = (TSize)(object)Convert.ToInt32(y);
+                this.Z = (TSize)(object)Convert.ToInt32(z);
+                this.T = (TSize)(object)Convert.ToInt32(t);
+                return;
+            }
+
+            this.X = (TSize)(object)Convert.ToInt64(x);
+            this.Y = (TSize)(object)Convert.ToInt64(y);
+            this.Z = (TSize)(object)Convert.ToInt64(z);
+            this.T = (TSize)(object)Convert.ToInt64(t);
+        }
+
+        public Vector(double x, double y, double z, double t)
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(x);
+                this.Y = (TSize)(object)Convert.ToDouble(y);
+                this.Z = (TSize)(object)Convert.ToDouble(z);
+                this.T = (TSize)(object)Convert.ToDouble(t);
+
+                return;
+            }
+
             if (typeof(TSize) == typeof(int))
             {
                 this.X = (TSize)(object)Convert.ToInt32(x);
@@ -211,17 +353,40 @@
             => pointA?.GetHashCode() != pointB?.GetHashCode();
 
         public static Vector<TSize> operator -(Vector<TSize> pointA, Vector<TSize> pointB)
-            => typeof(TSize) == typeof(int)
-            ? SubtractInt(pointA, pointB)
-            : SubtractLong(pointA, pointB);
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return SubtractDouble(pointA, pointB);
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return SubtractInt(pointA, pointB);
+            }
+
+            return SubtractLong(pointA, pointB);
+        }
 
         public static Vector<TSize> operator -(Vector<TSize> pointA, TSize value)
-            => typeof(TSize) == typeof(int)
-            ? SubtractInt(pointA, new(value, value, value, value))
-            : SubtractLong(pointA, new(value, value, value, value));
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return SubtractDouble(pointA, new(value, value, value, value));
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return SubtractInt(pointA, new(value, value, value, value));
+            }
+
+            return SubtractLong(pointA, new(value, value, value, value));
+        }
 
         public static Vector<TSize> operator +(Vector<TSize> pointA, Vector<TSize> pointB)
         {
+            if (typeof(TSize) == typeof(double))
+            {
+                return AddDouble(pointA, pointB);
+            }
+
             if (typeof(TSize) == typeof(int))
             {
                 return AddInt(pointA, pointB);
@@ -231,29 +396,74 @@
         }
 
         public static Vector<TSize> operator +(Vector<TSize> pointA, TSize value)
-            => typeof(TSize) == typeof(int)
-            ? AddInt(pointA, new(value, value, value, value))
-            : AddLong(pointA, new(value, value, value, value));
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return AddDouble(pointA, new(value, value, value, value));
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return AddInt(pointA, new(value, value, value, value));
+            }
+
+            return AddLong(pointA, new(value, value, value, value));
+        }
 
         public static Vector<TSize> operator *(Vector<TSize> pointA, Vector<TSize> pointB)
-            => typeof(TSize) == typeof(int)
-            ? ProductInt(pointA, pointB)
-            : ProductLong(pointA, pointB);
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return ProductDouble(pointA, pointB);
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return ProductInt(pointA, pointB);
+            }
+
+            return ProductLong(pointA, pointB);
+        }
 
         public static Vector<TSize> operator *(Vector<TSize> pointA, TSize value)
-            => typeof(TSize) == typeof(int)
-            ? ProductInt(pointA, new(value, value, value, value))
-            : ProductLong(pointA, new(value, value, value, value));
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return ProductDouble(pointA, new(value, value, value, value));
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return ProductInt(pointA, new(value, value, value, value));
+            }
+
+            return ProductLong(pointA, new(value, value, value, value));
+        }
 
         public static Vector<TSize> operator /(Vector<TSize> pointA, Vector<TSize> pointB)
-            => typeof(TSize) == typeof(int)
-            ? DivideInt(pointA, pointB)
-            : DivideLong(pointA, pointB);
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return DivideDouble(pointA, pointB);
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return DivideInt(pointA, pointB);
+            }
+
+            return DivideLong(pointA, pointB);
+        }
 
         public static Vector<TSize> operator /(Vector<TSize> pointA, TSize value)
-            => typeof(TSize) == typeof(int)
-            ? DivideInt(pointA, new(value, value, value, value))
-            : DivideLong(pointA, new(value, value, value, value));
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return DivideDouble(pointA, new(value, value, value, value));
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return DivideInt(pointA, new(value, value, value, value));
+            }
+
+            return DivideLong(pointA, new(value, value, value, value));
+        }
 
         public static IEnumerable<Vector<TSize>> AxisEnumerator(TSize width, TSize height)
         {
@@ -275,6 +485,22 @@
                     yield return new(x, y);
                 }
             }
+        }
+
+        public static Vector<TSize> GetPointByCardinal(Cardinal cardinal)
+        {
+            return cardinal switch
+            {
+                Cardinal.North => Vector<TSize>.North,
+                Cardinal.NorthWest => Vector<TSize>.NorthWest,
+                Cardinal.NorthEast => Vector<TSize>.NorthEast,
+                Cardinal.South => Vector<TSize>.South,
+                Cardinal.SouthWest => Vector<TSize>.SouthWest,
+                Cardinal.SouthEast => Vector<TSize>.SouthEast,
+                Cardinal.East => Vector<TSize>.East,
+                Cardinal.West => Vector<TSize>.West,
+                _ => throw new InvalidOperationException(),
+            };
         }
 
         public Vector<TSize> Clone() => new(this);
@@ -317,6 +543,16 @@
             return new long[] { x, y, z, t };
         }
 
+        public double[] ToDoubleArray()
+        {
+            double x = Convert.ToDouble(this.X);
+            double y = Convert.ToDouble(this.Y);
+            double z = Convert.ToDouble(this.Z);
+            double t = Convert.ToDouble(this.T);
+
+            return new double[] { x, y, z, t };
+        }
+
         public new string ToString()
             => $"x: {this.X}, y: {this.Y}, z: {this.Z}, z: {this.T}";
 
@@ -330,19 +566,74 @@
             => (this.X, this.Y, this.Z, this.T).GetHashCode();
 
         public TSize Absolute()
-            => typeof(TSize) == typeof(int) ? this.AbsoluteInt() : this.AbsoluteLong();
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return this.AbsoluteDouble();
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return this.AbsoluteInt();
+            }
+
+            return this.AbsoluteLong();
+        }
 
         public TSize Distance(Vector<TSize> point)
-            => typeof(TSize) == typeof(int) ? this.DistanceInt(point) : this.DistanceLong(point);
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return this.DistanceDouble(point);
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return this.DistanceInt(point);
+            }
+
+            return this.DistanceLong(point);
+        }
 
         public Vector<TSize> Negate()
-            => typeof(TSize) == typeof(int) ? this.NegateInt() : this.NegateLong();
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return this.NegateDouble();
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return this.NegateInt();
+                }
+
+            return this.NegateLong();
+        }
 
         public List<TSize> AbsoluteValues()
-            => typeof(TSize) == typeof(int) ? this.AbsoluteValuesInt() : this.AbsoluteValuesLong();
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return this.AbsoluteValuesDouble();
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return this.AbsoluteValuesInt();
+            }
+
+            return this.AbsoluteValuesLong();
+        }
 
         public IEnumerable<Vector<TSize>> Around(TSize minX, TSize minY, TSize maxX, TSize maxY)
-            => typeof(TSize) == typeof(int) ? this.AroundInt(minX, minY, maxX, maxY) : this.AroundLong(minX, minY, maxX, maxY);
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                return this.AroundDouble(minX, minY, maxX, maxY);
+            }
+            else if (typeof(TSize) == typeof(int))
+            {
+                return this.AroundInt(minX, minY, maxX, maxY);
+            }
+
+            return this.AroundLong(minX, minY, maxX, maxY);
+        }
 
         public bool IsLineOfSight(Vector<TSize> pointA, Vector<TSize> pointB)
         {
@@ -365,11 +656,22 @@
             return new(x, y);
         }
 
-        public void Transform(Cardinal direction)
+        public Vector<TSize> Transform(Cardinal direction)
         {
             Vector<TSize> transform = this + CardinalHelper.AllTransform<TSize>()[direction];
             this.X = transform.X;
             this.Y = transform.Y;
+
+            return transform;
+        }
+
+        public Vector<TSize> Transform(Vector<TSize> point)
+        {
+            Vector<TSize> transform = this + point;
+            this.X = transform.X;
+            this.Y = transform.Y;
+
+            return transform;
         }
 
         public void SymbolTransform(char direction)
@@ -409,6 +711,14 @@
             return new Vector<TSize>((TSize)(object)(a[0] - b[0]), (TSize)(object)(a[1] - b[1]), (TSize)(object)(a[2] - b[2]), (TSize)(object)(a[3] - b[3]));
         }
 
+        private static Vector<TSize> SubtractDouble(Vector<TSize> pointA, Vector<TSize> pointB)
+        {
+            double[] a = pointA.ToDoubleArray();
+            double[] b = pointB.ToDoubleArray();
+
+            return new Vector<TSize>((TSize)(object)(a[0] - b[0]), (TSize)(object)(a[1] - b[1]), (TSize)(object)(a[2] - b[2]), (TSize)(object)(a[3] - b[3]));
+        }
+
         private static Vector<TSize> AddInt(Vector<TSize> pointA, Vector<TSize> pointB)
         {
             int[] a = pointA.ToIntArray();
@@ -421,6 +731,14 @@
         {
             long[] a = pointA.ToLongArray();
             long[] b = pointB.ToLongArray();
+
+            return new Vector<TSize>((TSize)(object)(a[0] + b[0]), (TSize)(object)(a[1] + b[1]), (TSize)(object)(a[2] + b[2]), (TSize)(object)(a[3] + b[3]));
+        }
+
+        private static Vector<TSize> AddDouble(Vector<TSize> pointA, Vector<TSize> pointB)
+        {
+            double[] a = pointA.ToDoubleArray();
+            double[] b = pointB.ToDoubleArray();
 
             return new Vector<TSize>((TSize)(object)(a[0] + b[0]), (TSize)(object)(a[1] + b[1]), (TSize)(object)(a[2] + b[2]), (TSize)(object)(a[3] + b[3]));
         }
@@ -441,6 +759,14 @@
             return new Vector<TSize>((TSize)(object)(a[0] * b[0]), (TSize)(object)(a[1] * b[1]), (TSize)(object)(a[2] * b[2]), (TSize)(object)(a[3] * b[3]));
         }
 
+        private static Vector<TSize> ProductDouble(Vector<TSize> pointA, Vector<TSize> pointB)
+        {
+            double[] a = pointA.ToDoubleArray();
+            double[] b = pointB.ToDoubleArray();
+
+            return new Vector<TSize>((TSize)(object)(a[0] * b[0]), (TSize)(object)(a[1] * b[1]), (TSize)(object)(a[2] * b[2]), (TSize)(object)(a[3] * b[3]));
+        }
+
         private static Vector<TSize> DivideInt(Vector<TSize> pointA, Vector<TSize> pointB)
         {
             int[] a = pointA.ToIntArray();
@@ -457,6 +783,18 @@
         {
             long[] a = pointA.ToLongArray();
             long[] b = pointB.ToLongArray();
+
+            return new Vector<TSize>(
+                (TSize)(object)(a[0] / b[0]),
+                (TSize)(object)(a[1] / b[1]),
+                (TSize)(object)(a[2] == 0 && b[2] == 0 ? 0 : a[2] / b[2]),
+                (TSize)(object)(a[3] == 0 && b[3] == 0 ? 0 : a[3] / b[3]));
+        }
+
+        private static Vector<TSize> DivideDouble(Vector<TSize> pointA, Vector<TSize> pointB)
+        {
+            double[] a = pointA.ToDoubleArray();
+            double[] b = pointB.ToDoubleArray();
 
             return new Vector<TSize>(
                 (TSize)(object)(a[0] / b[0]),
@@ -500,6 +838,16 @@
             return (TSize)(object)result;
         }
 
+        private TSize DistanceDouble(Vector<TSize> point)
+        {
+            double result = (Convert.ToDouble(this.X) - Convert.ToDouble(point.X)).Abs()
+                + (Convert.ToDouble(this.Y) - Convert.ToDouble(point.Y)).Abs()
+                + (Convert.ToDouble(this.Z) - Convert.ToDouble(point.Z)).Abs()
+                + (Convert.ToDouble(this.T) - Convert.ToDouble(point.T)).Abs();
+
+            return (TSize)(object)result;
+        }
+
         private TSize AbsoluteInt()
         {
             int x = Convert.ToInt32(this.X);
@@ -516,6 +864,16 @@
             long y = Convert.ToInt64(this.Y);
             long z = Convert.ToInt64(this.Z);
             long t = Convert.ToInt64(this.T);
+
+            return (TSize)(object)(Math.Abs(x) + Math.Abs(y) + Math.Abs(z) + Math.Abs(t));
+        }
+
+        private TSize AbsoluteDouble()
+        {
+            double x = Convert.ToDouble(this.X);
+            double y = Convert.ToDouble(this.Y);
+            double z = Convert.ToDouble(this.Z);
+            double t = Convert.ToDouble(this.T);
 
             return (TSize)(object)(Math.Abs(x) + Math.Abs(y) + Math.Abs(z) + Math.Abs(t));
         }
@@ -540,9 +898,21 @@
             return new Vector<TSize>((TSize)(object)-x, (TSize)(object)-y, (TSize)(object)-z, (TSize)(object)-t);
         }
 
+        private Vector<TSize> NegateDouble()
+        {
+            double x = Convert.ToDouble(this.X);
+            double y = Convert.ToDouble(this.Y);
+            double z = Convert.ToDouble(this.Z);
+            double t = Convert.ToDouble(this.T);
+
+            return new Vector<TSize>((TSize)(object)-x, (TSize)(object)-y, (TSize)(object)-z, (TSize)(object)-t);
+        }
+
         private List<TSize> AbsoluteValuesInt() => this.ToIntArray().Select(x => (TSize)(object)Math.Abs(x)).ToList();
 
         private List<TSize> AbsoluteValuesLong() => this.ToLongArray().Select(x => (TSize)(object)Math.Abs(x)).ToList();
+
+        private List<TSize> AbsoluteValuesDouble() => this.ToDoubleArray().Select(x => (TSize)(object)Math.Abs(x)).ToList();
 
         private IEnumerable<Vector<TSize>> AroundInt(TSize minX, TSize minY, TSize maxX, TSize maxY)
         {
@@ -591,6 +961,32 @@
             }
 
             if (y - 1 >= minY.ToLong() && y - 1 <= maxY.ToLong())
+            {
+                yield return new(x, y - 1);
+            }
+        }
+
+        private IEnumerable<Vector<TSize>> AroundDouble(TSize minX, TSize minY, TSize maxX, TSize maxY)
+        {
+            double x = Convert.ToDouble(this.X);
+            double y = Convert.ToDouble(this.Y);
+
+            if (x + 1 >= minX.ToDouble() && x + 1 <= maxX.ToDouble())
+            {
+                yield return new(x + 1, y);
+            }
+
+            if (x - 1 >= minX.ToDouble() && x - 1 <= maxX.ToDouble())
+            {
+                yield return new(x - 1, y);
+            }
+
+            if (y + 1 >= minY.ToDouble() && y + 1 <= maxY.ToDouble())
+            {
+                yield return new(x, y + 1);
+            }
+
+            if (y - 1 >= minY.ToDouble() && y - 1 <= maxY.ToDouble())
             {
                 yield return new(x, y - 1);
             }

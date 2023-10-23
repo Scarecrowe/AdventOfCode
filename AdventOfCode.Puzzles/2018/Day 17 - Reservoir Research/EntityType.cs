@@ -2,7 +2,7 @@
 {
     public enum EntityType
     {
-        Sand = 0,
+        Air = 0,
         Clay = 1,
         Water = 2,
         Settled = 3

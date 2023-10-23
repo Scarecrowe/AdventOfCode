@@ -273,7 +273,7 @@
             {
                 var list = new List<string>();
                 var combinations = list.Combinations();
-                combinations.Count().Should().Be(1);
+                combinations.Count.Should().Be(0);
             }
         }
 

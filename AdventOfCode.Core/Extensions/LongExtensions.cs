@@ -22,5 +22,7 @@
         public static string ToString(this long value, int toBase) => Convert.ToString(value, toBase);
 
         public static long Abs(this long value) => Math.Abs(value);
+
+        public static long ZeroIfNegative(this long value) => value >= 0L ? value : 0L;
     }
 }
