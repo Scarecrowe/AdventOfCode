@@ -83,7 +83,7 @@
                     break;
                 }
 
-                if (this.Frames % 4 == 0)
+                if (this.Frames % 3 == 0)
                 {
                     this.FlowLength++;
                 }

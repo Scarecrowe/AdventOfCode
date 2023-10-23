@@ -47,7 +47,7 @@
                     .WithLibx264()
                         .WithPreset(Libx264Preset.Ultrafast)
                         .WithTune(Libx264Tune.Animation)
-                        .WithConstantQuality(34)
+                        .WithConstantQuality(20)
                     .Build()
                 .Build();
 
