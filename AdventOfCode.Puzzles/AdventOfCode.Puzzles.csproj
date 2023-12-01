@@ -207,6 +207,7 @@
     <None Remove="2022\Day 03 - Rucksack Reorganization\input.txt" />
     <None Remove="2022\Day 02 - Rock Paper Scissors\input.txt" />
     <None Remove="2022\Day 01 - Calorie Counting\input.txt" />
+    <None Remove="2023\Day 01 - Trebuchet\input.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -808,6 +809,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="2022\Day 01 - Calorie Counting\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2023\Day 01 - Trebuchet\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

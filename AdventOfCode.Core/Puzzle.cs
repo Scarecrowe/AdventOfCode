@@ -35,7 +35,7 @@
                 .Load("AdventOfCode.Puzzles")
                 .GetType($"AdventOfCode.Puzzles._{year}.Days.Day{day}");
 
-            if ((year < 2015 || year > 2022)
+            if ((year < 2015 || year > 2023)
                 || (day < 1 || day > 25)
                 || puzzle == null)
             {

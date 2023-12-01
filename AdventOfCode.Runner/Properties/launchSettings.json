@@ -1,7 +1,8 @@
 {
   "profiles": {
     "AdventOfCode.Runner": {
-      "commandName": "Project"
+      "commandName": "Project",
+      "commandLineArgs": "-year 2023 -day 1 -batch 1"
     }
   }
 }
