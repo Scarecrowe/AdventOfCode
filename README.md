@@ -20,6 +20,9 @@ About this repo
 
 - `AdventOfCode.Puzzles`: A project encompassing the silver and gold puzzles from each year.
 
-*Copyright &copy; 2018-2022 Daniel Crowe.*
+- `AdventOfCode.Animations`: This project contains a collection of puzzles transformed into captivating animations. [Advent of Code - 2018 - Day 17 - Reservoir Research][animation]
+
+*Copyright &copy; 2018-2023 Daniel Crowe.*
 
 [about]:   https://adventofcode.com/2022/about
+[animation]: https://www.youtube.com/watch?v=DI0rE_SX3Rk
