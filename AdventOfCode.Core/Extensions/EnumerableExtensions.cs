@@ -103,10 +103,7 @@
 
             for (int i = 1; i < enumerable.Count(); i++)
             {
-                if (typeof(T) == typeof(int))
-                {
-                    product *= Convert.ToInt64(enumerable.ElementAt(i));
-                }
+                product *= Convert.ToInt64(enumerable.ElementAt(i));
             }
 
             return product;
