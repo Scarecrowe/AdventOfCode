@@ -5,17 +5,14 @@
         public Scratchcards(string[] input)
         {
             this.Cards = new();
-            this.Points = new();
 
             for (int i = 0; i < input.Length; i++)
             {
-                this.Cards.Add(i + 1, new Card(input[i]));
+                this.Cards.Add(i + 1, new(input[i]));
             }
         }
 
         private Dictionary<int, Card> Cards { get; }
-
-        private Dictionary<int, int> Points { get; }
 
         public int TotalPoints()
         {
@@ -24,7 +21,6 @@
             foreach (var card in this.Cards)
             {
                 int points = 0;
-                this.Points.Clear();
 
                 foreach (int number in card.Value.Numbers)
                 {
@@ -42,35 +38,31 @@
 
         public int TotalCards()
         {
+            int result = 0;
+
             foreach (var card in this.Cards)
             {
-                this.Scratch(card.Value);
+                result += this.Scratch(card.Value);
             }
 
-            return this.Points.Sum(x => x.Value);
+            return result;
         }
 
-        private void Scratch(Card card)
+        private int Scratch(Card card)
         {
-            if (!this.Points.ContainsKey(card.Number))
-            {
-                this.Points.Add(card.Number, 1);
-            }
-            else
-            {
-                this.Points[card.Number]++;
-            }
-
+            int result = 0;
             int i = 0;
+            result++;
 
             foreach (int number in card.Numbers)
             {
                 if (card.Winning.Contains(number))
                 {
-                    i += 1;
-                    this.Scratch(this.Cards[card.Number + i]);
+                    result += this.Scratch(this.Cards[card.Number + ++i]);
                 }
             }
+
+            return result;
         }
     }
 }
