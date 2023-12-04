@@ -5,8 +5,6 @@
 
     public class Day3 : Puzzle, IPuzzle
     {
-        private string gold = string.Empty;
-
         public Day3(string file)
         {
             this.DayTitle = "Gear Ratios";
