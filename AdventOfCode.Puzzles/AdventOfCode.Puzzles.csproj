@@ -207,6 +207,7 @@
     <None Remove="2022\Day 03 - Rucksack Reorganization\input.txt" />
     <None Remove="2022\Day 02 - Rock Paper Scissors\input.txt" />
     <None Remove="2022\Day 01 - Calorie Counting\input.txt" />
+    <None Remove="2023\Day 06 - Wait For It\input.txt" />
     <None Remove="2023\Day 05 - You Give A Seed A Fertilizer\input.txt" />
     <None Remove="2023\Day 04 - Scratchcards\input.txt" />
     <None Remove="2023\Day 03 - Gear Ratios\input.txt" />
@@ -813,6 +814,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="2022\Day 01 - Calorie Counting\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2023\Day 06 - Wait For It\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="2023\Day 05 - You Give A Seed A Fertilizer\input.txt">
