@@ -30,6 +30,8 @@
 
         public static List<byte> ToByteList(this IEnumerable<string> value) => value.Select(x => byte.Parse($"{x}")).ToList();
 
+        public static string ToStringX(this IEnumerable<int> collection) => string.Join(string.Empty, collection);
+
         public static IEnumerable<IEnumerable<T>> Split<T>(this IEnumerable<T> collection, T splitOn)
         {
             List<T> current = new();

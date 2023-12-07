@@ -9,7 +9,7 @@
 
         private Dictionary<string, Hand> Hands { get; }
 
-        public long Play()
+        public int Play()
             => this.Hands
                 .OrderBy(x => x.Value.Strength)
                 .ThenBy(x => x.Value.Ordered)
@@ -19,7 +19,7 @@
 
         private static Dictionary<string, Hand> Parse(string order, string[] input)
             => input
-            .Select(x => x.Split(" "))
-            .ToDictionary(x => x[0], x => new Hand(x[0], x[1], order));
+                .Select(x => x.Split(" "))
+                .ToDictionary(x => x[0], x => new Hand(x[0], x[1], order));
     }
 }
