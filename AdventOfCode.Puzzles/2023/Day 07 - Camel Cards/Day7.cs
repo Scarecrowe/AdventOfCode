@@ -13,6 +13,6 @@
 
         public string Silver() => $"{new CamelCards(this.Input).Play()}";
 
-        public string Gold() => $"{new CamelCards(this.Input).Play(true)}";
+        public string Gold() => $"{new CamelCards(this.Input, true).Play()}";
     }
 }
