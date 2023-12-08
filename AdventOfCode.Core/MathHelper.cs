@@ -16,7 +16,21 @@
             return a;
         }
 
+        public static int GreatestCommonFactor(int a, int b)
+        {
+            while (b != 0)
+            {
+                int c = b;
+                b = a % b;
+                a = c;
+            }
+
+            return a;
+        }
+
         public static long LeastCommonMultiple(long a, long b) => (a / GreatestCommonFactor(a, b)) * b;
+
+        public static int LeastCommonMultiple(int a, int b) => (a / GreatestCommonFactor(a, b)) * b;
 
         public static long LeastCommonMultiple(List<long> values)
         {
