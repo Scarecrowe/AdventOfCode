@@ -207,6 +207,7 @@
     <None Remove="2022\Day 03 - Rucksack Reorganization\input.txt" />
     <None Remove="2022\Day 02 - Rock Paper Scissors\input.txt" />
     <None Remove="2022\Day 01 - Calorie Counting\input.txt" />
+    <None Remove="2023\Day 09 - Mirage Maintenance\input.txt" />
     <None Remove="2023\Day 08 - Haunted Wasteland\input.txt" />
     <None Remove="2023\Day 07 - Camel Cards\input.txt" />
     <None Remove="2023\Day 06 - Wait For It\input.txt" />
@@ -816,6 +817,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="2022\Day 01 - Calorie Counting\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="2023\Day 09 - Mirage Maintenance\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="2023\Day 08 - Haunted Wasteland\input.txt">
