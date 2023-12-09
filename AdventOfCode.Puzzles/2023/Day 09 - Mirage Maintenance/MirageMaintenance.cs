@@ -9,19 +9,19 @@
 
         public List<int[]> Report { get; }
 
+        public int Start()
+            => this.ExtrapolateHistory((history, value) => history[0] - value);
+
         public int End()
-            => this.ExtrapolateHistory((history, result) => history[^1] + result);
-
-        public int Beginning()
-            => this.ExtrapolateHistory((history, result) => history[0] - result);
-
-        private static int Predict(int[] history, Func<int[], int, int> func)
-            => history.Length == 0 ? 0 : func(history, Predict(Diff(history), func));
+            => this.ExtrapolateHistory((history, value) => history[^1] + value);
 
         private static int[] Diff(int[] history)
             => history[0..^1].Select((x, i) => history[i + 1] - x).ToArray();
 
-        private int ExtrapolateHistory(Func<int[], int, int> func)
-            => this.Report.Aggregate(0, (total, history) => total += Predict(history, func));
+        private static int Predict(int[] history, Func<int[], int, int> result)
+            => history.Length == 0 ? 0 : result(history, Predict(Diff(history), result));
+
+        private int ExtrapolateHistory(Func<int[], int, int> result)
+            => this.Report.Aggregate(0, (sum, history) => sum += Predict(history, result));
     }
 }

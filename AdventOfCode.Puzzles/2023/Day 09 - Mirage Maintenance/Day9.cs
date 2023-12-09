@@ -13,6 +13,6 @@
 
         public string Silver() => $"{new MirageMaintenance(this.Input).End()}";
 
-        public string Gold() => $"{new MirageMaintenance(this.Input).Beginning()}";
+        public string Gold() => $"{new MirageMaintenance(this.Input).Start()}";
     }
 }
