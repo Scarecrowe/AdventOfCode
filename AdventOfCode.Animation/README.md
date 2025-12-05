@@ -106,8 +106,6 @@ This makes animations deterministic and replayable.
 - Works with any puzzle type
 - Makes your AoC repo uniquely expressive and fun
 
-Your implementation is particularly nice because it keeps the complexity low while still supporting expressive visuals. The separation of solver → frames → renderer → playback is clean and maintainable.
-
 ---
 
 ## 📘 Adding a New Animated Puzzle

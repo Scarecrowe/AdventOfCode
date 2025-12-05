@@ -1,28 +1,98 @@
-# Advent of Code Puzzle Runner
+# AdventOfCode 🎄
 
-About Advent of Code
---------------------
+![Solved](https://img.shields.io/badge/Solved-215%2B_puzzles-brightgreen)
+![Years](https://img.shields.io/badge/Years-2015→2025-blue)
+![Language](https://img.shields.io/badge/Language-C%23-purple)
+![Last Update](https://img.shields.io/badge/Updated-2025-lightgrey)
 
-[Advent of Code][about] is an eagerly anticipated annual coding challenge that captivates programmers, developers, and problem-solving enthusiasts worldwide. Held during the month of December, this event offers participants an engaging series of daily coding puzzles, each designed to challenge and stimulate their logical thinking, algorithmic prowess, and creative problem-solving abilities.
+A collection of my solutions for **Advent of Code**, implemented in **C#**.  
+This repository includes every year of Advent of Code from **2015 → 2024 fully completed**,  
+and **2025 is in progress up to Day 5**.
 
-The puzzles cover a wide spectrum of programming topics, ranging from algorithmic challenges and mathematical conundrums to text processing, graph theory, and cryptography. Every day, participants are presented with a fresh puzzle, often accompanied by a unique narrative or theme that adds an element of storytelling to the experience.
+---
 
-The primary goal of Advent of Code is not just to find solutions, but to cultivate a sense of camaraderie among the coding community. Participants often discuss their strategies, share insights, and learn from one another's approaches, fostering an environment of collaboration and learning. While some puzzles may be relatively straightforward, others can be brain-teasers that require innovative thinking to crack.
+## ✅ Progress Overview
 
-Advent of Code doesn't just test technical skills; it encourages participants to think outside the box, experiment with different algorithms, and appreciate the beauty of elegant solutions. It's an opportunity to challenge oneself, celebrate the joy of coding, and embrace the spirit of friendly competition.
+### **Solved Status by Year**
 
-Whether you're a seasoned programmer, a newcomer to coding, or simply someone who enjoys puzzles, Advent of Code offers an exciting platform to sharpen your skills, learn new techniques, and connect with a global community of like-minded problem solvers. So, prepare to embark on a month-long journey of coding adventure, and unlock the doors to a world of challenging puzzles and endless discovery.
+| Year | Days Solved | Status |
+|------|-------------|--------|
+| **2025** | 5 / 25 | 🚧 In Progress |
+| **2024** | 25 / 25 | ✔️ Complete |
+| **2023** | 25 / 25 | ✔️ Complete |
+| **2022** | 25 / 25 | ✔️ Complete |
+| **2021** | 25 / 25 | ✔️ Complete |
+| **2020** | 25 / 25 | ✔️ Complete |
+| **2019** | 25 / 25 | ✔️ Complete |
+| **2018** | 25 / 25 | ✔️ Complete |
+| **2017** | 25 / 25 | ✔️ Complete |
+| **2016** | 25 / 25 | ✔️ Complete |
+| **2015** | 25 / 25 | ✔️ Complete |
 
-About this repo
---------------------
+If more years are added in the future, the table can be extended easily.
 
-- `AdventOfCode.Core`: A project encompassing fundamental, generic puzzle functionality commonly employed by the majority of puzzles.
+---
 
-- `AdventOfCode.Puzzles`: A project encompassing the silver and gold puzzles from each year.
+## 📁 Repository Structure
 
-- `AdventOfCode.Animations`: This project contains a collection of puzzles transformed into captivating animations. [Advent of Code - 2018 - Day 17 - Reservoir Research][animation]
+- **AdventOfCode.Core** – Shared utilities used across puzzles.  
+- **AdventOfCode.Puzzles** – All puzzle implementations, organised by year/day.  
+- **AdventOfCode.Animations** – Optional visualisations for selected puzzles.  
+- **AdventOfCode.Runner** – CLI interface for running puzzles directly.  
+- **AdventOfCode.Test** – Unit tests and input validation helpers.  
+- Standard `.gitignore`, `.ruleset` and `.sln` structure for a multi-project C# solution.
 
-*Copyright &copy; 2018-2023 Daniel Crowe.*
+---
 
-[about]:   https://adventofcode.com/2022/about
-[animation]: https://www.youtube.com/watch?v=DI0rE_SX3Rk
+## ▶️ Running Puzzles
+
+You can run puzzles using the runner project.
+
+### **1. Interactive Mode**
+Simply run the Runner project in your IDE.
+
+### **2. Command-Line Arguments**
+
+You can execute a *specific* puzzle directly:
+
+```
+-year <YEAR> -day <DAY> -batch <BATCH>
+```
+
+**Example:**
+
+```
+-year 2025 -day 5 -batch 1
+```
+
+**Argument meanings:**
+
+- `-year` → The Advent of Code year  
+- `-day` → Puzzle day  
+- `-batch` → Which input batch to use (useful when testing variations or performance)  
+
+This makes running puzzles scriptable and ideal for quick testing.
+
+---
+
+## 🔧 Adding New Puzzles
+
+- Add puzzle code under the appropriate year/day in `Puzzles`.  
+- Add test inputs or examples under `Test`.  
+- Add animations if the puzzle benefits from visualisation.  
+- Update progress in the table above as desired.  
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.  
+See `license.txt` for details.
+
+---
+
+## 🎅 What is Advent of Code?
+
+Advent of Code is a yearly December programming challenge by Eric Wastl.  
+It provides 25 days (50 parts) of algorithmic puzzles each year.  
+This repository serves as my complete archive of solutions, experiments, and animations.

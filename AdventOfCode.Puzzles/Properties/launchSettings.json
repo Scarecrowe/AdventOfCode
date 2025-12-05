@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "AdventOfCode.Puzzles": {
-      "commandName": "Project",
-      "commandLineArgs": "2023 1 1"
-    }
-  }
-}

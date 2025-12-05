@@ -1,16 +1,10 @@
 ﻿namespace AdventOfCode.Puzzles._2025.Day_05___Cafeteria
 {
-    public class Cafeteria
+    public class Cafeteria(string[] input)
     {
-        private List<IngredientRange> Fresh { get; set; }
+        private List<IngredientRange> Fresh { get; set; } = ParseFresh(input);
 
-        private List<long> Available { get; set; }
-
-        public Cafeteria(string[] input)
-        {
-            this.Fresh = ParseFresh(input);
-            this.Available = ParseAvailable(input);
-        }
+        private List<long> Available { get; set; } = ParseAvailable(input);
 
         private static List<IngredientRange> ParseFresh(string[] input)
         {
