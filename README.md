@@ -73,6 +73,39 @@ This makes running puzzles scriptable and ideal for quick testing.
 
 ---
 
+## 🎬 Running Animations
+
+Some puzzles include optional **visual animations** to help understand the solution or illustrate the problem.  
+These animations are implemented in the `AdventOfCode.Animations` library.
+
+### How to Run
+
+1. Make sure the `AdventOfCode.Animations` project is built.  
+2. Use the runner or directly run the animation project.  
+3. Specify the year, day, and batch if needed:
+
+```bash
+-year 2025 -day 5 -batch 1
+```
+
+The animation will open in a window or generate an output file depending on the puzzle.
+
+### Example Animation
+
+A sample animation for one of the puzzles is available on YouTube:
+
+[![Advent of Code Animation](https://img.youtube.com/vi/DI0rE_SX3Rk/0.jpg)](https://www.youtube.com/watch?v=DI0rE_SX3Rk)
+
+Click the image or the link above to watch the video demonstrating how the animations work.
+
+---
+
+**Notes:**
+
+- Not all puzzles have animations.  
+- Animations are mainly for visual understanding; puzzle logic is still solved via the standard Runner/Core workflow.  
+- Make sure your system has the necessary graphical libraries if running locally (e.g., WinForms, WPF, or console graphics depending on implementation).
+
 ## 🔧 Adding New Puzzles
 
 - Add puzzle code under the appropriate year/day in `Puzzles`.  
