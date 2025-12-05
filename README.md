@@ -76,7 +76,7 @@ This makes running puzzles scriptable and ideal for quick testing.
 ## 🎬 Running Animations
 
 Some puzzles include optional **visual animations** to help understand the solution or illustrate the problem.  
-These animations are implemented in the `AdventOfCode.Animations` library.
+These animations are implemented in the [`AdventOfCode.Animations`](./AdventOfCode.Animations/README.md) library.
 
 ### How to Run
 
@@ -85,7 +85,7 @@ These animations are implemented in the `AdventOfCode.Animations` library.
 3. Specify the year, day, and batch if needed:
 
 ```bash
--year 2025 -day 5 -batch 1
+-year 2018 -day 17 -batch 1
 ```
 
 The animation will open in a window or generate an output file depending on the puzzle.
