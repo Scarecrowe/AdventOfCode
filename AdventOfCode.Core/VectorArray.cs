@@ -156,6 +156,26 @@
             return result.ToString();
         }
 
+        public string Print(Func<TValue, Vector<TSize>, char> comparer)
+        {
+            StringBuilder result = new();
+            result.AppendLine().AppendLine();
+
+            for (int y = 0; y < this.Height.ToInt(); y++)
+            {
+                for (int x = 0; x < this.Width.ToInt(); x++)
+                {
+                    result.Append(comparer(this[y, x], new(x, y)));
+                }
+
+                result.AppendLine();
+            }
+
+            result.AppendLine();
+
+            return result.ToString();
+        }
+
         public VectorArray<TSize, TValue> Clone() => new(this);
 
         public IEnumerable<VectorCell<TSize, TValue>> Values(TValue value)
@@ -402,6 +422,10 @@
         public bool IsEdge(Vector<TSize> point)
             => this.EdgeEnumerator().Any(x => x.Point == point);
 
+        public bool Contains(Vector<TSize> point)
+            => !((point.X.ToInt() < 0 || point.X.ToInt() > this.Width.ToInt() - 1)
+                || (point.Y.ToInt() < 0 || point.Y.ToInt() > this.Height.ToInt() - 1));
+
         private IEnumerable<VectorCell<TSize, TValue>> Adjacent(List<VectorCell<TSize, TValue>> cells, Vector<TSize> point)
         {
             foreach (VectorCell<TSize, TValue> cell in cells)
@@ -445,8 +469,11 @@
 
         private void SetDimensions(string[] input)
         {
-            this.Width = input[0].Length.ToGeneric<TSize>();
-            this.Height = input.Length.ToGeneric<TSize>();
+            if (input.Length > 0)
+            {
+                this.Width = input[0].Length.ToGeneric<TSize>();
+                this.Height = input.Length.ToGeneric<TSize>();
+            }
         }
 
         private TValue SumInt() => (TValue)(object)this.AxisEnumerator().Sum(x => int.Parse($"{x.Value}"));

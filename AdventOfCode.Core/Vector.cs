@@ -554,7 +554,7 @@
         }
 
         public new string ToString()
-            => $"x: {this.X}, y: {this.Y}, z: {this.Z}, z: {this.T}";
+            => $"x: {this.X}, y: {this.Y}, z: {this.Z}, t: {this.T}";
 
         public bool Equals(Vector<TSize>? point)
             => point?.GetHashCode() == this.GetHashCode();

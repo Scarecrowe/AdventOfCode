@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2021</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Sonar Sweep\input.txt" />
+    <None Remove="Day 02 - Dive\input.txt" />
+    <None Remove="Day 03 - Binary Diagnostic\input.txt" />
+    <None Remove="Day 04 - Giant Squid\input.txt" />
+    <None Remove="Day 05 - Hydrothermal Venture\input.txt" />
+    <None Remove="Day 06 - Lanternfish\input.txt" />
+    <None Remove="Day 07 - The Treachery of Whales\input.txt" />
+    <None Remove="Day 08 - Seven Segment Search\input.txt" />
+    <None Remove="Day 09 - Smoke Basin\input.txt" />
+    <None Remove="Day 10 - Syntax Scoring\input.txt" />
+    <None Remove="Day 11 - Dumbo Octopus\input.txt" />
+    <None Remove="Day 12 - Passage Pathing\input.txt" />
+    <None Remove="Day 13 - Transparent Origami\input.txt" />
+    <None Remove="Day 14 - Extended Polymerization\input.txt" />
+    <None Remove="Day 15 - Chiton\input.txt" />
+    <None Remove="Day 16 - Packet Decoder\input.txt" />
+    <None Remove="Day 17 - Trick Shot\input.txt" />
+    <None Remove="Day 18 - Snailfish\input.txt" />
+    <None Remove="Day 19 - Beacon Scanner\input.txt" />
+    <None Remove="Day 20 - Trench Map\input.txt" />
+    <None Remove="Day 21 - Dirac Dice\input.txt" />
+    <None Remove="Day 22 - Reactor Reboot\input.txt" />
+    <None Remove="Day 23 - Amphipod\input.txt" />
+    <None Remove="Day 24 - Arithmetic Logic Unit\input.txt" />
+    <None Remove="Day 25 - Sea Cucumber\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Sonar Sweep\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Dive\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Binary Diagnostic\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Giant Squid\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Hydrothermal Venture\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Lanternfish\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - The Treachery of Whales\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Seven Segment Search\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Smoke Basin\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Syntax Scoring\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Dumbo Octopus\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Passage Pathing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Transparent Origami\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Extended Polymerization\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Chiton\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Packet Decoder\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Trick Shot\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Snailfish\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Beacon Scanner\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Trench Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Dirac Dice\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Reactor Reboot\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Amphipod\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Arithmetic Logic Unit\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Sea Cucumber\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

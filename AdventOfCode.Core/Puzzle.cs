@@ -32,10 +32,10 @@
         public static IPuzzle? GetPuzzle(int year, int day, List<string>? input = null)
         {
             Type? puzzle = Assembly
-                .Load("AdventOfCode.Puzzles")
+                .Load($"AdventOfCode.Puzzles.{year}")
                 .GetType($"AdventOfCode.Puzzles._{year}.Days.Day{day}");
 
-            if ((year < 2015 || year > 2023)
+            if ((year < 2015 || year > 2025)
                 || (day < 1 || day > 25)
                 || puzzle == null)
             {
@@ -44,43 +44,45 @@
 
             if (input != null)
             {
-                return Activator.CreateInstance(puzzle, new List<string[]> { input.ToArray() }.ToArray()) as IPuzzle;
+                return Activator.CreateInstance(puzzle) as IPuzzle;
             }
 
-            return Activator.CreateInstance(puzzle, GetInputPath(year, day)) as IPuzzle;
+            return Activator.CreateInstance(puzzle) as IPuzzle;
         }
 
-        public static string[] GetInput(int year, int day, StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries)
+        public static string[] GetInput(int day, string title, StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries)
         {
-            return File.ReadAllText(GetInputPath(year, day)).Split(
+            return File.ReadAllText(GetInputPath(day, title)).Split(
                 new[] { "\r\n", "\r", "\n" },
                 options);
         }
 
-        protected static string GetInputPath(int year, int day)
+        protected static string GetInputPath(int day, string title)
         {
-            string yearPath = $"{Assembly.GetCallingAssembly().ExecutingDirectory()}\\{year}";
-            string dayPath = day < 10 ? $"0{day}" : $"{day}";
-            string path = Directory.GetDirectories(yearPath).ToList().FirstOrDefault(x => Path.GetFileName(x).StartsWith($"Day {dayPath}")) ?? string.Empty;
-            return $"{path}\\input.txt";
+            string dayPath = $"{Assembly.GetCallingAssembly().ExecutingDirectory()}\\Day {(day < 10 ? $"0{day}" : $"{day}")} - {title}";
+
+            return $"{dayPath}\\input.txt";
         }
 
-        protected void GetPuzzleData(string file, StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries, bool split = true)
+        protected void GetPuzzleData(int day, string title, StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries, bool split = true)
         {
-            file.Should().Not().BeNullOrEmpty(file, paramName: nameof(file));
+            this.FilePath = GetInputPath(day, title);
 
-            this.FilePath = file;
+            if (!File.Exists(this.FilePath))
+            {
+                return;
+            }
 
             if (split)
             {
-                this.Input = File.ReadAllText(file).Split(
+                this.Input = File.ReadAllText(this.FilePath).Split(
                 new[] { "\r\n", "\r", "\n" },
                 options);
 
                 return;
             }
 
-            this.Input = new string[] { File.ReadAllText(file) };
+            this.Input = new string[] { File.ReadAllText(this.FilePath) };
         }
     }
 }

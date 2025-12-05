@@ -28,7 +28,7 @@
             string silver = string.Empty;
             string gold = string.Empty;
             PuzzleTimer timer = new();
-            IPuzzle? puzzle = Core.Puzzle.GetPuzzle(year, day);
+            IPuzzle? puzzle = Puzzle.GetPuzzle(year, day);
 
             if (puzzle == null)
             {

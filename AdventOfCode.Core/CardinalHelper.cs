@@ -127,5 +127,46 @@
 
         public static List<VectorCell<TSize, TValue>> AllCells<TSize, TValue>()
             => AllTransform<TSize>().Select(x => new VectorCell<TSize, TValue>(x.Value, x.Key)).ToList();
+
+        public static Cardinal Flip(Cardinal direction)
+        {
+            return direction switch
+            {
+                Cardinal.North => Cardinal.South,
+                Cardinal.South => Cardinal.North,
+                Cardinal.East => Cardinal.West,
+                Cardinal.West => Cardinal.East,
+                Cardinal.NorthEast => Cardinal.SouthWest,
+                Cardinal.SouthWest => Cardinal.NorthEast,
+                Cardinal.SouthEast => Cardinal.NorthWest,
+                Cardinal.NorthWest => Cardinal.SouthEast,
+                _ => throw new ArgumentException()
+            };
+        }
+
+        public static Vector<int> Transform(Vector<int> point, Cardinal direction)
+        {
+            switch (direction)
+            {
+                case Cardinal.North:
+                    return point + Vector<int>.North;
+                case Cardinal.South:
+                    return point + Vector<int>.South;
+                case Cardinal.East:
+                    return point + Vector<int>.East;
+                case Cardinal.West:
+                    return point + Vector<int>.West;
+                case Cardinal.NorthWest:
+                    return point + Vector<int>.NorthWest;
+                case Cardinal.NorthEast:
+                    return point + Vector<int>.NorthEast;
+                case Cardinal.SouthWest:
+                    return point + Vector<int>.SouthWest;
+                case Cardinal.SouthEast:
+                    return point + Vector<int>.SouthEast;
+                default:
+                    throw new Exception("Invalid Cardinal");
+            }
+        }
     }
 }

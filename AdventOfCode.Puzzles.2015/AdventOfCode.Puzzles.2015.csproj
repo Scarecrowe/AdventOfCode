@@ -1,0 +1,125 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2015</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Not Quite Lisp\input.txt" />
+    <None Remove="Day 02 - I Was Told There Would Be No Math\input.txt" />
+    <None Remove="Day 03 - Perfectly Spherical Houses in a Vacuum\input.txt" />
+    <None Remove="Day 04 - The Ideal Stocking Stuffer\input.txt" />
+    <None Remove="Day 05 - Doesn't He Have Intern-Elves For This\input.txt" />
+    <None Remove="Day 06 - Probably a Fire Hazard\input.txt" />
+    <None Remove="Day 07 - Some Assembly Required\input.txt" />
+    <None Remove="Day 08 - Matchsticks\input.txt" />
+    <None Remove="Day 09 - All in a Single Night\input.txt" />
+    <None Remove="Day 10 - Elves Look, Elves Say\input.txt" />
+    <None Remove="Day 11 - Corporate Policy\input.txt" />
+    <None Remove="Day 12 - JSAbacusFramework.io\input.txt" />
+    <None Remove="Day 13 - Knights of the Dinner Table\input.txt" />
+    <None Remove="Day 14 - Reindeer Olympics\input.txt" />
+    <None Remove="Day 15 - Science for Hungry People\input.txt" />
+    <None Remove="Day 16 - Aunt Sue\input.txt" />
+    <None Remove="Day 17 - No Such Thing as Too Much\input.txt" />
+    <None Remove="Day 18 - Like a GIF For Your Yard\input.txt" />
+    <None Remove="Day 19 - Medicine for Rudolph\input.txt" />
+    <None Remove="Day 20 - Infinite Elves and Infinite Houses\input.txt" />
+    <None Remove="Day 21 - RPG Simulator 20XX\input.txt" />
+    <None Remove="Day 22 - Wizard Simulator 20XX\input.txt" />
+    <None Remove="Day 23 - Opening the Turing Lock\input.txt" />
+    <None Remove="Day 24 - It Hangs in the Balance\input.txt" />
+    <None Remove="Day 25 - Let It Snow\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Not Quite Lisp\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - I Was Told There Would Be No Math\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Perfectly Spherical Houses in a Vacuum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - The Ideal Stocking Stuffer\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Doesn't He Have Intern-Elves For This\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Probably a Fire Hazard\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - Some Assembly Required\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Matchsticks\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - All in a Single Night\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Elves Look, Elves Say\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Corporate Policy\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - JSAbacusFramework.io\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Knights of the Dinner Table\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Reindeer Olympics\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Science for Hungry People\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Aunt Sue\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - No Such Thing as Too Much\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Like a GIF For Your Yard\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Medicine for Rudolph\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Infinite Elves and Infinite Houses\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - RPG Simulator 20XX\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Wizard Simulator 20XX\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Opening the Turing Lock\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - It Hangs in the Balance\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Let It Snow\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

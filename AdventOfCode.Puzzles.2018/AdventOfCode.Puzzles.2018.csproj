@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2018</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Chronal Calibration\input.txt" />
+    <None Remove="Day 02 - Inventory Management System\input.txt" />
+    <None Remove="Day 03 - No Matter How You Slice It\input.txt" />
+    <None Remove="Day 04 - Repose Record\input.txt" />
+    <None Remove="Day 05 - Alchemical Reduction\input.txt" />
+    <None Remove="Day 06 - Chronal Coordinates\input.txt" />
+    <None Remove="Day 07 - The Sum of Its Parts\input.txt" />
+    <None Remove="Day 08 - Memory Maneuver\input.txt" />
+    <None Remove="Day 09 - Marble Mania\input.txt" />
+    <None Remove="Day 10 - The Stars Align\input.txt" />
+    <None Remove="Day 11 - Chronal Charge\input.txt" />
+    <None Remove="Day 12 - Subterranean Sustainability\input.txt" />
+    <None Remove="Day 13 - Mine Cart Madness\input.txt" />
+    <None Remove="Day 14 - Chocolate Charts\input.txt" />
+    <None Remove="Day 15 - Beverage Bandits\input.txt" />
+    <None Remove="Day 16 - Chronal Classification\input.txt" />
+    <None Remove="Day 17 - Reservoir Research\input.txt" />
+    <None Remove="Day 18 - Settlers of The North Pole\input.txt" />
+    <None Remove="Day 19 - Go With The Flow\input.txt" />
+    <None Remove="Day 20 - A Regular Map\input.txt" />
+    <None Remove="Day 21 - Chronal Conversion\input.txt" />
+    <None Remove="Day 22 - Mode Maze\input.txt" />
+    <None Remove="Day 23 - Experimental Emergency Teleportation\input.txt" />
+    <None Remove="Day 24 - Immune System Simulator 20XX\input.txt" />
+    <None Remove="Day 25 - Four-Dimensional Adventure\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Chronal Calibration\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Inventory Management System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - No Matter How You Slice It\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Repose Record\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Alchemical Reduction\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Chronal Coordinates\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - The Sum of Its Parts\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Memory Maneuver\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Marble Mania\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - The Stars Align\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Chronal Charge\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Subterranean Sustainability\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Mine Cart Madness\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Chocolate Charts\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Beverage Bandits\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Chronal Classification\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Reservoir Research\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Settlers of The North Pole\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Go With The Flow\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - A Regular Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Chronal Conversion\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Mode Maze\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Experimental Emergency Teleportation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Immune System Simulator 20XX\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Four-Dimensional Adventure\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

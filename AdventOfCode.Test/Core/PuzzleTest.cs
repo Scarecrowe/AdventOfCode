@@ -15,7 +15,7 @@
         public void Init()
         {
             CreateSplitInput(Input);
-            Subject = new Day4(InputPath(2015, 4, "The Ideal Stocking Stuffer"));
+            Subject = new Day4();
         }
 
         protected static string InputPath(int year, int day, string dayTitle)
@@ -158,7 +158,7 @@
             [Test]
             public void When_told_to_get_a_puzzle_input()
             {
-                string[] result = Puzzle.GetInput(2015, 4);
+                string[] result = Puzzle.GetInput(4, "The Ideal Stocking Stuffer");
 
                 result.Should().Equal(new string[] { Input });
             }
@@ -166,7 +166,7 @@
             [Test]
             public void When_told_to_get_a_puzzle_input_with_remove_none()
             {
-                Puzzle.GetInput(2015, 4, StringSplitOptions.None);
+                Puzzle.GetInput(4, "The Ideal Stocking Stuffer", StringSplitOptions.None);
             }
 
             [Test]

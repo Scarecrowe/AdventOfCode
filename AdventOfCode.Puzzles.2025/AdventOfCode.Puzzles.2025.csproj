@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2025</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Secret Entrance\input.txt" />
+    <None Remove="Day 05 - Cafeteria\input.txt" />
+    <None Remove="Day 04 - Printing Department\input.txt" />
+    <None Remove="Day 03 - Lobby\input.txt" />
+    <None Remove="Day 02 - Gift Shop\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Secret Entrance\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Cafeteria\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Printing Department\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Lobby\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Gift Shop\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

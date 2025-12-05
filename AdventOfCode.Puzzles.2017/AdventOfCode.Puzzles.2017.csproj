@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2017</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Inverse Captcha\input.txt" />
+    <None Remove="Day 02 - Corruption Checksum\input.txt" />
+    <None Remove="Day 03 - Spiral Memory\input.txt" />
+    <None Remove="Day 04 - High-Entropy Passphrases\input.txt" />
+    <None Remove="Day 05 - A Maze of Twisty Trampolines, All Alike\input.txt" />
+    <None Remove="Day 06 - Memory Reallocation\input.txt" />
+    <None Remove="Day 07 - Recursive Circus\input.txt" />
+    <None Remove="Day 08 - I Heard You Like Registers\input.txt" />
+    <None Remove="Day 09 - Stream Processing\input.txt" />
+    <None Remove="Day 10 - Knot Hash\input.txt" />
+    <None Remove="Day 11 - Hex Ed\input.txt" />
+    <None Remove="Day 12 - Digital Plumber\input.txt" />
+    <None Remove="Day 13 - Packet Scanners\input.txt" />
+    <None Remove="Day 14 - Disk Defragmentation\input.txt" />
+    <None Remove="Day 15 - Dueling Generators\input.txt" />
+    <None Remove="Day 16 - Permutation Promenade\input.txt" />
+    <None Remove="Day 17 - Spinlock\input.txt" />
+    <None Remove="Day 18 - Duet\input.txt" />
+    <None Remove="Day 19 - A Series of Tubes\input.txt" />
+    <None Remove="Day 20 - Particle Swarm\input.txt" />
+    <None Remove="Day 21 - Fractal Art\input.txt" />
+    <None Remove="Day 22 - Sporifica Virus\input.txt" />
+    <None Remove="Day 23 - Coprocessor Conflagration\input.txt" />
+    <None Remove="Day 24 - Electromagnetic Moat\input.txt" />
+    <None Remove="Day 25 - The Halting Problem\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Inverse Captcha\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Corruption Checksum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Spiral Memory\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - High-Entropy Passphrases\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - A Maze of Twisty Trampolines, All Alike\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Memory Reallocation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - Recursive Circus\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - I Heard You Like Registers\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Stream Processing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Knot Hash\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Hex Ed\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Digital Plumber\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Packet Scanners\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Disk Defragmentation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Dueling Generators\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Permutation Promenade\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Spinlock\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Duet\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - A Series of Tubes\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Particle Swarm\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Fractal Art\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Sporifica Virus\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Coprocessor Conflagration\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Electromagnetic Moat\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - The Halting Problem\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

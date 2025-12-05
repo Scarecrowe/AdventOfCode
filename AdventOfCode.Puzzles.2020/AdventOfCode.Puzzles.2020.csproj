@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2020</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Report Repair\input.txt" />
+    <None Remove="Day 02 - Password Philosophy\input.txt" />
+    <None Remove="Day 03 - Toboggan Trajectory\input.txt" />
+    <None Remove="Day 04 - Passport Processing\input.txt" />
+    <None Remove="Day 05 - Binary Boarding\input.txt" />
+    <None Remove="Day 06 - Custom Customs\input.txt" />
+    <None Remove="Day 07 - Handy Haversacks\input.txt" />
+    <None Remove="Day 08 - Handheld Halting\input.txt" />
+    <None Remove="Day 09 - Encoding Error\input.txt" />
+    <None Remove="Day 10 - Adapter Array\input.txt" />
+    <None Remove="Day 11 - Seating System\input.txt" />
+    <None Remove="Day 12 - Rain Risk\input.txt" />
+    <None Remove="Day 13 - Shuttle Search\input.txt" />
+    <None Remove="Day 14 - Docking Data\input.txt" />
+    <None Remove="Day 15 - Rambunctious Recitation\input.txt" />
+    <None Remove="Day 16 - Ticket Translation\input.txt" />
+    <None Remove="Day 17 - Conway Cubes\input.txt" />
+    <None Remove="Day 18 - Operation Order\input.txt" />
+    <None Remove="Day 19 - Monster Messages\input.txt" />
+    <None Remove="Day 20 - Jurassic Jigsaw\input.txt" />
+    <None Remove="Day 21 - Allergen Assessment\input.txt" />
+    <None Remove="Day 22 - Crab Combat\input.txt" />
+    <None Remove="Day 23 - Crab Cups\input.txt" />
+    <None Remove="Day 24 - Lobby Layout\input.txt" />
+    <None Remove="Day 25 - Combo Breaker\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Report Repair\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Password Philosophy\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Toboggan Trajectory\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Passport Processing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Binary Boarding\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Custom Customs\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - Handy Haversacks\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Handheld Halting\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Encoding Error\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Adapter Array\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Seating System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Rain Risk\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Shuttle Search\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Docking Data\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Rambunctious Recitation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Ticket Translation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Conway Cubes\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Operation Order\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Monster Messages\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Jurassic Jigsaw\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Allergen Assessment\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Crab Combat\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Crab Cups\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Lobby Layout\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Combo Breaker\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -54,6 +54,50 @@
                 .ToList();
         }
 
+        public static IEnumerable<List<T>> PermutationsA<T>(this List<T> list, int length)
+        {
+            if (length == 0)
+            {
+                yield break;
+            }
+
+            var result = new List<T>(length);
+            var used = new bool[list.Count];
+
+            IEnumerable<List<T>> Generate(int index)
+            {
+                if (index == length)
+                {
+                    yield return new List<T>(result);
+                    yield break;
+                }
+
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (used[i])
+                    {
+                        continue;
+                    }
+
+                    used[i] = true;
+                    result.Add(list[i]);
+
+                    foreach (var perm in Generate(index + 1))
+                    {
+                        yield return perm;
+                    }
+
+                    used[i] = false;
+                    result.RemoveAt(result.Count - 1);
+                }
+            }
+
+            foreach (var perm in Generate(0))
+            {
+                yield return perm;
+            }
+        }
+
         public static IEnumerable<string> CombinationsWithRepetition(this IEnumerable<int> list, int length)
         {
             if (length <= 0)
@@ -189,6 +233,17 @@
             foreach (T item in range)
             {
                 list.Remove(item);
+            }
+        }
+
+        public static IEnumerable<(T ItemA, T ItemB)> PairEnumerator<T>(this List<T> list)
+        {
+            foreach(T itemA in list)
+            {
+                foreach (T itemB in list)
+                {
+                    yield return (itemA, itemB);
+                }
             }
         }
 

@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2022</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Calorie Counting\input.txt" />
+    <None Remove="Day 02 - Rock Paper Scissors\input.txt" />
+    <None Remove="Day 03 - Rucksack Reorganization\input.txt" />
+    <None Remove="Day 04 - Camp Cleanup\input.txt" />
+    <None Remove="Day 05 - Supply Stacks\input.txt" />
+    <None Remove="Day 06 - Tuning Trouble\input.txt" />
+    <None Remove="Day 07 - No Space Left On Device\input.txt" />
+    <None Remove="Day 08 - Treetop Tree House\input.txt" />
+    <None Remove="Day 09 - Rope Bridge\input.txt" />
+    <None Remove="Day 10 - Cathode-Ray Tube\input.txt" />
+    <None Remove="Day 11 - Monkey in the Middle\input.txt" />
+    <None Remove="Day 12 - Hill Climbing Algorithm\input.txt" />
+    <None Remove="Day 13 - Distress Signal\input.txt" />
+    <None Remove="Day 14 - Regolith Reservoir\input.txt" />
+    <None Remove="Day 15 - Beacon Exclusion Zone\input.txt" />
+    <None Remove="Day 16 - Proboscidea Volcanium\input.txt" />
+    <None Remove="Day 17 - Pyroclastic Flow\input.txt" />
+    <None Remove="Day 18 - Boiling Boulders\input.txt" />
+    <None Remove="Day 19 - Not Enough Minerals\input.txt" />
+    <None Remove="Day 20 - Grove Positioning System\input.txt" />
+    <None Remove="Day 21 - Monkey Math\input.txt" />
+    <None Remove="Day 22 - Monkey Map\input.txt" />
+    <None Remove="Day 23 - Unstable Diffusion\input.txt" />
+    <None Remove="Day 24 - Blizzard Basin\input.txt" />
+    <None Remove="Day 25 - Full of Hot Air\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Calorie Counting\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Rock Paper Scissors\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Rucksack Reorganization\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Camp Cleanup\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Supply Stacks\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Tuning Trouble\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - No Space Left On Device\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Treetop Tree House\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Rope Bridge\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Cathode-Ray Tube\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Monkey in the Middle\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Hill Climbing Algorithm\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Distress Signal\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Regolith Reservoir\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Beacon Exclusion Zone\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Proboscidea Volcanium\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Pyroclastic Flow\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Boiling Boulders\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Not Enough Minerals\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Grove Positioning System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Monkey Math\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Monkey Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Unstable Diffusion\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Blizzard Basin\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Full of Hot Air\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

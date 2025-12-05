@@ -54,7 +54,7 @@
                 return value;
             }
 
-            return string.Concat(value[count..], value.AsSpan(0, count));
+            return string.Concat(value.AsSpan()[count..], value.AsSpan(0, count));
         }
 
         public static string RotateRight(this string value, int count)

@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +18,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles\AdventOfCode.Puzzles.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2015\AdventOfCode.Puzzles.2015.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2016\AdventOfCode.Puzzles.2016.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2017\AdventOfCode.Puzzles.2017.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2018\AdventOfCode.Puzzles.2018.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2019\AdventOfCode.Puzzles.2019.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2020\AdventOfCode.Puzzles.2020.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2021\AdventOfCode.Puzzles.2021.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2022\AdventOfCode.Puzzles.2022.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2023\AdventOfCode.Puzzles.2023.csproj" />
+    <ProjectReference Include="..\AdventOfCode.Puzzles.2024\AdventOfCode.Puzzles.2024.csproj" />
+	<ProjectReference Include="..\AdventOfCode.Puzzles.2025\AdventOfCode.Puzzles.2025.csproj" />
   </ItemGroup>
 
 </Project>

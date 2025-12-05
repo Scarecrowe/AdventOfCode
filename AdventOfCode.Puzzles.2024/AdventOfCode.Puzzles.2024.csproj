@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2024</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Historian Hysteria\input.txt" />
+    <None Remove="Day 02 - Red-Nosed Reports\input.txt" />
+    <None Remove="Day 03 - Mull It Over\input.txt" />
+    <None Remove="Day 10 - Hoof It\input.txt" />
+    <None Remove="Day 25 - Code Chronicle\input.txt" />
+    <None Remove="Day 24 - Crossed Wires\input.txt" />
+    <None Remove="Day 23 - LAN Party\input.txt" />
+    <None Remove="Day 22 - Monkey Market\input.txt" />
+    <None Remove="Day 21 - Keypad Conundrum\input.txt" />
+    <None Remove="Day 20 - Race Condition\input.txt" />
+    <None Remove="Day 19 - Linen Layout\input.txt" />
+    <None Remove="Day 18 - RAM Run\input.txt" />
+    <None Remove="Day 17 - Chronospatial Computer\input.txt" />
+    <None Remove="Day 16 - Reindeer Maze\input.txt" />
+    <None Remove="Day 15 - Warehouse Woes\input.txt" />
+    <None Remove="Day 14 - Restroom Redoubt\input.txt" />
+    <None Remove="Day 13 - Claw Contraption\input.txt" />
+    <None Remove="Day 12 - Garden Groups\input.txt" />
+    <None Remove="Day 11 - Plutonian Pebbles\input.txt" />
+    <None Remove="Day 09 - Disk Fragmenter\input.txt" />
+    <None Remove="Day 08 - Resonant Collinearity\input.txt" />
+    <None Remove="Day 07 - Bridge Repair\input.txt" />
+    <None Remove="Day 06 - Guard Gallivant\input.txt" />
+    <None Remove="Day 05 - Print Queue\input.txt" />
+    <None Remove="Day 04 - Ceres Search\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Historian Hysteria\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Red-Nosed Reports\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Mull It Over\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Hoof It\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Code Chronicle\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Crossed Wires\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - LAN Party\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Monkey Market\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Keypad Conundrum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Race Condition\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Linen Layout\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - RAM Run\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Chronospatial Computer\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Reindeer Maze\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Warehouse Woes\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Restroom Redoubt\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Claw Contraption\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Garden Groups\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Plutonian Pebbles\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Disk Fragmenter\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Resonant Collinearity\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - Bridge Repair\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Guard Gallivant\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Print Queue\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Ceres Search\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

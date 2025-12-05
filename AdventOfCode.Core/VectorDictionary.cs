@@ -359,11 +359,14 @@
         {
             List<VectorCell<TSize, TValue>> result = new();
 
-            for (long x = 0; x < this.Width.ToLong(); x++)
+            for (long x = 0; x <= this.Width.ToLong(); x++)
             {
                 Vector<TSize> key = new(x, y);
 
-                result.Add(new(key, this[key]));
+                if (this.ContainsKey(key))
+                {
+                    result.Add(new(key, this[key]));
+                }
             }
 
             return result;

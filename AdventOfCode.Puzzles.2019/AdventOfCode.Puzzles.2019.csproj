@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2019</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - The Tyranny of the Rocket Equation\input.txt" />
+    <None Remove="Day 02 - 1202 Program Alarm\input.txt" />
+    <None Remove="Day 03 - Crossed Wires\input.txt" />
+    <None Remove="Day 04 - Secure Container\input.txt" />
+    <None Remove="Day 05 - Sunny with a Chance of Asteroids\input.txt" />
+    <None Remove="Day 06 - Universal Orbit Map\input.txt" />
+    <None Remove="Day 07 - Amplification Circuit\input.txt" />
+    <None Remove="Day 08 - Space Image Format\input.txt" />
+    <None Remove="Day 09 - Sensor Boost\input.txt" />
+    <None Remove="Day 10 - Monitoring Station\input.txt" />
+    <None Remove="Day 11 - Space Police\input.txt" />
+    <None Remove="Day 12 - The N-Body Problem\input.txt" />
+    <None Remove="Day 13 - Care Package\input.txt" />
+    <None Remove="Day 14 - Space Stoichiometry\input.txt" />
+    <None Remove="Day 15 - Oxygen System\input.txt" />
+    <None Remove="Day 16 - Flawed Frequency Transmission\input.txt" />
+    <None Remove="Day 17 - Set and Forget\input.txt" />
+    <None Remove="Day 18 - Many-Worlds Interpretation\input.txt" />
+    <None Remove="Day 19 - Tractor Beam\input.txt" />
+    <None Remove="Day 20 - Donut Maze\input.txt" />
+    <None Remove="Day 21 - Springdroid Adventure\input.txt" />
+    <None Remove="Day 22 - Slam Shuffle\input.txt" />
+    <None Remove="Day 23 - Category Six\input.txt" />
+    <None Remove="Day 24 - Planet of Discord\input.txt" />
+    <None Remove="Day 25 - Cryostasis\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - The Tyranny of the Rocket Equation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - 1202 Program Alarm\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Crossed Wires\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Secure Container\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - Sunny with a Chance of Asteroids\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Universal Orbit Map\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - Amplification Circuit\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Space Image Format\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Sensor Boost\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Monitoring Station\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Space Police\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - The N-Body Problem\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Care Package\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Space Stoichiometry\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Oxygen System\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Flawed Frequency Transmission\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Set and Forget\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Many-Worlds Interpretation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Tractor Beam\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Donut Maze\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Springdroid Adventure\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Slam Shuffle\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Category Six\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Planet of Discord\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Cryostasis\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

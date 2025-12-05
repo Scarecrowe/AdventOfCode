@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2016</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - No Time for a Taxicab\input.txt" />
+    <None Remove="Day 02 - Bathroom Security\input.txt" />
+    <None Remove="Day 03 - Squares With Three Sides\input.txt" />
+    <None Remove="Day 04 - Security Through Obscurity\input.txt" />
+    <None Remove="Day 05 - How About a Nice Game of Chess\input.txt" />
+    <None Remove="Day 06 - Signals and Noise\input.txt" />
+    <None Remove="Day 07 - Internet Protocol Version 7\input.txt" />
+    <None Remove="Day 08 - Two-Factor Authentication\input.txt" />
+    <None Remove="Day 09 - Explosives in Cyberspace\input.txt" />
+    <None Remove="Day 10 - Balance Bots\input.txt" />
+    <None Remove="Day 11 - Radioisotope Thermoelectric Generators\input.txt" />
+    <None Remove="Day 12 - Leonardo's Monorail\input.txt" />
+    <None Remove="Day 13 - A Maze of Twisty Little Cubicles\input.txt" />
+    <None Remove="Day 14 - One-Time Pad\input.txt" />
+    <None Remove="Day 15 - Timing is Everything\input.txt" />
+    <None Remove="Day 16 - Dragon Checksum\input.txt" />
+    <None Remove="Day 17 - Two Steps Forward\input.txt" />
+    <None Remove="Day 18 - Like a Rogue\input.txt" />
+    <None Remove="Day 19 - An Elephant Named Joseph\input.txt" />
+    <None Remove="Day 20 - Firewall Rules\input.txt" />
+    <None Remove="Day 21 - Scrambled Letters and Hash\input.txt" />
+    <None Remove="Day 22 - Grid Computing\input.txt" />
+    <None Remove="Day 23 - Safe Cracking\input.txt" />
+    <None Remove="Day 24 - Air Duct Spelunking\input.txt" />
+    <None Remove="Day 25 - Clock Signal\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - No Time for a Taxicab\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Bathroom Security\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Squares With Three Sides\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Security Through Obscurity\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - How About a Nice Game of Chess\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Signals and Noise\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - Internet Protocol Version 7\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Two-Factor Authentication\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Explosives in Cyberspace\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Balance Bots\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Radioisotope Thermoelectric Generators\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Leonardo's Monorail\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - A Maze of Twisty Little Cubicles\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - One-Time Pad\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Timing is Everything\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - Dragon Checksum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Two Steps Forward\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Like a Rogue\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - An Elephant Named Joseph\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Firewall Rules\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Scrambled Letters and Hash\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Grid Computing\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - Safe Cracking\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Air Duct Spelunking\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Clock Signal\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>

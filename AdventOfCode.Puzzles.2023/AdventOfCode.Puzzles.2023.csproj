@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>AdventOfCode.Puzzles._2023</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Day 01 - Trebuchet\input.txt" />
+    <None Remove="Day 02 - Cube Conundrum\input.txt" />
+    <None Remove="Day 03 - Gear Ratios\input.txt" />
+    <None Remove="Day 04 - Scratchcards\input.txt" />
+    <None Remove="Day 05 - You Give A Seed A Fertilizer\input.txt" />
+    <None Remove="Day 06 - Wait For It\input.txt" />
+    <None Remove="Day 07 - Camel Cards\input.txt" />
+    <None Remove="Day 08 - Haunted Wasteland\input.txt" />
+    <None Remove="Day 09 - Mirage Maintenance\input.txt" />
+    <None Remove="Day 10 - Pipe Maze\input.txt" />
+    <None Remove="Day 11 - Cosmic Expansion\input.txt" />
+    <None Remove="Day 12 - Hot Springs\input.txt" />
+    <None Remove="Day 13 - Point of Incidence\input.txt" />
+    <None Remove="Day 14 - Parabolic Reflector Dish\input.txt" />
+    <None Remove="Day 15 - Lens Library\input.txt" />
+    <None Remove="Day 16 - The Floor Will Be Lava\input.txt" />
+    <None Remove="Day 17 - Clumsy Crucible\input.txt" />
+    <None Remove="Day 18 - Lavaduct Lagoon\input.txt" />
+    <None Remove="Day 19 - Aplenty\input.txt" />
+    <None Remove="Day 20 - Pulse Propagation\input.txt" />
+    <None Remove="Day 21 - Step Counter\input.txt" />
+    <None Remove="Day 22 - Sand Slabs\input.txt" />
+    <None Remove="Day 23 - A Long Walk\input.txt" />
+    <None Remove="Day 24 - Never Tell Me The Odds\input.txt" />
+    <None Remove="Day 25 - Snowverload\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Day 01 - Trebuchet\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 02 - Cube Conundrum\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 03 - Gear Ratios\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 04 - Scratchcards\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 05 - You Give A Seed A Fertilizer\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 06 - Wait For It\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 07 - Camel Cards\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 08 - Haunted Wasteland\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Mirage Maintenance\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Pipe Maze\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Cosmic Expansion\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Hot Springs\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 13 - Point of Incidence\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 14 - Parabolic Reflector Dish\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 15 - Lens Library\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 16 - The Floor Will Be Lava\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 17 - Clumsy Crucible\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 18 - Lavaduct Lagoon\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 19 - Aplenty\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 20 - Pulse Propagation\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 21 - Step Counter\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 22 - Sand Slabs\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 23 - A Long Walk\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 24 - Never Tell Me The Odds\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 25 - Snowverload\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
+  </ItemGroup>
+
+</Project>
