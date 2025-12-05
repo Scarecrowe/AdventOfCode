@@ -76,7 +76,7 @@ This makes running puzzles scriptable and ideal for quick testing.
 ## 🎬 Running Animations
 
 Some puzzles include optional **visual animations** to help understand the solution or illustrate the problem.  
-These animations are implemented in the [`AdventOfCode.Animations`](./AdventOfCode.Animations/README.md) library.
+These animations are implemented in the [`AdventOfCode.Animations`](./AdventOfCode.Animation/README.md) library.
 
 ### How to Run
 
