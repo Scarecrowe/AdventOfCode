@@ -29,8 +29,6 @@ and **2025 is in progress up to Day 5**.
 | **2016** | 25 / 25 | ✔️ Complete |
 | **2015** | 25 / 25 | ✔️ Complete |
 
-If more years are added in the future, the table can be extended easily.
-
 ---
 
 ## 📁 Repository Structure

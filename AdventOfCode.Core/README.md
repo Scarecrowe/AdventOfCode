@@ -50,8 +50,6 @@ var grid = GridHelper.FromLines(inputLines);
 var result = grid.Traverse(...);
 ```
 
-*(Adapt names to actual class/method names in your implementation.)*
-
 ## License
 
 This library is covered under the same MIT License as the rest of the project.  

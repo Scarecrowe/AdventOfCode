@@ -65,19 +65,17 @@ The runner will:
 ```csharp
 public class Day05 : IPuzzle
 {
-    public string SolveSilver(string[] input)
+    public string Silver(string[] input)
     {
         // Part 1 logic
     }
 
-    public string SolveGold(string[] input)
+    public string Gold(string[] input)
     {
         // Part 2 logic
     }
 }
 ```
-
-*(Adjust IPuzzle / interface names to match your exact structure.)*
 
 ---
 
