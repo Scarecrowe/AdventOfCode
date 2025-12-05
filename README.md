@@ -17,7 +17,7 @@ and **2025 is in progress up to Day 5**.
 
 | Year | Days Solved | Status |
 |------|-------------|--------|
-| **2025** | 5 / 25 | 🚧 In Progress |
+| **2025** | 5 / 12 | 🚧 In Progress |
 | **2024** | 25 / 25 | ✔️ Complete |
 | **2023** | 25 / 25 | ✔️ Complete |
 | **2022** | 25 / 25 | ✔️ Complete |
@@ -104,7 +104,8 @@ Click the image or the link above to watch the video demonstrating how the anima
 
 - Not all puzzles have animations.  
 - Animations are mainly for visual understanding; puzzle logic is still solved via the standard Runner/Core workflow.  
-- Make sure your system has the necessary graphical libraries if running locally (e.g., WinForms, WPF, or console graphics depending on implementation).
+
+---
 
 ## 🔧 Adding New Puzzles
 
