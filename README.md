@@ -7,7 +7,7 @@
 
 A collection of my solutions for **Advent of Code**, implemented in **C#**.  
 This repository includes every year of Advent of Code from **2015 → 2024 fully completed**,  
-and **2025 is in progress up to Day 5**.
+and **2025 is in progress up to Day 6**.
 
 ---
 
@@ -34,17 +34,25 @@ and **2025 is in progress up to Day 5**.
 ## 📁 Repository Structure
 
 - **AdventOfCode.Core** – Shared utilities used across puzzles.  
-- **AdventOfCode.Puzzles** – All puzzle implementations, organised by year/day.  
+  ➜ 📘 [Core README](./AdventOfCode.Core/README.md)
+
+- **AdventOfCode.Puzzles** – All puzzle implementations, organised by year/day.
+
 - **AdventOfCode.Animations** – Optional visualisations for selected puzzles.  
+  ➜ 🎞️ [Animations README](./AdventOfCode.Animations/README.md)
+
 - **AdventOfCode.Runner** – CLI interface for running puzzles directly.  
-- **AdventOfCode.Test** – Unit tests and input validation helpers.  
+  ➜ 🚀 [Runner README](./AdventOfCode.Runner/README.md)
+
+- **AdventOfCode.Test** – Unit tests and input validation helpers.
+
 - Standard `.gitignore`, `.ruleset` and `.sln` structure for a multi-project C# solution.
 
 ---
 
 ## ▶️ Running Puzzles
 
-You can run puzzles using the runner project.
+You can run puzzles using the runner project → see the [AdventOfCode.Runner README](./AdventOfCode.Runner/README.md) for usage instructions.
 
 ### **1. Interactive Mode**
 Simply run the Runner project in your IDE.
