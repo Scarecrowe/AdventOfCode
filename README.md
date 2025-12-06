@@ -1,6 +1,6 @@
 # AdventOfCode 🎄
 
-![Solved](https://img.shields.io/badge/Solved-215%2B_puzzles-brightgreen)
+![Solved](https://img.shields.io/badge/Solved-256_puzzles-brightgreen)
 ![Years](https://img.shields.io/badge/Years-2015→2025-blue)
 ![Language](https://img.shields.io/badge/Language-C%23-purple)
 ![Last Update](https://img.shields.io/badge/Updated-2025-lightgrey)
@@ -17,7 +17,7 @@ and **2025 is in progress up to Day 5**.
 
 | Year | Days Solved | Status |
 |------|-------------|--------|
-| **2025** | 5 / 12 | 🚧 In Progress |
+| **2025** | 6 / 12 | 🚧 In Progress |
 | **2024** | 25 / 25 | ✔️ Complete |
 | **2023** | 25 / 25 | ✔️ Complete |
 | **2022** | 25 / 25 | ✔️ Complete |
