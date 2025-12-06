@@ -39,7 +39,7 @@ and **2025 is in progress up to Day 6**.
 - **AdventOfCode.Puzzles** – All puzzle implementations, organised by year/day.
 
 - **AdventOfCode.Animations** – Optional visualisations for selected puzzles.  
-  ➜ 🎞️ [Animations README](./AdventOfCode.Animations/README.md)
+  ➜ 🎞️ [Animations README](./AdventOfCode.Animation/README.md)
 
 - **AdventOfCode.Runner** – CLI interface for running puzzles directly.  
   ➜ 🚀 [Runner README](./AdventOfCode.Runner/README.md)
