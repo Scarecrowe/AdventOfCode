@@ -37,44 +37,19 @@
                         sets[root] = ++value;
                     }
 
-                    List<int> sizes = [.. sets.Values.OrderByDescending(x => x)];
-
-                    while (sizes.Count < 3)
-                    {
-                        sizes.Add(1);
-                    }
-
-                    return (long)sizes[0] * sizes[1] * sizes[2];
+                    return sets.Values
+                        .OrderByDescending(x => x)
+                        .Take(3)
+                        .Concat(Enumerable.Repeat(1, 3))
+                        .Take(3)
+                        .Aggregate(1L, (acc, v) => acc * v);
                 }
 
                 set.Union(indexA, indexB);
                 connections++;
             }
 
-            sets.Clear();
-
-            for (int i = 0; i < this.Junctions.Count; i++)
-            {
-                int root = set.Find(i);
-
-                if (!sets.TryGetValue(root, out int value))
-                {
-                    value = 0;
-                    sets[root] = value;
-                }
-
-                sets[root] = ++value;
-            }
-
-            List<int> result =
-                sets.Values
-                    .OrderByDescending(x => x)
-                    .Take(3)
-                    .Concat(Enumerable.Repeat(1, 3))
-                    .Take(3)
-                    .ToList();
-
-            return (long)result[0] * result[1] * result[2];
+            return 0;
         }
 
         public long MultiplyXCoordinates()
@@ -85,7 +60,7 @@
             {
                 if (set.Union(indexA, indexB) && set.Sets == 1)
                 {
-                    return (long)this.Junctions[indexA].X * this.Junctions[indexB].X;
+                    return Junctions[indexA].X * this.Junctions[indexB].X;
                 }
             }
 
@@ -101,8 +76,6 @@
 
             for (int i = 0; i < this.Junctions.Count; i++)
             {
-                Vector<long> a = this.Junctions[i];
-
                 for (int j = i + 1; j < this.Junctions.Count; j++)
                 {
                     result.Add((i, j));
