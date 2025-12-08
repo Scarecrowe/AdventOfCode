@@ -1,13 +1,13 @@
 # AdventOfCode 🎄
 
-![Solved](https://img.shields.io/badge/Solved-257_puzzles-brightgreen)
+![Solved](https://img.shields.io/badge/Solved-258_puzzles-brightgreen)
 ![Years](https://img.shields.io/badge/Years-2015→2025-blue)
 ![Language](https://img.shields.io/badge/Language-C%23-purple)
 ![Last Update](https://img.shields.io/badge/Updated-2025-lightgrey)
 
 A collection of my solutions for **Advent of Code**, implemented in **C#**.  
 This repository includes every year of Advent of Code from **2015 → 2024 fully completed**,  
-and **2025 is in progress up to Day 7**.
+and **2025 is in progress up to Day 8**.
 
 ---
 
@@ -17,7 +17,7 @@ and **2025 is in progress up to Day 7**.
 
 | Year | Days Solved | Status |
 |------|-------------|--------|
-| **2025** | 7 / 12 | 🚧 In Progress |
+| **2025** | 8 / 12 | 🚧 In Progress |
 | **2024** | 25 / 25 | ✔️ Complete |
 | **2023** | 25 / 25 | ✔️ Complete |
 | **2022** | 25 / 25 | ✔️ Complete |

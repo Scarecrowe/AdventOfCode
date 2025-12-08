@@ -148,6 +148,34 @@
             this.T = 0.ToGeneric<TSize>();
         }
 
+        public Vector(int[] coords)
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(coords[0]);
+                this.Y = (TSize)(object)Convert.ToDouble(coords[1]);
+                this.Z = (TSize)(object)Convert.ToDouble(coords[2]);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
+            if (typeof(TSize) == typeof(int))
+            {
+                this.X = (TSize)(object)Convert.ToInt32(coords[0]);
+                this.Y = (TSize)(object)Convert.ToInt32(coords[1]);
+                this.Z = (TSize)(object)Convert.ToInt32(coords[2]);
+                this.T = 0.ToGeneric<TSize>();
+
+                return;
+            }
+
+            this.X = (TSize)(object)Convert.ToInt64(coords[0]);
+            this.Y = (TSize)(object)Convert.ToInt64(coords[1]);
+            this.Z = (TSize)(object)Convert.ToInt64(coords[2]);
+            this.T = 0.ToGeneric<TSize>();
+        }
+
         public Vector(long x, long y, long z)
         {
             if (typeof(TSize) == typeof(double))
@@ -172,6 +200,33 @@
             this.X = (TSize)(object)Convert.ToInt64(x);
             this.Y = (TSize)(object)Convert.ToInt64(y);
             this.Z = (TSize)(object)Convert.ToInt64(z);
+            this.T = 0.ToGeneric<TSize>();
+        }
+
+        public Vector(long[] coords)
+        {
+            if (typeof(TSize) == typeof(double))
+            {
+                this.X = (TSize)(object)Convert.ToDouble(coords[0]);
+                this.Y = (TSize)(object)Convert.ToDouble(coords[1]);
+                this.Z = (TSize)(object)Convert.ToDouble(coords[2]);
+                this.T = (TSize)(object)Convert.ToDouble(0);
+
+                return;
+            }
+
+            if (typeof(TSize) == typeof(int))
+            {
+                this.X = (TSize)(object)Convert.ToInt32(coords[0]);
+                this.Y = (TSize)(object)Convert.ToInt32(coords[1]);
+                this.Z = (TSize)(object)Convert.ToInt32(coords[2]);
+                this.T = 0.ToGeneric<TSize>();
+                return;
+            }
+
+            this.X = (TSize)(object)Convert.ToInt64(coords[0]);
+            this.Y = (TSize)(object)Convert.ToInt64(coords[1]);
+            this.Z = (TSize)(object)Convert.ToInt64(coords[2]);
             this.T = 0.ToGeneric<TSize>();
         }
 
