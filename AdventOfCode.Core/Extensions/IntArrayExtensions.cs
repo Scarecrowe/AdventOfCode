@@ -2,6 +2,19 @@
 {
     public static class IntArrayExtensions
     {
+        public static bool ContainsArray(this List<int[,]> list, int[,] array)
+        {
+            foreach (var a in list)
+            {
+                if (AreEqual(a, array))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public static int[,] RotateClockWise(this int[,] matrix, int length)
         {
             int[,] result = new int[length, length];
@@ -143,6 +156,27 @@
             }
 
             return result;
+        }
+
+        private static bool AreEqual(int[,] a, int[,] b)
+        {
+            if (a.GetLength(0) != b.GetLength(0) || a.GetLength(1) != b.GetLength(1))
+            {
+                return false;
+            }
+
+            for (int r = 0; r < a.GetLength(0); r++)
+            {
+                for (int c = 0; c < a.GetLength(1); c++)
+                {
+                    if (a[r, c] != b[r, c])
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

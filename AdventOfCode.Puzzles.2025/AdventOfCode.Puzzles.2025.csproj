@@ -10,6 +10,10 @@
 
   <ItemGroup>
     <None Remove="Day 01 - Secret Entrance\input.txt" />
+    <None Remove="Day 12 - Christmas Tree Farm\input.txt" />
+    <None Remove="Day 11 - Reactor\input.txt" />
+    <None Remove="Day 10 - Factory\input.txt" />
+    <None Remove="Day 09 - Movie Theater\input.txt" />
     <None Remove="Day 08 - Playground\input.txt" />
     <None Remove="Day 07 - Laboratories\input.txt" />
     <None Remove="Day 06 - Trash Compactor\input.txt" />
@@ -21,6 +25,18 @@
 
   <ItemGroup>
     <Content Include="Day 01 - Secret Entrance\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 12 - Christmas Tree Farm\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 11 - Reactor\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 10 - Factory\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day 09 - Movie Theater\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Day 08 - Playground\input.txt">
