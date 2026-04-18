@@ -2,17 +2,17 @@
 
 ## 📜 Puzzle Overview
 
-The elves bought too much eggnog again and need to fit exactly `150` liters into a selection of containers. Each container has a fixed capacity, and the goal is to find combinations of containers that add up to the target exactly. :contentReference[oaicite:0]{index=0}
+The elves bought too much eggnog again and need to fit exactly `150` liters into a selection of containers. Each container has a fixed capacity, and the goal is to find combinations of containers that add up to the target exactly.
 
 Part 1 asks for the total number of valid combinations.
 
-Part 2 asks how many of those valid combinations use the **fewest possible containers**. :contentReference[oaicite:1]{index=1}
+Part 2 asks how many of those valid combinations use the **fewest possible containers**.
 
 ---
 
 ## 🧩 Part 1
 
-Determine how many different combinations of containers can exactly hold `150` liters of eggnog. :contentReference[oaicite:2]{index=2}
+Determine how many different combinations of containers can exactly hold `150` liters of eggnog.
 
 ### 💡 Approach
 
@@ -20,13 +20,13 @@ Determine how many different combinations of containers can exactly hold `150` l
 - Generate every combination of containers that sums to the target amount
 - Count how many valid combinations exist
 
-This solution delegates the combination search to a shared extension method that returns only combinations matching the required total. :contentReference[oaicite:3]{index=3}
+This solution delegates the combination search to a shared extension method that returns only combinations matching the required total.
 
 ---
 
 ## 🧩 Part 2
 
-Determine how many valid combinations use the **minimum number of containers** needed to reach the target. :contentReference[oaicite:4]{index=4}
+Determine how many valid combinations use the **minimum number of containers** needed to reach the target.
 
 ### 💡 Approach
 
@@ -54,7 +54,7 @@ For Part 2:
 
 - Calls `NoSuchThingAsTooMuch.CombinationCount(this.Input, 150)`
 
-Both answers are returned as strings. :contentReference[oaicite:5]{index=5}
+Both answers are returned as strings.
 
 ---
 
@@ -65,7 +65,7 @@ This class contains the full solution for both parts.
 It exposes two static methods:
 
 - `ContainerCount(string[] input, int liters)`
-- `CombinationCount(string[] input, int liters)` :contentReference[oaicite:6]{index=6}
+- `CombinationCount(string[] input, int liters)`
 
 ---
 
@@ -75,7 +75,7 @@ Both methods begin by converting the raw string input into numeric container siz
 
     input.ToLongList()
 
-This produces a numeric list that can be passed into the combination search. :contentReference[oaicite:7]{index=7}
+This produces a numeric list that can be passed into the combination search.
 
 ---
 
@@ -85,7 +85,7 @@ This produces a numeric list that can be passed into the combination search. :co
 
     input.ToLongList().CombinationsOfTotal(liters).Count
 
-This means the method does not manually loop through subsets itself. Instead, it relies on the `CombinationsOfTotal()` helper and simply returns the number of matching combinations. :contentReference[oaicite:8]{index=8}
+This means the method does not manually loop through subsets itself. Instead, it relies on the `CombinationsOfTotal()` helper and simply returns the number of matching combinations.
 
 ---
 
@@ -99,7 +99,7 @@ It then finds the minimum number of containers used by any valid combination and
 
     combinations.Count(x => x.Count == combinations.Min(x => x.Count))
 
-This keeps Part 2 compact by building directly on top of the Part 1 result set. :contentReference[oaicite:9]{index=9}
+This keeps Part 2 compact by building directly on top of the Part 1 result set.
 
 ---
 
@@ -109,7 +109,7 @@ This keeps Part 2 compact by building directly on top of the Part 1 result set. 
 - Part 1 returns the total number of matching combinations
 - Part 2 filters those combinations by the smallest container count
 - Input parsing is handled through `ToLongList()`
-- The target amount is passed in as a parameter, with Day 17 using `150` liters in both parts :contentReference[oaicite:10]{index=10}
+- The target amount is passed in as a parameter, with Day 17 using `150` liters in both parts
 
 ---
 
@@ -128,7 +128,7 @@ and the target is `25` liters, there are four valid combinations:
 - `15` and `10`
 - `20` and the first `5`
 - `20` and the second `5`
-- `15`, `5`, and `5` :contentReference[oaicite:11]{index=11}
+- `15`, `5`, and `5`
 
 ---
 
@@ -137,7 +137,7 @@ and the target is `25` liters, there are four valid combinations:
 - Clean example of reusing one combination search for both puzzle parts
 - Part 2 stays simple by filtering the already-valid combinations
 - The solver remains compact because the heavy lifting is delegated to shared extension methods
-- The only real difference between the two parts is how the valid combination list is evaluated afterward :contentReference[oaicite:12]{index=12}
+- The only real difference between the two parts is how the valid combination list is evaluated afterward
 
 ---
 

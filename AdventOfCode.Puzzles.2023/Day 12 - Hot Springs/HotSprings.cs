@@ -1,73 +1,127 @@
 ﻿namespace AdventOfCode.Puzzles._2023.Day_12___Hot_Springs
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using AdventOfCode.Core.Extensions;
 
     public class HotSprings
     {
+        private readonly string[] input;
+
         public HotSprings(string[] input)
+        {
+            this.input = input;
+        }
+
+        public long Arrangements()
         {
             long result = 0;
 
-            foreach(string line in input)
+            foreach (string line in this.input)
             {
-                string[] tokens = line.Split(" ");
-                List<string> possible = new();
-
-                int[] damaged = tokens[1].Split(",").ToInt();
-                int count = 0;
-
-                this.Make(tokens[0], 0, possible);
-
-                foreach(string pos in possible)
-                {
-                    var t = pos.Split(".", StringSplitOptions.RemoveEmptyEntries);
-                    bool found = true;
-
-                    if (t.Length != damaged.Length)
-                    {
-                        continue;
-                    }
-
-                    for(int i = 0; i < t.Length; i++)
-                    {
-                        if (t[i].Length != damaged[i])
-                        {
-                            found = false;
-                            break;
-                        }
-                    }
-
-                    if (found)
-                    {
-                        count++;
-                    }
-                }
-
-                result += count;
+                (string pattern, int[] groups) = this.Parse(line, false);
+                result += this.CountArrangements(pattern, groups);
             }
+
+            return result;
         }
 
-        public void Make(string value, int i, List<string> values)
+        public long UnfoldedArrangements()
         {
-            for (; i < value.Length; i++)
+            long result = 0;
+
+            foreach (string line in this.input)
             {
-                if (value[i] == '?')
+                (string pattern, int[] groups) = this.Parse(line, true);
+                result += this.CountArrangements(pattern, groups);
+            }
+
+            return result;
+        }
+
+        private (string Pattern, int[] Groups) Parse(string line, bool unfold)
+        {
+            string[] tokens = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            string pattern = tokens[0];
+            int[] groups = tokens[1].Split(',').ToInt();
+
+            if (!unfold)
+            {
+                return (pattern, groups);
+            }
+
+            string expandedPattern = string.Join("?", Enumerable.Repeat(pattern, 5));
+            int[] expandedGroups = Enumerable.Range(0, 5)
+                .SelectMany(_ => groups)
+                .ToArray();
+
+            return (expandedPattern, expandedGroups);
+        }
+
+        private long CountArrangements(string pattern, int[] groups)
+        {
+            Dictionary<(int Index, int GroupIndex, int RunLength), long> cache = new();
+
+            return this.Count(pattern, groups, 0, 0, 0, cache);
+        }
+
+        private long Count(
+            string pattern,
+            int[] groups,
+            int index,
+            int groupIndex,
+            int runLength,
+            Dictionary<(int Index, int GroupIndex, int RunLength), long> cache)
+        {
+            (int Index, int GroupIndex, int RunLength) key = (index, groupIndex, runLength);
+
+            if (cache.TryGetValue(key, out long cached))
+            {
+                return cached;
+            }
+
+            if (index == pattern.Length)
+            {
+                if (runLength > 0)
                 {
-                    char[] ch = value.ToCharArray();
+                    if (groupIndex >= groups.Length || runLength != groups[groupIndex])
+                    {
+                        return cache[key] = 0;
+                    }
 
-                    ch[i] = '#';
-                    this.Make(new string(ch), i + 1, values);
+                    groupIndex++;
+                }
 
-                    ch[i] = '.';
-                    this.Make(new string(ch), i + 1, values);
-                    break;
+                return cache[key] = groupIndex == groups.Length ? 1 : 0;
+            }
+
+            long result = 0;
+            char current = pattern[index];
+
+            if (current == '.' || current == '?')
+            {
+                if (runLength == 0)
+                {
+                    result += this.Count(pattern, groups, index + 1, groupIndex, 0, cache);
+                }
+                else if (groupIndex < groups.Length && runLength == groups[groupIndex])
+                {
+                    result += this.Count(pattern, groups, index + 1, groupIndex + 1, 0, cache);
                 }
             }
 
-            if (!value.Contains("?"))
+            if (current == '#' || current == '?')
             {
-                values.Add(value);
+                if (groupIndex < groups.Length && runLength < groups[groupIndex])
+                {
+                    result += this.Count(pattern, groups, index + 1, groupIndex, runLength + 1, cache);
+                }
             }
+
+            cache[key] = result;
+            return result;
         }
     }
 }

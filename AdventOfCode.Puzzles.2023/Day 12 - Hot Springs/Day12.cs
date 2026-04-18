@@ -11,8 +11,8 @@
             this.GetPuzzleData(12, this.DayTitle);
         }
 
-        public string Silver() => $"{new HotSprings(this.Input)}";
+        public string Silver() => $"{new HotSprings(this.Input).Arrangements()}";
 
-        public string Gold() => $"{new HotSprings(this.Input)}";
+        public string Gold() => $"{new HotSprings(this.Input).UnfoldedArrangements()}";
     }
 }
