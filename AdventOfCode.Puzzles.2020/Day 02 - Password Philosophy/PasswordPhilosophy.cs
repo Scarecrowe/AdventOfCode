@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Puzzles._2020.Day_2___Password_Philosophy
+﻿namespace AdventOfCode.Puzzles._2020.Day_02___Password_Philosophy
 {
     using AdventOfCode.Core.Extensions;
 

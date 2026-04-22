@@ -1,7 +1,7 @@
 ﻿namespace AdventOfCode.Puzzles._2020.Days
 {
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2020.Day_2___Password_Philosophy;
+    using AdventOfCode.Puzzles._2020.Day_02___Password_Philosophy;
 
     public class Day2 : Puzzle, IPuzzle
     {

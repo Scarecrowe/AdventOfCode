@@ -6,9 +6,9 @@
 
     public class Animation
     {
-        public static string[] GetInput(int year, int day, StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries)
+        public static string[] GetInput(int day, string title, StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries)
         {
-            return File.ReadAllText(GetInputPath(year, day)).Split(
+            return File.ReadAllText(GetInputPath(day, title)).Split(
                 new[] { "\r\n", "\r", "\n" },
                 options);
         }
@@ -26,12 +26,11 @@
             return result;
         }
 
-        public static string GetInputPath(int year, int day)
+        public static string GetInputPath(int day, string title)
         {
-            string yearPath = $"{Assembly.GetCallingAssembly().ExecutingDirectory()}\\{year}";
-            string dayPath = day < 10 ? $"0{day}" : $"{day}";
-            string path = Directory.GetDirectories(yearPath).ToList().FirstOrDefault(x => Path.GetFileName(x).StartsWith($"Day {dayPath}")) ?? string.Empty;
-            return $"{path}\\input.txt";
+            string dayPath = $"{Assembly.GetCallingAssembly().ExecutingDirectory()}\\Day {(day < 10 ? $"0{day}" : $"{day}")} - {title}";
+
+            return $"{dayPath}\\input.txt";
         }
 
         public static Image GetImage(string file) => Image.FromFile(file);

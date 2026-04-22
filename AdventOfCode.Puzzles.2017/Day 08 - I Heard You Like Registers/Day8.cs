@@ -1,7 +1,7 @@
 ﻿namespace AdventOfCode.Puzzles._2017.Days
 {
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2017.Day_8___I_Heard_You_Like_Registers;
+    using AdventOfCode.Puzzles._2017.Day_08___I_Heard_You_Like_Registers;
 
     public class Day8 : Puzzle, IPuzzle
     {

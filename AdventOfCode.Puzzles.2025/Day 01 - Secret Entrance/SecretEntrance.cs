@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Puzzles._2025.Day_01
+﻿namespace AdventOfCode.Puzzles._2025.Day_01___Secret_Entrance
 {
     using AdventOfCode.Core;
 

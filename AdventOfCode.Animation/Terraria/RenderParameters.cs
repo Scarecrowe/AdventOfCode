@@ -17,7 +17,7 @@
             this.FadeType = FadeType.In;
             this.FadeRenderer = new(width, height, FadeType.In);
             this.Playlist = new();
-            this.Puzzle = new(Animation.GetInput(2018, 17));
+            this.Puzzle = new(Animation.GetInput(17, "Reservoir Research"));
             this.Puzzle = new(WaterFallRenderer.LoadPuzzleInput(false, new(width, height, new(this.Puzzle.Map.Width, this.Puzzle.Map.Height), 16, 16, this.Puzzle.ClayMin.X)));
             this.Screen = new(width, height, new(this.Puzzle.Map.Width, this.Puzzle.Map.Height), 16, 16, this.Puzzle.ClayMin.X);
             this.Frames = 0;

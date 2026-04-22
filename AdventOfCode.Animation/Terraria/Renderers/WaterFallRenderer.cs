@@ -91,7 +91,7 @@
         {
             List<string> input = new();
 
-            foreach (string line in Animation.GetInput(2018, 17).ToList())
+            foreach (string line in Animation.GetInput(17, "Reservoir Research").ToList())
             {
                 string[] tokens = line.Split(", ");
 

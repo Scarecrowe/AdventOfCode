@@ -29,7 +29,7 @@
         {
             Console.WriteLine("Loading Outro");
 
-            string answer = new ReservoirResearch(Animation.GetInput(2018, 17)).Settle(false).ToString();
+            string answer = new ReservoirResearch(Animation.GetInput(17, "Reservoir Research")).Settle(false).ToString();
 
             Console.WriteLine($"Puzzle answer: {answer}");
 

@@ -19,15 +19,15 @@
                         i++;
                         break;
                     case "-batch":
-                        this.BatchCount = this.ParseArgument(args, i);
+                        this.Iterations = this.ParseArgument(args, i);
                         i++;
                         break;
                 }
             }
 
-            if (this.BatchCount == 0)
+            if (this.Iterations == 0)
             {
-                this.BatchCount = 1;
+                this.Iterations = 1;
             }
         }
 
@@ -35,7 +35,7 @@
 
         public int Day { get; }
 
-        public int BatchCount { get; }
+        public int Iterations { get; }
 
         public bool Valid
         {

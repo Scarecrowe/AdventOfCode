@@ -1,7 +1,7 @@
 ﻿namespace AdventOfCode.Puzzles._2024.Days
 {
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2024.Day_01___Red_Nosed_Reports;
+    using AdventOfCode.Puzzles._2024.Day_02___Red_Nosed_Reports;
 
     public class Day2 : Puzzle, IPuzzle
     {

@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Puzzles._2017.Day_8___I_Heard_You_Like_Registers
+﻿namespace AdventOfCode.Puzzles._2017.Day_08___I_Heard_You_Like_Registers
 {
     using AdventOfCode.Core.Extensions;
 

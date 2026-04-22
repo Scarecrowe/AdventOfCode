@@ -6,7 +6,7 @@
 
         int Day { get; }
 
-        int BatchCount { get; }
+        int Iterations { get; }
 
         bool Valid { get; }
     }

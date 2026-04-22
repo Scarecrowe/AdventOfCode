@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Puzzles._2024.Day_01___Red_Nosed_Reports
+﻿namespace AdventOfCode.Puzzles._2024.Day_02___Red_Nosed_Reports
 {
     public class RedNosedReports
     {

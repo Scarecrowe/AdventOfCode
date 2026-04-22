@@ -1,6 +1,8 @@
 ﻿namespace AdventOfCode.Runner
 {
     using System.Diagnostics;
+    using System.Reflection;
+    using System.Text.RegularExpressions;
     using AdventOfCode.Core;
 
     public class PuzzleRunner
@@ -12,18 +14,229 @@
             if (!this.Args.Valid)
             {
                 PuzzleMenu menu = new();
+                menu.Execute();
                 return;
             }
 
             PrintTree(13);
-            RunPuzzle(this.Args.Year, this.Args.Day, this.Args.BatchCount);
+            RunPuzzle(this.Args.Year, this.Args.Day, this.Args.Iterations);
 
             Console.ReadLine();
         }
 
         private ICommandArguments Args { get; }
 
-        public static void RunPuzzle(int year, int day, int batchCount = 1)
+        public static Assembly GetPuzzleAssembly(int year)
+        {
+            return Assembly.LoadFrom($"AdventOfCode.Puzzles.{year}.dll");
+        }
+
+        public static List<string> GetPuzzleDays(int year)
+        {
+            List<string> result = new();
+
+            IOrderedEnumerable<string?> namespaces = GetPuzzleAssembly(year)
+                .GetTypes()
+                .Select(t => t.Namespace)
+                .Where(ns => !string.IsNullOrEmpty(ns))
+                .Distinct()
+                .OrderBy(@namespace => @namespace);
+
+            foreach (string? @namespace in namespaces)
+            {
+                string current = @namespace?.Replace($"AdventOfCode.Puzzles._{year}.", string.Empty) ?? string.Empty;
+                int day = GetDayFromNamespace(@namespace ?? string.Empty);
+
+                if (day == -1)
+                {
+                    continue;
+                }
+
+                for (int i = 1; i <= 25; i++)
+                {
+                    current = current.Replace($"Day_{i:D2}", string.Empty);
+                }
+
+                current = current.Replace("_", " ");
+
+                result.Add($"{day,2}. {current.Trim()}");
+            }
+
+            return result;
+        }
+
+        public static int GetDayFromNamespace(string @namespace)
+        {
+            Match? match = Regex.Match(@namespace, @"Day_(\d{2})");
+
+            if (!match.Success)
+            {
+                return -1;
+            }
+
+            return int.Parse(match.Groups[1].Value);
+        }
+
+        public static async Task RunAsync(
+            int year,
+            int day,
+            int iterations = 1,
+            bool printTitle = true,
+            CancellationToken cancellationToken = default)
+        {
+            string silver = string.Empty;
+            string gold = string.Empty;
+            PuzzleTimer timer = new();
+            IPuzzle? puzzle = Puzzle.GetPuzzle(year, day);
+
+            if (puzzle == null)
+            {
+                throw new InvalidOperationException($"No puzzle found with the year: {year} and day: {day}");
+            }
+
+            SetupProcess();
+            CollectAndFinalize();
+
+            if (printTitle)
+            {
+                PrintTitle(day, year, puzzle);
+            }
+
+            for (int i = 1; i <= iterations; i++)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                timer.Restart();
+                silver = puzzle.Silver() ?? string.Empty;
+                timer.Stop();
+
+                if (i != iterations)
+                {
+                    PuzzleConsole.Clear();
+                    await Task.Yield();
+                }
+            }
+
+            PrintResult($"Silver: {silver}", timer);
+
+            timer.Reset();
+
+            for (int i = 1; i <= iterations; i++)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                timer.Restart();
+                gold = puzzle.Gold() ?? string.Empty;
+                timer.Stop();
+
+                if (i > 1 && string.IsNullOrEmpty(gold))
+                {
+                    break;
+                }
+
+                if (i != iterations)
+                {
+                    PuzzleConsole.Clear();
+                    await Task.Yield();
+                }
+            }
+
+            PrintResult($"Gold: {gold}", timer);
+
+            Console.WriteLine($" Executed {(iterations > 1 ? $"{iterations} times" : "once")}:");
+
+            CopyResultToClipboard(string.IsNullOrEmpty(gold) ? silver : gold);
+        }
+
+        public static async Task<string> RunSilverAsync(
+            int year,
+            int day,
+            int executions = 1,
+            CancellationToken cancellationToken = default)
+        {
+            string silver = string.Empty;
+
+            PuzzleTimer timer = new();
+            IPuzzle? puzzle = Puzzle.GetPuzzle(year, day);
+
+            if (puzzle == null)
+            {
+                throw new InvalidOperationException($"No puzzle found with the year: {year} and day: {day}");
+            }
+
+            SetupProcess();
+            CollectAndFinalize();
+
+            for (int i = 1; i <= executions; i++)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                timer.Restart();
+                silver = puzzle.Silver() ?? string.Empty;
+                timer.Stop();
+
+                if (i != executions)
+                {
+                    PuzzleConsole.Clear();
+                    await Task.Yield();
+                }
+            }
+
+            PrintResult($"Silver: {silver}", timer);
+
+            PuzzleConsole.WriteLine($"Executed {(executions > 1 ? $"{executions} times" : "once")}:");
+
+            return silver;
+        }
+
+        public static async Task<string> RunGoldAsync(
+           int year,
+           int day,
+           int executions = 1,
+           CancellationToken cancellationToken = default)
+        {
+            string gold = string.Empty;
+            PuzzleTimer timer = new();
+            IPuzzle? puzzle = Puzzle.GetPuzzle(year, day);
+
+            if (puzzle == null)
+            {
+                throw new InvalidOperationException($"No puzzle found with the year: {year} and day: {day}");
+            }
+
+            SetupProcess();
+            CollectAndFinalize();
+
+            timer.Reset();
+
+            for (int i = 1; i <= executions; i++)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+
+                timer.Restart();
+                gold = puzzle.Gold() ?? string.Empty;
+                timer.Stop();
+
+                if (i > 1 && string.IsNullOrEmpty(gold))
+                {
+                    break;
+                }
+
+                if (i != executions)
+                {
+                    PuzzleConsole.Clear();
+                    await Task.Yield();
+                }
+            }
+
+            PrintResult($"Gold: {gold}", timer);
+
+            PuzzleConsole.WriteLine($"Executed {(executions > 1 ? $"{executions} times" : "once")}:");
+
+            return gold;
+        }
+
+        public static void RunPuzzle(int year, int day, int iterations = 1)
         {
             string silver = string.Empty;
             string gold = string.Empty;
@@ -39,13 +252,13 @@
             CollectAndFinalize();
             PrintTitle(day, year, puzzle);
 
-            for (int i = 1; i <= batchCount; i++)
+            for (int i = 1; i <= iterations; i++)
             {
                 timer.Restart();
                 silver = puzzle?.Silver() ?? string.Empty;
                 timer.Stop();
 
-                if (i != batchCount)
+                if (i != iterations)
                 {
                     PuzzleConsole.Clear();
                 }
@@ -55,7 +268,7 @@
 
             timer.Reset();
 
-            for (int i = 1; i <= batchCount; i++)
+            for (int i = 1; i <= iterations; i++)
             {
                 timer.Restart();
                 gold = puzzle?.Gold() ?? string.Empty;
@@ -66,14 +279,14 @@
                     break;
                 }
 
-                if (i != batchCount)
+                if (i != iterations)
                 {
                     PuzzleConsole.Clear();
                 }
             }
 
             PrintResult($"Gold: {gold}", timer);
-            Console.WriteLine($" Executed {(batchCount > 1 ? $"{batchCount} times" : "once")}:");
+            Console.WriteLine($" Executed {(iterations > 1 ? $"{iterations} times" : "once")}:");
             CopyResultToClipboard(string.IsNullOrEmpty(gold) ? silver : gold);
         }
 
@@ -147,7 +360,7 @@
         private static void PrintTitle(int day, int year, IPuzzle? puzzle)
         {
             Console.WriteLine();
-            Console.WriteLine($" {$"Advent Of Code {year} Day {day}: {puzzle?.DayTitle}"}");
+            Console.WriteLine($" {$"--- Advent Of Code {year} Day {day}: {puzzle?.DayTitle}"} ---");
             Console.WriteLine();
         }
     }

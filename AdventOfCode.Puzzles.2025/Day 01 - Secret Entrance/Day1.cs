@@ -1,7 +1,7 @@
 ﻿namespace AdventOfCode.Puzzles._2025.Days
 {
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2025.Day_01;
+    using AdventOfCode.Puzzles._2025.Day_01___Secret_Entrance;
 
     public class Day1 : Puzzle, IPuzzle
     {
