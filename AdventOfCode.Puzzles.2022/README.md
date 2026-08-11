@@ -16,7 +16,7 @@ Find highest total.
 Part 2 sums top three totals.
 Grouping and aggregation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2001%20-%20Calorie%20Counting
 
 ---
 
@@ -26,7 +26,7 @@ Map inputs to moves and outcomes.
 Part 2 changes meaning of input.
 Rule-based scoring.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2002%20-%20Rock%20Paper%20Scissors
 
 ---
 
@@ -36,7 +36,7 @@ Assign priority values.
 Part 2 groups elves in threes.
 Set intersection.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2003%20-%20Rucksack%20Reorganization
 
 ---
 
@@ -46,7 +46,7 @@ Count full overlaps.
 Part 2 counts any overlap.
 Range comparison.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2004%20-%20Camp%20Cleanup
 
 ---
 
@@ -56,7 +56,7 @@ Follow move instructions.
 Part 2 preserves order.
 Stack manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2005%20-%20Supply%20Stacks
 
 ---
 
@@ -66,7 +66,7 @@ Part 1 uses length 4.
 Part 2 uses length 14.
 Sliding window.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2006%20-%20Tuning%20Trouble
 
 ---
 
@@ -76,7 +76,7 @@ Track directory sizes.
 Part 2 finds directory to delete.
 Tree structure.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2007%20-%20No%20Space%20Left%20On%20Device
 
 ---
 
@@ -86,7 +86,7 @@ Count visible trees.
 Part 2 calculates scenic scores.
 Grid scanning.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2008%20-%20Treetop%20Tree%20House
 
 ---
 
@@ -96,7 +96,7 @@ Track tail positions.
 Part 2 increases rope length.
 Coordinate simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2009%20-%20Rope%20Bridge
 
 ---
 
@@ -106,7 +106,7 @@ Track signal strength.
 Render CRT output.
 Cycle-based simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2010%20-%20Cathode-Ray%20Tube
 
 ---
 
@@ -116,7 +116,7 @@ Apply operations and tests.
 Part 2 uses modulo optimisation.
 Simulation with large numbers.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2011%20-%20Monkey%20in%20the%20Middle
 
 ---
 
@@ -126,7 +126,7 @@ Movement constrained by elevation.
 Part 2 searches from multiple starts.
 Pathfinding.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2012%20-%20Hill%20Climbing%20Algorithm
 
 ---
 
@@ -136,7 +136,7 @@ Determine correct order.
 Part 2 sorts packets.
 Recursive comparison.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2013%20-%20Distress%20Signal
 
 ---
 
@@ -146,7 +146,7 @@ Track resting positions.
 Part 2 adds floor.
 Grid simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2014%20-%20Regolith%20Reservoir
 
 ---
 
@@ -156,7 +156,7 @@ Find impossible beacon positions.
 Part 2 finds distress beacon.
 Range merging.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2015%20-%20Beacon%20Exclusion%20Zone
 
 ---
 
@@ -166,7 +166,7 @@ Open valves with time constraints.
 Part 2 adds second agent.
 Graph search optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2016%20-%20Proboscidea%20Volcanium
 
 ---
 
@@ -176,7 +176,7 @@ Apply jet stream influence.
 Detect repeating patterns.
 Cycle detection.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2017%20-%20Pyroclastic%20Flow
 
 ---
 
@@ -186,7 +186,7 @@ Account for adjacent cubes.
 Part 2 excludes internal air pockets.
 3D grid analysis.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2018%20-%20Boiling%20Boulders
 
 ---
 
@@ -196,7 +196,7 @@ Maximise geode output.
 Explore resource states.
 Search with pruning.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2019%20-%20Not%20Enough%20Minerals
 
 ---
 
@@ -206,7 +206,7 @@ Reposition based on values.
 Part 2 repeats with scaling.
 List manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2020%20-%20Grove%20Positioning%20System
 
 ---
 
@@ -216,7 +216,7 @@ Resolve dependencies.
 Part 2 solves for unknown variable.
 Symbolic evaluation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2021%20-%20Monkey%20Math
 
 ---
 
@@ -226,7 +226,7 @@ Follow movement instructions.
 Part 2 maps onto cube surface.
 Grid navigation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2022%20-%20Monkey%20Map
 
 ---
 
@@ -236,7 +236,7 @@ Resolve movement conflicts.
 Repeat until stable.
 Grid simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2023%20-%20Unstable%20Diffusion
 
 ---
 
@@ -246,7 +246,7 @@ Avoid blizzards over time.
 Part 2 makes multiple trips.
 Time-aware pathfinding.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2024%20-%20Blizzard%20Basin
 
 ---
 
@@ -256,7 +256,7 @@ Handle base-5 with negative digits.
 Sum and convert results.
 Custom number system.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2022/Day%2025%20-%20Full%20of%20Hot%20Air
 
 ---
 

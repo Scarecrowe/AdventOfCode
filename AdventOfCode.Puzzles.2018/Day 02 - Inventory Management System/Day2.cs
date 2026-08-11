@@ -6,12 +6,15 @@
     public class Day2 : Puzzle, IPuzzle
     {
         public Day2()
+            : base(2018, 2, "Inventory Management System")
         {
-            this.DayTitle = "Inventory Management System";
-            this.GetPuzzleData(2, this.DayTitle);
         }
 
-        public Day2(string[] input) => this.Input = input;
+        public Day2(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new InventoryManagementSystem(this.Input).Checksum()}";
 

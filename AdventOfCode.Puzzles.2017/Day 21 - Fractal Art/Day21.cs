@@ -6,12 +6,15 @@
     public class Day21 : Puzzle, IPuzzle
     {
         public Day21()
+            : base(2017, 21, "Fractal Art")
         {
-            this.DayTitle = "Fractal Art";
-            this.GetPuzzleData(21, this.DayTitle);
         }
 
-        public Day21(string[] input) => this.Input = input;
+        public Day21(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new FractalArt(this.Input).Enhance(5).Pattern.PixelCount()}";
 

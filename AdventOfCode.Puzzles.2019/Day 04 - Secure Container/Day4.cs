@@ -6,12 +6,15 @@
     public class Day4 : Puzzle, IPuzzle
     {
         public Day4()
+            : base(2019, 4, "Secure Container")
         {
-            this.DayTitle = "Secure Container";
-            this.GetPuzzleData(4, this.DayTitle);
         }
 
-        public Day4(string[] input) => this.Input = input;
+        public Day4(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{SecureContainer.Simple(this.Input)}";
 

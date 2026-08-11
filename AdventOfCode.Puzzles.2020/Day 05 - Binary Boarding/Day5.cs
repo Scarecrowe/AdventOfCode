@@ -6,12 +6,15 @@
     public class Day5 : Puzzle, IPuzzle
     {
         public Day5()
+            : base(2020, 5, "Binary Boarding", StringSplitOptions.None)
         {
-            this.DayTitle = "Binary Boarding";
-            this.GetPuzzleData(5, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day5(string[] input) => this.Input = input;
+        public Day5(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new BinaryBoarding(this.Input).Process().MaxSeatId()}";
 

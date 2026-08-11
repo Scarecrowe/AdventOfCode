@@ -6,12 +6,15 @@
     public class Day11 : Puzzle, IPuzzle
     {
         public Day11()
+            : base(2017, 11, "Hex Ed")
         {
-            this.DayTitle = "Hex Ed";
-            this.GetPuzzleData(11, this.DayTitle);
         }
 
-        public Day11(string[] input) => this.Input = input;
+        public Day11(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new HexEd(this.Input[0]).Distance}";
 

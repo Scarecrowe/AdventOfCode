@@ -6,12 +6,15 @@
     public class Day19 : Puzzle, IPuzzle
     {
         public Day19()
+            : base(2022, 19, "Not Enough Minerals")
         {
-            this.DayTitle = "Not Enough Minerals";
-            this.GetPuzzleData(19, this.DayTitle);
         }
 
-        public Day19(string[] input) => this.Input = input;
+        public Day19(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         [Slow]
         public string Silver() => $"{new GeodeCracker(this.Input).Run24()}";

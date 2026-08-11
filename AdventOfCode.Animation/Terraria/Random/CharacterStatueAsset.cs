@@ -2,7 +2,6 @@
 {
     using System.Drawing;
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class CharacterStatueAsset : RandomAsset
     {

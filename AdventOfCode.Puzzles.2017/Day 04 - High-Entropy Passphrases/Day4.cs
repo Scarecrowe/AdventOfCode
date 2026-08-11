@@ -6,12 +6,15 @@
     public class Day4 : Puzzle, IPuzzle
     {
         public Day4()
+            : base(2017, 4, "High-Entropy Passphrases")
         {
-            this.DayTitle = "High-Entropy Passphrases";
-            this.GetPuzzleData(4, this.DayTitle);
         }
 
-        public Day4(string[] input) => this.Input = input;
+        public Day4(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{HighEntropyPassphrases.Simple(this.Input)}";
 

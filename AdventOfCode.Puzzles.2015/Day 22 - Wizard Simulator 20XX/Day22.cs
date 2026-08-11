@@ -6,12 +6,15 @@
     public class Day22 : Puzzle, IPuzzle
     {
         public Day22()
+            : base(2015, 22, "Wizard Simulator 20XX")
         {
-            this.DayTitle = "Wizard Simulator 20XX";
-            this.GetPuzzleData(22, this.DayTitle);
         }
 
-        public Day22(string[] input) => this.Input = input;
+        public Day22(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new WizardSimulator20XX(new Wizard(50, 500), WizardSimulator20XX.LoadEnemy(this.Input)).MinMana(BattleMode.Easy)}";
 

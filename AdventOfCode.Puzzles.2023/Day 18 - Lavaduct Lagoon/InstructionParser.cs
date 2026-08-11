@@ -1,6 +1,5 @@
 ﻿namespace AdventOfCode.Puzzles._2023.Day_18___Lavaduct_Lagoon
 {
-    using AdventOfCode.Core.Extensions;
     using System.Globalization;
 
     public enum Direction { R, D, L, U }

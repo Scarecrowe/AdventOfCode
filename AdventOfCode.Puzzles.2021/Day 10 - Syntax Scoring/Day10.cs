@@ -6,12 +6,15 @@
     public class Day10 : Puzzle, IPuzzle
     {
         public Day10()
+            : base(2021, 10, "Syntax Scoring")
         {
-            this.DayTitle = "Syntax Scoring";
-            this.GetPuzzleData(10, this.DayTitle);
         }
 
-        public Day10(string[] input) => this.Input = input;
+        public Day10(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new SyntaxScoring(this.Input).ErrorScore()}";
 

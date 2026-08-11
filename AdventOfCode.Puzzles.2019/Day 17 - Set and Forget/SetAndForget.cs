@@ -1,8 +1,10 @@
 ﻿namespace AdventOfCode.Puzzles._2019.Day_17___Set_and_Forget
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
     using AdventOfCode.Puzzles._2019.IntCode;
+    using System.Text;
 
     public class SetAndForget
     {
@@ -15,6 +17,14 @@
             this.CompressedPaths = new();
             this.Movements = string.Empty;
         }
+
+        public SetAndForget(string program, IFrameRenderer renderer)
+            : this(program)
+        {
+            this.Renderer = renderer;
+        }
+
+        public IFrameRenderer? Renderer { get; }
 
         public long AlignmentParameter { get; private set; }
 
@@ -280,6 +290,119 @@
             return this;
         }
 
+        public SetAndForget RenderSilver()
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            this.BuildMap();
+
+            List<string[]> frames = [];
+
+            HashSet<Vector<int>> visible = [];
+
+            foreach (KeyValuePair<Vector<int>, Entity> pair in this.Map
+                .OrderBy(x => x.Key.Y)
+                .ThenBy(x => x.Key.X))
+            {
+                visible.Add(pair.Key);
+
+                if (pair.Value == Entity.OpenSpace)
+                {
+                    continue;
+                }
+
+                frames.Add(this.BuildPartialFrame(
+                    visible,
+                    $"CAMERA CALIBRATION // ALIGNMENT {this.AlignmentParameter:00000}"));
+            }
+
+            foreach (Vector<int> intersection in this.Intersections)
+            {
+                frames.Add(this.BuildFrame(
+                    new HashSet<Vector<int>> { intersection },
+                    null,
+                    $"INTERSECTION FOUND // ALIGNMENT {this.AlignmentParameter:00000}"));
+            }
+
+            for (int i = 0; i < 24; i++)
+            {
+                frames.Add(this.BuildFrame(
+                    this.Intersections,
+                    null,
+                    $"CALIBRATION COMPLETE // ALIGNMENT {this.AlignmentParameter:00000}"));
+            }
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
+        }
+
+        public SetAndForget RenderGold(int renderEvery = 2)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            this.BuildMap();
+            this.BuildPath();
+            this.CompressPath();
+
+            Robot robot = this.GetRobot();
+
+            List<string[]> frames = [];
+            HashSet<Vector<int>> cleaned = new() { robot.Location };
+
+            int step = 0;
+
+            frames.Add(this.BuildFrame(cleaned, robot.Location, "VACUUM ROBOT ONLINE"));
+
+            foreach (string instruction in this.Path)
+            {
+                if (instruction == "L" || instruction == "R")
+                {
+                    robot.Turn(instruction);
+                    frames.Add(this.BuildFrame(
+                            cleaned,
+                            robot.Location,
+                            $"CLEANING SCAFFOLD // STEPS {step:0000}"));
+
+                    continue;
+                }
+
+                int distance = instruction.ToInt();
+
+                for (int i = 0; i < distance; i++)
+                {
+                    robot.Location += CardinalHelper.CardinalTransform<int>()[robot.Direction];
+                    cleaned.Add(robot.Location);
+
+                    step++;
+
+                    if (step % renderEvery == 0)
+                    {
+                        frames.Add(this.BuildFrame(
+                            cleaned,
+                            robot.Location,
+                            $"CLEANING SCAFFOLD // STEPS {step:0000}"));
+                    }
+                }
+            }
+
+            this.FindRobots();
+                frames.Add(this.BuildFrame(
+                    cleaned,
+                    null,
+                    $"DUST COLLECTED // {this.DustCollected}"));
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
+        }
+
         private static string? ConstructPaths(string a, string b, string c, string path)
         {
             int index = 0;
@@ -322,6 +445,153 @@
             KeyValuePair<Vector<int>, Entity> robotPair = this.Map.FirstOrDefault(c => c.Value != Entity.Scaffold && c.Value != Entity.OpenSpace);
 
             return new(robotPair.Key, robotPair.Value);
+        }
+
+        private void RenderPaddedFrames(List<string[]> frames)
+        {
+            if (this.Renderer == null || frames.Count == 0)
+            {
+                return;
+            }
+
+            int width = frames
+                .SelectMany(frame => frame)
+                .Max(row => row.Length);
+
+            int height = frames.Max(frame => frame.Length);
+
+            foreach (string[] frame in frames)
+            {
+                this.Renderer.RenderFrame(new Frame(PadFrame(frame, width, height)));
+            }
+        }
+
+        private static string[] PadFrame(string[] frame, int width, int height)
+        {
+            List<string> result = [];
+
+            foreach (string row in frame)
+            {
+                result.Add(row.PadRight(width, ' '));
+            }
+
+            while (result.Count < height)
+            {
+                result.Add(new string(' ', width));
+            }
+
+            return [.. result];
+        }
+
+        private string[] BuildFrame(
+            HashSet<Vector<int>>? highlight = null,
+            Vector<int>? robot = null,
+            string title = "")
+        {
+            int minY = this.Map.Min(c => c.Key.Y);
+            int maxY = this.Map.Max(c => c.Key.Y);
+            int minX = this.Map.Min(c => c.Key.X);
+            int maxX = this.Map.Max(c => c.Key.X);
+
+            List<string> result = [];
+
+            if (!string.IsNullOrEmpty(title))
+            {
+                result.Add(title);
+                result.Add(string.Empty);
+            }
+
+            for (int y = minY; y <= maxY; y++)
+            {
+                StringBuilder sb = new();
+
+                for (int x = minX; x <= maxX; x++)
+                {
+                    Vector<int> point = new(x, y);
+
+                    if (robot != null && point == robot)
+                    {
+                        sb.Append('@');
+                    }
+                    else if (highlight != null && highlight.Contains(point))
+                    {
+                        sb.Append('~');
+                    }
+                    else if (this.Intersections.Contains(point))
+                    {
+                        sb.Append('+');
+                    }
+                    else if (this.Map.TryGetValue(point, out Entity entity))
+                    {
+                        sb.Append(entity switch
+                        {
+                            Entity.Scaffold => '#',
+                            Entity.OpenSpace => '.',
+                            Entity.RobotUp => '^',
+                            Entity.RobotDown => 'v',
+                            Entity.RobotLeft => '<',
+                            Entity.RobotRight => '>',
+                            Entity.RobotTumbling => 'X',
+                            _ => ' '
+                        });
+                    }
+                    else
+                    {
+                        sb.Append(' ');
+                    }
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
+        }
+
+        private string[] BuildPartialFrame(HashSet<Vector<int>> visible, string title)
+        {
+            int minY = this.Map.Min(c => c.Key.Y);
+            int maxY = this.Map.Max(c => c.Key.Y);
+            int minX = this.Map.Min(c => c.Key.X);
+            int maxX = this.Map.Max(c => c.Key.X);
+
+            List<string> result = [];
+
+            result.Add(title);
+            result.Add(string.Empty);
+
+            for (int y = minY; y <= maxY; y++)
+            {
+                StringBuilder sb = new();
+
+                for (int x = minX; x <= maxX; x++)
+                {
+                    Vector<int> point = new(x, y);
+
+                    if (!visible.Contains(point))
+                    {
+                        sb.Append(' ');
+                        continue;
+                    }
+
+                    Entity entity = this.Map[point];
+
+                    sb.Append(entity switch
+                    {
+                        Entity.Scaffold => '#',
+                        Entity.OpenSpace => '.',
+                        Entity.RobotUp => '^',
+                        Entity.RobotDown => 'v',
+                        Entity.RobotLeft => '<',
+                        Entity.RobotRight => '>',
+                        Entity.RobotTumbling => 'X',
+                        _ => ' '
+                    });
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
         }
     }
 }

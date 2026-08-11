@@ -6,12 +6,15 @@
     public class Day19 : Puzzle, IPuzzle
     {
         public Day19()
+            : base(2021, 19, "Beacon Scanner", StringSplitOptions.None)
         {
-            this.DayTitle = "Beacon Scanner";
-            this.GetPuzzleData(19, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day19(string[] input) => this.Input = input;
+        public Day19(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new BeaconScanner(this.Input).BeaconCount()}";
 

@@ -16,7 +16,7 @@ Part 2 extends to three numbers.
 Return product of matching entries.
 Classic combination search.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2001%20-%20Report%20Repair
 
 ---
 
@@ -26,7 +26,7 @@ Part 1 counts character occurrences.
 Part 2 checks positional rules.
 String validation problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2002%20-%20Password%20Philosophy
 
 ---
 
@@ -36,7 +36,7 @@ Count collisions on slopes.
 Part 2 multiplies multiple slopes.
 Grid traversal.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2003%20-%20Toboggan%20Trajectory
 
 ---
 
@@ -46,7 +46,7 @@ Part 1 checks required fields.
 Part 2 validates field formats.
 Parsing and validation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2004%20-%20Passport%20Processing
 
 ---
 
@@ -56,7 +56,7 @@ Find highest seat ID.
 Part 2 finds missing seat.
 Binary space partitioning.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2005%20-%20Binary%20Boarding
 
 ---
 
@@ -66,7 +66,7 @@ Part 1 uses union of answers.
 Part 2 uses intersection.
 Set operations.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2006%20-%20Custom%20Customs
 
 ---
 
@@ -76,7 +76,7 @@ Find bags that can contain target.
 Part 2 counts total nested bags.
 Graph traversal.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2007%20-%20Handy%20Haversacks
 
 ---
 
@@ -86,7 +86,7 @@ Detect infinite loops.
 Part 2 fixes corrupted instruction.
 Interpreter and debugging.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2008%20-%20Handheld%20Halting
 
 ---
 
@@ -96,7 +96,7 @@ Based on previous sum rules.
 Part 2 finds contiguous range.
 Sliding window.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2009%20-%20Encoding%20Error
 
 ---
 
@@ -106,7 +106,7 @@ Count differences for Part 1.
 Part 2 counts arrangements.
 Dynamic programming.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2010%20-%20Adapter%20Array
 
 ---
 
@@ -116,7 +116,7 @@ Apply adjacency rules until stable.
 Part 2 uses visibility rules.
 Cellular automaton.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2011%20-%20Seating%20System
 
 ---
 
@@ -126,7 +126,7 @@ Part 1 uses direct movement.
 Part 2 uses waypoint system.
 Vector movement.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2012%20-%20Rain%20Risk
 
 ---
 
@@ -136,7 +136,7 @@ Part 2 aligns schedules with offsets.
 Uses modular arithmetic.
 Chinese remainder theorem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2013%20-%20Shuttle%20Search
 
 ---
 
@@ -146,7 +146,7 @@ Part 1 masks values.
 Part 2 masks addresses with floating bits.
 Bit manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2014%20-%20Docking%20Data
 
 ---
 
@@ -156,7 +156,7 @@ Track last occurrences.
 Part 2 scales to large turns.
 Efficient lookup.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2015%20-%20Rambunctious%20Recitation
 
 ---
 
@@ -166,7 +166,7 @@ Identify invalid fields.
 Part 2 determines field positions.
 Constraint solving.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2016%20-%20Ticket%20Translation
 
 ---
 
@@ -176,7 +176,7 @@ Apply Game of Life rules.
 Expand active regions.
 Cellular automaton.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2017%20-%20Conway%20Cubes
 
 ---
 
@@ -186,7 +186,7 @@ Part 1 ignores standard precedence.
 Part 2 changes precedence rules.
 Expression parsing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2018%20-%20Operation%20Order
 
 ---
 
@@ -196,7 +196,7 @@ Build recursive patterns.
 Part 2 introduces recursion.
 Rule-based parsing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2019%20-%20Monster%20Messages
 
 ---
 
@@ -206,7 +206,7 @@ Match edges to form grid.
 Part 2 detects patterns in image.
 Tile matching and transformation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2020%20-%20Jurassic%20Jigsaw
 
 ---
 
@@ -216,7 +216,7 @@ Eliminate possibilities.
 Part 2 creates canonical list.
 Constraint deduction.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2021%20-%20Allergen%20Assessment
 
 ---
 
@@ -226,7 +226,7 @@ Part 2 adds recursive rules.
 Track game states.
 Game simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2022%20-%20Crab%20Combat
 
 ---
 
@@ -236,7 +236,7 @@ Perform moves efficiently.
 Part 2 scales to large input.
 Linked list optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2023%20-%20Crab%20Cups
 
 ---
 
@@ -246,7 +246,7 @@ Track black and white tiles.
 Part 2 simulates daily changes.
 Hex grid and automaton.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2024%20-%20Lobby%20Layout
 
 ---
 
@@ -256,7 +256,7 @@ Reverse transform loop size.
 Apply transformation formula.
 Modular exponentiation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2020/Day%2025%20-%20Combo%20Breaker
 
 ---
 

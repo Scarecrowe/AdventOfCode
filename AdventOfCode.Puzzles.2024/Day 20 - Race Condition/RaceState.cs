@@ -6,7 +6,7 @@
     {
         public Vector<int> Point { get; set; }
 
-        public HashSet<Vector<int>> Path { get; private set; }  
+        public HashSet<Vector<int>> Path { get; private set; }
 
         public bool Cheated { get; set; }
 

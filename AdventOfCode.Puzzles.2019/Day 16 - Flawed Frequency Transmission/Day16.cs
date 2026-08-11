@@ -6,12 +6,15 @@
     public class Day16 : Puzzle, IPuzzle
     {
         public Day16()
+            : base(2019, 16, "Flawed Frequency Transmission")
         {
-            this.DayTitle = "Flawed Frequency Transmission";
-            this.GetPuzzleData(16, this.DayTitle);
         }
 
-        public Day16(string[] input) => this.Input = input;
+        public Day16(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{FlawedFrequencyTransmission.Single(this.Input)}";
 

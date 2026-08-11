@@ -6,12 +6,15 @@
     public class Day6 : Puzzle, IPuzzle
     {
         public Day6()
+            : base(2019, 6, "Universal Orbit Map")
         {
-            this.DayTitle = "Universal Orbit Map";
-            this.GetPuzzleData(6, this.DayTitle);
         }
 
-        public Day6(string[] input) => this.Input = input;
+        public Day6(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new UniversalOrbitMap(this.Input).DirectInDirectCount()}";
 

@@ -6,12 +6,15 @@
     public class Day8 : Puzzle, IPuzzle
     {
         public Day8()
+            : base(2015, 8, "Matchsticks", StringSplitOptions.RemoveEmptyEntries, false)
         {
-            this.DayTitle = "Matchsticks";
-            this.GetPuzzleData(8, this.DayTitle, StringSplitOptions.RemoveEmptyEntries, false);
         }
 
-        public Day8(string[] input) => this.Input = input;
+        public Day8(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{Matchsticks.CountCharacters(this.Input[0], MatchstickMode.Normal)}";
 

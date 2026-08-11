@@ -53,14 +53,6 @@ namespace AdventOfCode.Puzzles._2024.Day_22___Monkey_Market
             {
                 long value = 0;
 
-                if (commonSequence.Sequence[0] == -2
-                   && commonSequence.Sequence[1] == 1
-                   && commonSequence.Sequence[2] == -1
-                   && commonSequence.Sequence[3] == 3)
-                {
-                    var t = 1;
-                }
-
                 for (int i = 0; i < digits.Count; i++)
                 {
                     var digit = digits[i];
@@ -82,7 +74,6 @@ namespace AdventOfCode.Puzzles._2024.Day_22___Monkey_Market
                 if (value > result)
                 {
                     result = value;
-                    ////val = commonSequence;
                 }
             }
 

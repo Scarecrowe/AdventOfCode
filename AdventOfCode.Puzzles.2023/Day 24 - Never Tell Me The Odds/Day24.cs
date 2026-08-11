@@ -6,9 +6,14 @@
     public class Day24 : Puzzle, IPuzzle
     {
         public Day24()
+            : base(2023, 24, "Never Tell Me The Odds", StringSplitOptions.None)
         {
-            this.DayTitle = "Never Tell Me The Odds";
-            this.GetPuzzleData(24, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day24(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new NeverTellMeTheOdds(this.Input).TestAreaIntersections()}";

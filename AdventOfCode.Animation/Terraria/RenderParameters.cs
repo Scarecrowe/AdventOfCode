@@ -5,7 +5,6 @@
     using AdventOfCode.Animation.Terraria.Biomes;
     using AdventOfCode.Animation.Terraria.Renderers;
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class RenderParameters
     {
@@ -17,8 +16,8 @@
             this.FadeType = FadeType.In;
             this.FadeRenderer = new(width, height, FadeType.In);
             this.Playlist = new();
-            this.Puzzle = new(Animation.GetInput(17, "Reservoir Research"));
-            this.Puzzle = new(WaterFallRenderer.LoadPuzzleInput(false, new(width, height, new(this.Puzzle.Map.Width, this.Puzzle.Map.Height), 16, 16, this.Puzzle.ClayMin.X)));
+            this.Puzzle = Terraria.LoadPuzzle();
+            this.Puzzle = Terraria.LoadPuzzle(WaterFallRenderer.LoadPuzzleInput(false, new(width, height, new(this.Puzzle.Map.Width, this.Puzzle.Map.Height), 16, 16, this.Puzzle.ClayMin.X)));
             this.Screen = new(width, height, new(this.Puzzle.Map.Width, this.Puzzle.Map.Height), 16, 16, this.Puzzle.ClayMin.X);
             this.Frames = 0;
             this.Load(biomes);
@@ -28,7 +27,7 @@
 
         public Screen Screen { get; }
 
-        public ReservoirResearch Puzzle { get; private set; }
+        public ITerrariaRenderer Puzzle { get; private set; }
 
         public int Frames { get; private set; }
 

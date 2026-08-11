@@ -1,14 +1,26 @@
 ﻿namespace AdventOfCode.Puzzles._2019.Day_03___Crossed_Wires
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
+    using System.Text;
 
     public class CrossedWires
     {
-        public static long Nearest(string[] input)
+        public CrossedWires(string[] input)
         {
-            Dictionary<string, int> wireA = TraceWire(input[0]);
-            Dictionary<string, int> wireB = TraceWire(input[1]);
+            this.WireA = input[0];
+            this.WireB = input[0];
+        }
+
+        private string WireA { get; }
+
+        private string WireB { get; }
+
+        public long Nearest()
+        {
+            Dictionary<string, int> wireA = TraceWire(this.WireA);
+            Dictionary<string, int> wireB = TraceWire(this.WireB);
 
             long result = int.MaxValue;
 
@@ -33,10 +45,10 @@
             return result;
         }
 
-        public static int StepsToIntersection(string[] input)
+        public int StepsToIntersection()
         {
-            Dictionary<string, int> wireA = TraceWire(input[0]);
-            Dictionary<string, int> wireB = TraceWire(input[1]);
+            Dictionary<string, int> wireA = TraceWire(this.WireA);
+            Dictionary<string, int> wireB = TraceWire(this.WireB);
 
             SortedDictionary<string, int> intersectionsA = TraceIntersections(wireA, wireB);
             SortedDictionary<string, int> intersectionsB = TraceIntersections(wireB, wireA);

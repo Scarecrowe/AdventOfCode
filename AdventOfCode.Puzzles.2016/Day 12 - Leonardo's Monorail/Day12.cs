@@ -6,12 +6,15 @@
     public class Day12 : Puzzle, IPuzzle
     {
         public Day12()
+            : base(2016, 12, "Leonardo's Monorail")
         {
-            this.DayTitle = "Leonardo's Monorail";
-            this.GetPuzzleData(12, this.DayTitle);
         }
 
-        public Day12(string[] input) => this.Input = input;
+        public Day12(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new LeonardosMonorail(this.Input).Process().Registers[0]}";
 

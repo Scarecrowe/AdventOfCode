@@ -6,12 +6,15 @@
     public class Day3 : Puzzle, IPuzzle
     {
         public Day3()
+            : base(2017, 3, "Spiral Memory")
         {
-            this.DayTitle = "Spiral Memory";
-            this.GetPuzzleData(3, this.DayTitle);
         }
 
-        public Day3(string[] input) => this.Input = input;
+        public Day3(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new SpiralMemory(int.Parse(this.Input[0])).Distance()}";
 

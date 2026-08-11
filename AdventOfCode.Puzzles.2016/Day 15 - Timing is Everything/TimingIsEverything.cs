@@ -4,7 +4,7 @@
     {
         public TimingIsEverything(string[] input, bool extraDisc = false)
         {
-            this.Discs = new();
+            this.Discs = [];
 
             foreach (string line in input)
             {

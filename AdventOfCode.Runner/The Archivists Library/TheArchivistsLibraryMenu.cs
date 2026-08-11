@@ -1,47 +1,106 @@
 ﻿namespace AdventOfCode.Runner.The_Archivists_Library
 {
-    using System;
-    using System.Threading.Tasks;
     using AdventOfCode.Core;
-    using AdventOfCode.Runner.Menus;
+    using AdventOfCode.Core.ConsoleMenu;
     using AdventOfCode.Runner.North_Pole_Operations;
 
-    public class TheArchivistsLibraryMenu : Menu, IMenu
+    public class TheArchivistsLibraryMenu : ConsoleMenu, IConsoleMenu
     {
+        private static readonly string RunsPath = Path.Combine(AppContext.BaseDirectory, "Runs");
+
         public TheArchivistsLibraryMenu()
             : base("The Archivist's Library")
         {
+            this.AddMenuItems();
         }
 
-        public async Task<IMenu> Execute()
+        public async Task<IConsoleMenu> Execute()
         {
             while (true)
             {
                 this.Reset();
-                PuzzleConsole.WriteLine("Assembling your solution...");
-                PuzzleConsole.WriteLine();
-                PuzzleConsole.Flush();
 
-                int year = PromptInt("Year", 2015);
-                int day = PromptInt("Day", 1);
-                int iterations = PromptInt("Iterations", 1);
+                IConsoleMenuItem? item = await this.WriteMenu();
 
-                await PuzzleRunner.RunAsync(year, day, iterations);
-
-                PuzzleConsole.WriteLine();
-                PuzzleConsole.Write("Run another puzzle? (y/n): ");
-                PuzzleConsole.Flush();
-                var input = Console.ReadLine();
-
-                if (!IsYes(input))
+                if (item == null)
                 {
-                    break;
+                    return new TheArchivistsLibraryMenu();
                 }
 
-                PuzzleConsole.Clear();
+                if (item.GetKey<int>() == GenericMenu.Back ||
+                    item.GetKey<int>() == GenericMenu.MainMenu)
+                {
+                    return new NorthPoleOperationsMenu();
+                }
+
+                if (item.GetKey<int>() == GenericMenu.Exit)
+                {
+                    return await new ExitMenu().Execute();
+                }
+
+                if (item.Key is string filePath)
+                {
+                    this.ViewRun(filePath);
+                    this.WaitForUser();
+                }
+            }
+        }
+
+        private void AddMenuItems()
+        {
+            this.Items.Clear();
+
+            if (!Directory.Exists(RunsPath))
+            {
+                this.Items.Add(TheArchivistsLibraryMenuType.NoRunsFound, "No Past Runs Found", "Santa's Gauntlet has not saved any runs yet");
+                this.AddGenericMenuItems("Return to North Pole Operations");
+                return;
             }
 
-            return new NorthPoleOperationsMenu();
+            string[] files = Directory
+                .GetFiles(RunsPath, "*.txt", SearchOption.TopDirectoryOnly)
+                .OrderByDescending(File.GetCreationTime)
+                .ToArray();
+
+            if (files.Length == 0)
+            {
+                this.Items.Add(TheArchivistsLibraryMenuType.NoRunsFound, "No Past Runs Found", "Santa's Gauntlet has not saved any runs yet");
+                this.AddGenericMenuItems("Return to North Pole Operations");
+                return;
+            }
+
+            foreach (string file in files)
+            {
+                FileInfo info = new(file);
+
+                this.Items.Add(
+                    file,
+                    Path.GetFileNameWithoutExtension(file),
+                    $"{info.CreationTime:yyyy-MM-dd HH:mm:ss} // {info.Length:N0} bytes");
+            }
+
+            this.AddBackMenuItem("Return to North Pole Operations");
+            this.AddExitMenuItem();
+        }
+
+        private void ViewRun(string filePath)
+        {
+            this.SetSubTitle(Path.GetFileNameWithoutExtension(filePath));
+            this.Reset();
+
+            if (!File.Exists(filePath))
+            {
+                PuzzleConsole.WriteLine("The Archivist could not find that run.");
+                PuzzleConsole.Flush();
+                return;
+            }
+
+            foreach (string line in File.ReadAllLines(filePath))
+            {
+                PuzzleConsole.WriteLine(line);
+            }
+
+            PuzzleConsole.Flush();
         }
     }
 }

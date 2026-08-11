@@ -1,57 +1,57 @@
 ﻿namespace AdventOfCode.Runner.The_Toymakers_Workshop
 {
-    using System;
     using System.Threading.Tasks;
     using AdventOfCode.Core;
-    using AdventOfCode.Runner.Menus;
+    using AdventOfCode.Core.ConsoleMenu;
     using AdventOfCode.Runner.North_Pole_Operations;
 
-    public class TheToyMakersWorkshopSelectorMenu : Menu, IMenu
+    public class TheToyMakersWorkshopSelectorMenu : ConsoleMenu, IConsoleMenu
     {
         public TheToyMakersWorkshopSelectorMenu()
            : base("The Toymaker's Workshop")
         {
         }
 
-        public async Task<IMenu> Execute()
+        public async Task<IConsoleMenu> Execute()
         {
+            YearMenu yearSelector = new(this.Title, "Assembling your solution...", "Return to North Pole Operations");
+
             while (true)
             {
-                PuzzleYearDayMenu selector = new(this.Title);
+                this.Reset();
 
-                while (selector.Year == -1 || selector.Day == -1)
+                await yearSelector.Execute();
+
+                if (yearSelector.GoBack)
                 {
-                    this.Reset();
-                    this.WriteLine("Assembling your solution...");
-                    PuzzleConsole.WriteLine();
-                    PuzzleConsole.Flush();
-
-                    await selector.Execute();
-
-                    if (selector.Day >= 1 && selector.Day <= selector.Days)
-                    {
-                        IMenu menu = await new TheToyMakersWorkshopMenu(selector.Year, selector.Day).Execute();
-
-                        if (menu is NorthPoleOperationsMenu)
-                        {
-                            return menu;
-                        }
-
-                        selector.ResetYear();
-                        continue;
-                    }
-
-                    switch ((TheToyMakersWorkshopSelector)selector.Day - selector.Days)
-                    {
-                        case TheToyMakersWorkshopSelector.ChooseAnotherPuzzle:
-                            selector.ResetYear();
-                            break;
-                        case TheToyMakersWorkshopSelector.ReturnToMainMenu:
-                            return await new NorthPoleOperationsMenu().Execute();
-                        case TheToyMakersWorkshopSelector.Exit:
-                            return await new ExitMenu().Execute();
-                    }
+                    this.GotoMainMenu();
+                    return this;
                 }
+
+                DayMenu daySelector = new(this.Title, "Assembling your solution...", "Select a different year", yearSelector.Year);
+
+                await daySelector.Execute();
+
+                if (daySelector.GoBack)
+                {
+                    yearSelector.ResetYear();
+                    continue;
+                }
+
+                if (daySelector.MainMenu)
+                {
+                    this.GotoMainMenu();
+                    return this;
+                }
+
+                IConsoleMenu menu = await new TheToyMakersWorkshopMenu(Puzzle.GetPuzzle(yearSelector.Year, daySelector.Day)!).Execute();
+
+                if (menu.MainMenu)
+                {
+                    return this;
+                }
+
+                yearSelector.ResetYear();
 
                 break;
             }

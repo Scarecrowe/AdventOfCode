@@ -6,12 +6,15 @@
     public class Day4 : Puzzle, IPuzzle
     {
         public Day4()
+            : base(2018, 4, "Repose Record")
         {
-            this.DayTitle = "Repose Record";
-            this.GetPuzzleData(4, this.DayTitle);
         }
 
-        public Day4(string[] input) => this.Input = input;
+        public Day4(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ReposeRecord(this.Input).ProcessLog().StrategyOne()}";
 

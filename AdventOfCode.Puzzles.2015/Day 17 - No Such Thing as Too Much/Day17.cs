@@ -6,12 +6,15 @@
     public class Day17 : Puzzle, IPuzzle
     {
         public Day17()
+            : base(2015, 17, "No Such Thing as Too Much", StringSplitOptions.None)
         {
-            this.DayTitle = "No Such Thing as Too Much";
-            this.GetPuzzleData(17, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day17(string[] input) => this.Input = input;
+        public Day17(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{NoSuchThingAsTooMuch.ContainerCount(this.Input, 150)}";
 

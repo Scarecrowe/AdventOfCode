@@ -6,12 +6,15 @@
     public class Day2 : Puzzle, IPuzzle
     {
         public Day2()
+            : base(2017, 2, "Corruption Checksum")
         {
-            this.DayTitle = "Corruption Checksum";
-            this.GetPuzzleData(2, this.DayTitle);
         }
 
-        public Day2(string[] input) => this.Input = input;
+        public Day2(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new CorruptionChecksum(this.Input).SumOfLargestSmallest()}";
 

@@ -1,4 +1,4 @@
-﻿namespace AdventOfCode.Runner.Menus
+﻿namespace AdventOfCode.Runner.The_Toymakers_Workshop
 {
     public enum TheToyMakersWorkshopSelector
     {

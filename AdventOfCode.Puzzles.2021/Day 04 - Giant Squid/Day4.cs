@@ -6,12 +6,15 @@
     public class Day4 : Puzzle, IPuzzle
     {
         public Day4()
+            : base(2021, 4, "Giant Squid", StringSplitOptions.None)
         {
-            this.DayTitle = "Giant Squid";
-            this.GetPuzzleData(4, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day4(string[] input) => this.Input = input;
+        public Day4(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{GiantSquid.First(this.Input)}";
 

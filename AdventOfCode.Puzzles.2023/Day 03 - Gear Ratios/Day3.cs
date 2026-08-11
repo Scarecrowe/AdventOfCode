@@ -6,9 +6,14 @@
     public class Day3 : Puzzle, IPuzzle
     {
         public Day3()
+            : base(2023, 3, "Gear Ratios")
         {
-            this.DayTitle = "Gear Ratios";
-            this.GetPuzzleData(3, this.DayTitle);
+        }
+
+        public Day3(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new GearRatios(this.Input).Count()}";

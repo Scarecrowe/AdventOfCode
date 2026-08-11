@@ -6,12 +6,15 @@
     public class Day23 : Puzzle, IPuzzle
     {
         public Day23()
+            : base(2015, 23, "Opening the Turing Lock")
         {
-            this.DayTitle = "Opening the Turing Lock";
-            this.GetPuzzleData(23, this.DayTitle);
         }
 
-        public Day23(string[] input) => this.Input = input;
+        public Day23(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new OpeningTheTuringLock(this.Input).Execute().RegisterB()}";
 

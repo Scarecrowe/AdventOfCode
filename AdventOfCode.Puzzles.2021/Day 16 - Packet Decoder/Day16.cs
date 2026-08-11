@@ -6,12 +6,15 @@
     public class Day16 : Puzzle, IPuzzle
     {
         public Day16()
+            : base(2012, 16, "Packet Decoder")
         {
-            this.DayTitle = "Packet Decoder";
-            this.GetPuzzleData(16, this.DayTitle);
         }
 
-        public Day16(string[] input) => this.Input = input;
+        public Day16(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new PacketDecoder(this.Input).Sum()}";
 

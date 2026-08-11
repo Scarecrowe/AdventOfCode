@@ -6,12 +6,15 @@
     public class Day21 : Puzzle, IPuzzle
     {
         public Day21()
+            : base(2020, 21, "Allergen Assessment")
         {
-            this.DayTitle = "Allergen Assessment";
-            this.GetPuzzleData(21, this.DayTitle);
         }
 
-        public Day21(string[] input) => this.Input = input;
+        public Day21(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{AllergenAssessment.NonAllergens(this.Input)}";
 

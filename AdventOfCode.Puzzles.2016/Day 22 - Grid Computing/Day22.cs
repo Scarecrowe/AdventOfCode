@@ -6,12 +6,15 @@
     public class Day22 : Puzzle, IPuzzle
     {
         public Day22()
+            : base(2016, 22, "Grid Computing")
         {
-            this.DayTitle = "Grid Computing";
-            this.GetPuzzleData(22, this.DayTitle);
         }
 
-        public Day22(string[] input) => this.Input = input;
+        public Day22(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new GridComputing(this.Input).FindAvailablePairs()}";
 

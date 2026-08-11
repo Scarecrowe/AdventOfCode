@@ -6,12 +6,15 @@
     public class Day2 : Puzzle, IPuzzle
     {
         public Day2()
+            : base(2019, 2, "1202 Program Alarm")
         {
-            this.DayTitle = "1202 Program Alarm";
-            this.GetPuzzleData(2, this.DayTitle);
         }
 
-        public Day2(string[] input) => this.Input = input;
+        public Day2(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new OneTwoOneTwoProgramAlarm(this.Input[0]).Run(12, 2)}";
 

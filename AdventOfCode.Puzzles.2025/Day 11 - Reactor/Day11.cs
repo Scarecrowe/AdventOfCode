@@ -6,9 +6,14 @@
     public class Day11 : Puzzle, IPuzzle
     {
         public Day11()
+            : base(2025, 11, "Reactor")
         {
-            this.DayTitle = "Reactor";
-            this.GetPuzzleData(11, this.DayTitle);
+        }
+
+        public Day11(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new Reactor(this.Input).CountAllPaths()}";

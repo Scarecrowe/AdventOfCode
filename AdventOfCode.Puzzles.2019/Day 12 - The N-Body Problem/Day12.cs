@@ -6,12 +6,15 @@
     public class Day12 : Puzzle, IPuzzle
     {
         public Day12()
+            : base(2019, 12, "The N-Body Problem")
         {
-            this.DayTitle = "The N-Body Problem";
-            this.GetPuzzleData(12, this.DayTitle);
         }
 
-        public Day12(string[] input) => this.Input = input;
+        public Day12(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new TheNBodyProblem(this.Input).Simulate(1000)}";
 

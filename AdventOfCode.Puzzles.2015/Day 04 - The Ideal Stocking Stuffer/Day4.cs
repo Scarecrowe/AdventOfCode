@@ -6,12 +6,15 @@
     public class Day4 : Puzzle, IPuzzle
     {
         public Day4()
+            : base(2015, 4, "The Ideal Stocking Stuffer", StringSplitOptions.None)
         {
-            this.DayTitle = "The Ideal Stocking Stuffer";
-            this.GetPuzzleData(4, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day4(string[] input) => this.Input = input;
+        public Day4(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new TheIdealStockingStuffer(this.Input[0], 5).Number}";
 

@@ -6,12 +6,15 @@
     public class Day24 : Puzzle, IPuzzle
     {
         public Day24()
+            : base(2021, 24, "Arithmetic Logic Unit")
         {
-            this.DayTitle = "Arithmetic Logic Unit";
-            this.GetPuzzleData(24, this.DayTitle);
         }
 
-        public Day24(string[] input) => this.Input = input;
+        public Day24(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ArithmeticLogicUnit(this.Input).Largest()}";
 

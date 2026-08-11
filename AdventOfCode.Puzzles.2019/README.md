@@ -16,7 +16,7 @@ Part 1 uses direct division formula.
 Part 2 includes fuel for fuel recursively.
 Simple iterative calculation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2001%20-%20The%20Tyranny%20of%20the%20Rocket%20Equation
 
 ---
 
@@ -26,7 +26,7 @@ Modify memory positions before execution.
 Part 2 searches for noun and verb.
 Simple interpreter and brute-force search.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2002%20-%201202%20Program%20Alarm
 
 ---
 
@@ -36,7 +36,7 @@ Find intersections between paths.
 Part 1 finds closest by distance.
 Part 2 finds minimal combined steps.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2003%20-%20Crossed%20Wires
 
 ---
 
@@ -46,7 +46,7 @@ Apply digit rules and ordering.
 Part 2 tightens repetition rule.
 Range filtering and validation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2004%20-%20Secure%20Container
 
 ---
 
@@ -56,7 +56,7 @@ Support input and output instructions.
 Part 2 adds jumps and comparisons.
 Interpreter enhancement.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2005%20-%20Sunny%20with%20a%20Chance%20of%20Asteroids
 
 ---
 
@@ -66,7 +66,7 @@ Count total direct and indirect orbits.
 Part 2 finds shortest transfer path.
 Tree traversal and graph search.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2006%20-%20Universal%20Orbit%20Map
 
 ---
 
@@ -76,7 +76,7 @@ Test permutations of phase settings.
 Part 2 introduces feedback loop.
 Search with stateful execution.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2007%20-%20Amplification%20Circuit
 
 ---
 
@@ -86,7 +86,7 @@ Find layer with fewest digits.
 Part 2 renders final image.
 Layer processing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2008%20-%20Space%20Image%20Format
 
 ---
 
@@ -96,7 +96,7 @@ Handle large memory and offsets.
 Run diagnostic program.
 Interpreter expansion.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2009%20-%20Sensor%20Boost
 
 ---
 
@@ -106,7 +106,7 @@ Count unique angles.
 Part 2 simulates laser destruction order.
 Geometry and angle sorting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2010%20-%20Monitoring%20Station
 
 ---
 
@@ -116,7 +116,7 @@ Track painted panels.
 Part 2 renders registration identifier.
 Grid simulation with interpreter.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2011%20-%20Space%20Police
 
 ---
 
@@ -126,7 +126,7 @@ Update velocity and position.
 Part 2 finds system repeat cycle.
 Physics simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2012%20-%20The%20N-Body%20Problem
 
 ---
 
@@ -136,7 +136,7 @@ Track tiles and score.
 Part 2 plays game automatically.
 Simulation with input control.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2013%20-%20Care%20Package
 
 ---
 
@@ -146,7 +146,7 @@ Track dependencies and leftovers.
 Part 2 maximises fuel production.
 Resource graph problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2014%20-%20Space%20Stoichiometry
 
 ---
 
@@ -156,7 +156,7 @@ Map walls and open spaces.
 Part 2 finds oxygen fill time.
 Exploration and BFS.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2015%20-%20Oxygen%20System
 
 ---
 
@@ -166,7 +166,7 @@ Repeat pattern-based processing.
 Part 2 optimises large input.
 Signal processing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2016%20-%20Flawed%20Frequency%20Transmission
 
 ---
 
@@ -176,7 +176,7 @@ Find alignment parameters.
 Part 2 compresses movement routines.
 Path planning.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2017%20-%20Set%20and%20Forget
 
 ---
 
@@ -186,7 +186,7 @@ Unlock paths with key collection.
 Part 2 splits into multiple agents.
 Complex pathfinding.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2018%20-%20Many-Worlds%20Interpretation
 
 ---
 
@@ -196,7 +196,7 @@ Scan grid area.
 Part 2 fits square in beam.
 Search and geometry.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2019%20-%20Tractor%20Beam
 
 ---
 
@@ -206,7 +206,7 @@ Part 1 uses flat layout.
 Part 2 introduces recursive layers.
 Graph traversal with levels.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2020%20-%20Donut%20Maze
 
 ---
 
@@ -216,7 +216,7 @@ Control jumps over holes.
 Part 2 uses extended instruction set.
 Custom scripting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2021%20-%20Springdroid%20Adventure
 
 ---
 
@@ -226,7 +226,7 @@ Model operations mathematically.
 Part 2 handles huge deck size.
 Modular arithmetic.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2022%20-%20Slam%20Shuffle
 
 ---
 
@@ -236,7 +236,7 @@ Packets routed between nodes.
 Part 2 introduces NAT device.
 Concurrent system simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2023%20-%20Category%20Six
 
 ---
 
@@ -246,7 +246,7 @@ Detect repeating biodiversity rating.
 Part 2 expands into recursive grids.
 Cellular automaton.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2024%20-%20Planet%20of%20Discord
 
 ---
 
@@ -256,7 +256,7 @@ Collect correct item combination.
 Pass security checkpoint.
 Interactive state exploration.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2019/Day%2025%20-%20Cryostasis
 
 ---
 

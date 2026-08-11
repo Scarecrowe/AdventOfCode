@@ -6,12 +6,15 @@
     public class Day11 : Puzzle, IPuzzle
     {
         public Day11()
+            : base(2022, 11, "Monkey in the Middle", StringSplitOptions.None)
         {
-            this.DayTitle = "Monkey in the Middle";
-            this.GetPuzzleData(11, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day11(string[] input) => this.Input = input;
+        public Day11(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new MonkeyInTheMiddle(this.Input.ToList()).Play(20)}";
 

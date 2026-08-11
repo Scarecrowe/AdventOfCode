@@ -6,9 +6,8 @@
     public class Day5 : Puzzle, IPuzzle
     {
         public Day5()
+            : base(2025, 5, "Cafeteria", StringSplitOptions.None)
         {
-            this.DayTitle = "Cafeteria";
-            this.GetPuzzleData(5, this.DayTitle, StringSplitOptions.None);
         }
 
         public string Silver() => $"{new Cafeteria(this.Input).AvailableCount()}";

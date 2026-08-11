@@ -16,7 +16,7 @@ Track position on a grid using directional changes.
 Part 1 finds final distance from origin.
 Part 2 finds first location visited twice.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2001%20-%20No%20Time%20for%20a%20Taxicab
 
 ---
 
@@ -26,7 +26,7 @@ Build code from resulting button presses.
 Part 2 uses a more complex keypad layout.
 Grid navigation with constraints.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2002%20-%20Bathroom%20Security
 
 ---
 
@@ -36,7 +36,7 @@ Part 1 reads rows as triangles.
 Part 2 reads columns instead.
 Simple validation with input reinterpretation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2003%20-%20Squares%20With%20Three%20Sides
 
 ---
 
@@ -46,7 +46,7 @@ Decrypt valid room names using shifting.
 Part 2 finds target room name.
 Frequency analysis and string manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2004%20-%20Security%20Through%20Obscurity
 
 ---
 
@@ -56,7 +56,7 @@ Look for hashes with specific prefixes.
 Part 2 places characters by position.
 Hashing and brute-force search.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2005%20-%20How%20About%20a%20Nice%20Game%20of%20Chess
 
 ---
 
@@ -66,7 +66,7 @@ Select most common character per column.
 Part 2 uses least common instead.
 Column-wise frequency counting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2006%20-%20Signals%20and%20Noise
 
 ---
 
@@ -76,7 +76,7 @@ Identify patterns inside and outside brackets.
 Part 2 looks for ABA/BAB relationships.
 Pattern matching with string segments.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2007%20-%20Internet%20Protocol%20Version%207
 
 ---
 
@@ -86,7 +86,7 @@ Apply rectangle and rotation commands.
 Count lit pixels after instructions.
 Grid manipulation and visual output.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2008%20-%20Two-Factor%20Authentication
 
 ---
 
@@ -96,7 +96,7 @@ Part 1 processes markers once.
 Part 2 expands recursively.
 String parsing with recursion.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2009%20-%20Explosives%20in%20Cyberspace
 
 ---
 
@@ -107,7 +107,7 @@ Part 1 finds specific comparison bot.
 Part 2 multiplies output bins.
 Event-driven simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2010%20-%20Balance%20Bots
 
 ---
 
@@ -117,7 +117,7 @@ Avoid invalid combinations of generators and chips.
 Find minimum steps to goal.
 State search with constraints.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2011%20-%20Radioisotope%20Thermoelectric%20Generators
 
 ---
 
@@ -127,7 +127,7 @@ Manipulate registers and jumps.
 Part 2 changes initial register state.
 Basic interpreter implementation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2012%20-%20Leonardo's%20Monorail
 
 ---
 
@@ -137,7 +137,7 @@ Navigate from start to target.
 Part 2 counts reachable locations within steps.
 Pathfinding in generated grid.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2013%20-%20A%20Maze%20of%20Twisty%20Little%20Cubicles
 
 ---
 
@@ -147,7 +147,7 @@ Detect repeating character sequences.
 Part 2 increases hash complexity.
 Hashing with pattern tracking.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2014%20-%20One-Time%20Pad
 
 ---
 
@@ -157,7 +157,7 @@ Each disc has position and timing.
 Find earliest valid time.
 Modular arithmetic problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2015%20-%20Timing%20is%20Everything
 
 ---
 
@@ -167,7 +167,7 @@ Compute checksum by pair reduction.
 Part 2 uses larger data size.
 String expansion and reduction.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2016%20-%20Dragon%20Checksum
 
 ---
 
@@ -177,7 +177,7 @@ Door states depend on current path hash.
 Find shortest and longest paths.
 Pathfinding with dynamic rules.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2017%20-%20Two%20Steps%20Forward
 
 ---
 
@@ -187,7 +187,7 @@ Safe and trap tiles evolve over time.
 Count safe tiles across rows.
 Cellular automaton variation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2018%20-%20Like%20a%20Rogue
 
 ---
 
@@ -197,7 +197,7 @@ Part 1 uses classic Josephus logic.
 Part 2 changes elimination rules.
 Mathematical pattern optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2019%20-%20An%20Elephant%20Named%20Joseph
 
 ---
 
@@ -207,7 +207,7 @@ Merge and analyse blocked intervals.
 Part 1 finds lowest allowed IP.
 Part 2 counts total allowed addresses.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2020%20-%20Firewall%20Rules
 
 ---
 
@@ -217,7 +217,7 @@ Includes swaps, rotations, and moves.
 Part 2 reverses operations.
 String transformation logic.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2021%20-%20Scrambled%20Letters%20and%20Hash
 
 ---
 
@@ -227,7 +227,7 @@ Count viable pairs based on capacity.
 Part 2 moves goal data to origin.
 Grid and pathfinding problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2022%20-%20Grid%20Computing
 
 ---
 
@@ -237,7 +237,7 @@ Instructions can modify themselves.
 Optimisation needed for performance.
 Self-modifying code simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2023%20-%20Safe%20Cracking
 
 ---
 
@@ -247,7 +247,7 @@ Grid-based travelling salesman problem.
 Part 2 returns to starting point.
 Pathfinding with permutations.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2024%20-%20Air%20Duct%20Spelunking
 
 ---
 
@@ -257,7 +257,7 @@ Run assembly program and monitor output.
 Detect repeating pattern.
 Interpreter with output validation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2016/Day%2025%20-%20Clock%20Signal
 
 ---
 

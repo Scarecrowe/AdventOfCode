@@ -6,12 +6,15 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2015, 7, "ProbablySome Assembly Required", StringSplitOptions.None)
         {
-            this.DayTitle = "ProbablySome Assembly Required";
-            this.GetPuzzleData(7, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day7(string[] input) => this.Input = input;
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new SomeAssemblyRequired(this.Input).Assemble().WireA()}";
 

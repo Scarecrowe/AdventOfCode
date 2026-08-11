@@ -389,6 +389,27 @@
             return result.ToString();
         }
 
+        public string[] ToStringArray()
+        {
+            List<string> result = new();
+
+            StringBuilder sb = new();
+
+            for (int y = 0; y < this.Height.ToLong(); y++)
+            {
+                sb.Clear();
+
+                for (int x = 0; x < this.Width.ToLong(); x++)
+                {
+                    sb.Append($"{this[new(x, y)]}");
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
+        }
+
         public TValue Sum()
         {
             if (typeof(TValue) == typeof(int))

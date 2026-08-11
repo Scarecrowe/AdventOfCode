@@ -16,7 +16,7 @@ Combine digits based on positional rules.
 Part 2 introduces alternate parsing logic.
 String processing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2001%20-%20Secret%20Entrance
 
 ---
 
@@ -26,7 +26,7 @@ Resolve dependencies between signals.
 Part 2 modifies input constraints.
 Graph evaluation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2002%20-%20Gift%20Shop
 
 ---
 
@@ -36,7 +36,7 @@ Track shortest valid path.
 Part 2 adds dynamic blockers.
 Pathfinding.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2003%20-%20Lobby
 
 ---
 
@@ -46,7 +46,7 @@ Validate pattern rules.
 Part 2 allows partial mismatches.
 Pattern matching.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2004%20-%20Printing%20Department
 
 ---
 
@@ -56,7 +56,7 @@ Track position changes.
 Part 2 scales input size.
 List manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2005%20-%20Cafeteria
 
 ---
 
@@ -66,7 +66,7 @@ Detect peaks and anomalies.
 Part 2 aggregates signal ranges.
 Time-series analysis.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2006%20-%20Trash%20Compactor
 
 ---
 
@@ -76,7 +76,7 @@ Test multiple permutations.
 Part 2 introduces additional operators.
 Search and evaluation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2007%20-%20Laboratories
 
 ---
 
@@ -86,7 +86,7 @@ Find overlapping transmission points.
 Part 2 expands detection rules.
 Graph and geometry.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2008%20-%20Playground
 
 ---
 
@@ -96,7 +96,7 @@ Track fragmentation patterns.
 Part 2 optimises large moves.
 Array manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2009%20-%20Movie%20Theater
 
 ---
 
@@ -106,7 +106,7 @@ Count valid paths.
 Part 2 tracks all possible routes.
 Graph traversal.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2010%20-%20Factory
 
 ---
 
@@ -116,7 +116,7 @@ Track population changes.
 Part 2 scales significantly.
 Simulation with counting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2011%20-%20Reactor
 
 ---
 
@@ -126,7 +126,7 @@ Calculate area metrics.
 Part 2 refines boundary rules.
 Flood fill.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2025/Day%2012%20-%20Christmas%20Tree%20Farm
 
 ---
 

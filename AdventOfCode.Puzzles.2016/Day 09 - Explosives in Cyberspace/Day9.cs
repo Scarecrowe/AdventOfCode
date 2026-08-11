@@ -6,12 +6,15 @@
     public class Day9 : Puzzle, IPuzzle
     {
         public Day9()
+            : base(2016, 9, "Explosives in Cyberspace")
         {
-            this.DayTitle = "Explosives in Cyberspace";
-            this.GetPuzzleData(9, this.DayTitle);
         }
 
-        public Day9(string[] input) => this.Input = input;
+        public Day9(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{ExplosivesInCyberspace.Decompress(this.Input[0])}";
 

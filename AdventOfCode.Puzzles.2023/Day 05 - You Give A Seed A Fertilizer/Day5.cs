@@ -6,9 +6,14 @@
     public class Day5 : Puzzle, IPuzzle
     {
         public Day5()
+            : base(2023, 5, "You Give A Seed A Fertilizer", StringSplitOptions.None)
         {
-            this.DayTitle = "You Give A Seed A Fertilizer";
-            this.GetPuzzleData(5, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day5(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new YouGiveASeedAFertilizer([.. this.Input]).LowestSeed()}";

@@ -6,12 +6,11 @@
     using AdventOfCode.Animation.Terraria.Biomes;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class SceneRenderer
     {
         public SceneRenderer(
-            ReservoirResearch puzzle,
+            ITerrariaRenderer puzzle,
             Dictionary<BiomeType, Biome> biomes,
             List<Basin> basins)
         {
@@ -27,7 +26,7 @@
             this.RandomRenderer = new(this.Basins, this.Biomes);
         }
 
-        public ReservoirResearch Puzzle { get; }
+        public ITerrariaRenderer Puzzle { get; }
 
         public Bitmap Scene { get; private set; }
 
@@ -150,7 +149,7 @@
                 this.Graphics.DrawImage(BiomeRenderer.RenderBiomeJoin(scenes[i]), 0, start - 500);
             }
 
-            this.Scene.Save($"{Animation.GetRenderPath()}\\scene.jpg", ImageFormat.Png);
+            this.Scene.Save($"{Animation.GetRenderPath(2018, 17, "Reservoir Research")}\\scene.jpg", ImageFormat.Png);
         }
     }
 }

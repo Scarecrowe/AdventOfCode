@@ -6,9 +6,14 @@
     public class Day23 : Puzzle, IPuzzle
     {
         public Day23()
+            : base(2024, 23, "LAN Party" , StringSplitOptions.None)
         {
-            this.DayTitle = "LAN Party";
-            this.GetPuzzleData(23, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day23(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new LANParty(this.Input).Interconnections()}";

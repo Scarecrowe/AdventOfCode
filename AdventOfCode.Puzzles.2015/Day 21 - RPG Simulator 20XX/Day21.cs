@@ -6,12 +6,15 @@
     public class Day21 : Puzzle, IPuzzle
     {
         public Day21()
+            : base(2015, 21, "RPG Simulator 20XX")
         {
-            this.DayTitle = "RPG Simulator 20XX";
-            this.GetPuzzleData(21, this.DayTitle);
         }
 
-        public Day21(string[] input) => this.Input = input;
+        public Day21(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new RpgSimulator20XX(this.Input).MinGold()}";
 

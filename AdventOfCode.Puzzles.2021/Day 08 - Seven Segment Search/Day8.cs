@@ -6,12 +6,15 @@
     public class Day8 : Puzzle, IPuzzle
     {
         public Day8()
+            : base(2021, 8, "Seven Segment Searc")
         {
-            this.DayTitle = "Seven Segment Search";
-            this.GetPuzzleData(8, this.DayTitle);
         }
 
-        public Day8(string[] input) => this.Input = input;
+        public Day8(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new SevenSegmentDisplay(this.Input).UniqueOutputValues()}";
 

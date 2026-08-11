@@ -6,12 +6,15 @@
     public class Day22 : Puzzle, IPuzzle
     {
         public Day22()
+            : base(2019, 22, "Slam Shuffle")
         {
-            this.DayTitle = "Slam Shuffle";
-            this.GetPuzzleData(22, this.DayTitle);
         }
 
-        public Day22(string[] input) => this.Input = input;
+        public Day22(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new SlamShuffle(this.Input).Shuffle()}";
 

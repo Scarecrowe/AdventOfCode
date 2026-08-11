@@ -6,9 +6,14 @@
     public class Day22 : Puzzle, IPuzzle
     {
         public Day22()
+            : base(2024, 22, "Monkey Market", StringSplitOptions.None)
         {
-            this.DayTitle = "Monkey Market";
-            this.GetPuzzleData(22, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day22(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new MonkeyMarket(this.Input).Sum()}";

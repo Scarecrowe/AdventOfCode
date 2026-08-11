@@ -6,12 +6,15 @@
     public class Day2 : Puzzle, IPuzzle
     {
         public Day2()
+            : base(2015, 2, "I Was Told There Would Be No Math")
         {
-            this.DayTitle = "I Was Told There Would Be No Math";
-            this.GetPuzzleData(2, this.DayTitle);
         }
 
-        public Day2(string[] input) => this.Input = input;
+        public Day2(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new IWasToldThereWouldBeNoMath(this.Input).WrappingPaper()}";
 

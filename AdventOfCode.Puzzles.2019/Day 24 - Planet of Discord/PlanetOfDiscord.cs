@@ -1,7 +1,9 @@
 ﻿namespace AdventOfCode.Puzzles._2019.Day_24___Planet_of_Discord
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
+    using System.Text;
 
     public class PlanetOfDiscord
     {
@@ -12,6 +14,14 @@
             this.Cache = new();
             this.Visited = new bool[0, 0];
         }
+
+        public PlanetOfDiscord(string[] input, IFrameRenderer renderer)
+            : this(input)
+        {
+            this.Renderer = renderer;
+        }
+
+        public IFrameRenderer? Renderer { get; }
 
         private VectorArray<int, char> Map { get; set; }
 
@@ -101,6 +111,95 @@
             }
 
             return totalBugs;
+        }
+
+        public PlanetOfDiscord RenderSilver(int renderEvery = 1)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            List<string[]> frames = [];
+            HashSet<string> seen = [];
+
+            int minute = 0;
+            seen.Add(this.Map.Flatten().Join());
+
+            frames.Add(this.BuildSingleLevelFrame(
+                $"PLANET OF DISCORD // MINUTE {minute:000} // BIODIVERSITY {this.GetBiodiversity(this.Map):000000000}",
+                this.Map));
+
+            while (true)
+            {
+                minute++;
+
+                VectorArray<int, char> next = this.EvolveSingleLevel(this.Map);
+                string key = next.Flatten().Join();
+
+                this.Map = next;
+
+                if (minute % renderEvery == 0 || seen.Contains(key))
+                {
+                    frames.Add(this.BuildSingleLevelFrame(
+                        seen.Contains(key)
+                            ? $"FIRST REPEATED LAYOUT // MINUTE {minute:000} // BIODIVERSITY {this.GetBiodiversity(this.Map):000000000}"
+                            : $"PLANET OF DISCORD // MINUTE {minute:000} // BIODIVERSITY {this.GetBiodiversity(this.Map):000000000}",
+                        this.Map));
+                }
+
+                if (seen.Contains(key))
+                {
+                    frames.Add(this.BuildSingleLevelFrame(
+                           $"FIRST REPEATED LAYOUT // BIODIVERSITY {this.GetBiodiversity(this.Map):000000000}",
+                           this.Map));
+
+                    break;
+                }
+
+                seen.Add(key);
+            }
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
+        }
+
+        public PlanetOfDiscord RenderGold(int renderEvery = 1)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            Dictionary<int, bool[,]> levels = this.CreateInitialLevels();
+
+            List<string[]> frames = [];
+
+            frames.Add(this.BuildRecursiveFrame(
+                $"RECURSIVE PLANET OF DISCORD // MINUTE 000 // BUGS {this.CountBugs(levels):0000}",
+                levels));
+
+            for (int minute = 1; minute <= 200; minute++)
+            {
+                this.EvolveWithLevels(levels);
+
+                if (minute % renderEvery == 0 || minute == 200)
+                {
+                    frames.Add(this.BuildRecursiveFrame(
+                        $"RECURSIVE PLANET OF DISCORD // MINUTE {minute:000} // BUGS {this.CountBugs(levels):0000}",
+                        levels,
+                        visibleRadius: 6));
+                }
+            }
+
+            frames.Add(this.BuildRecursiveFrame(
+                    $"AFTER 200 MINUTES // BUGS {this.CountBugs(levels):0000}",
+                    levels));
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
         }
 
         private static bool HasOuterEdgeBugs(bool[,] level) => Vector<int>.Outer.Any(p => level[p.Y, p.X]);
@@ -246,6 +345,199 @@
             {
                 levels[kvp.Key] = kvp.Value;
             }
+        }
+
+        private VectorArray<int, char> EvolveSingleLevel(VectorArray<int, char> map)
+        {
+            VectorArray<int, char> next = new(map.Width, map.Height);
+
+            foreach (VectorCell<int, char> cell in map.AxisEnumerator())
+            {
+                int bugs = map.AdjacentCardinal(cell.Point).Count(c => c.Value == '#');
+
+                if (cell.Value == '#')
+                {
+                    next[cell.Point] = bugs == 1 ? '#' : '.';
+                }
+                else
+                {
+                    next[cell.Point] = bugs is 1 or 2 ? '#' : '.';
+                }
+            }
+
+            return next;
+        }
+
+        private long GetBiodiversity(VectorArray<int, char> map)
+        {
+            long result = 0;
+            string key = map.Flatten().Join();
+
+            for (int i = 0; i < key.Length; i++)
+            {
+                if (key[i] == '#')
+                {
+                    result += 1L << i;
+                }
+            }
+
+            return result;
+        }
+
+        private Dictionary<int, bool[,]> CreateInitialLevels()
+        {
+            bool[,] level = new bool[this.Map.Height, this.Map.Width];
+
+            for (int y = 0; y < this.Map.Height; y++)
+            {
+                for (int x = 0; x < this.Map.Width; x++)
+                {
+                    level[y, x] = this.Input[y][x] == '#';
+                }
+            }
+
+            return new Dictionary<int, bool[,]>
+    {
+        { 0, level }
+    };
+        }
+
+        private int CountBugs(Dictionary<int, bool[,]> levels)
+        {
+            int total = 0;
+
+            foreach (bool[,] level in levels.Values)
+            {
+                for (int y = 0; y < this.Map.Height; y++)
+                {
+                    for (int x = 0; x < this.Map.Width; x++)
+                    {
+                        if (level[y, x])
+                        {
+                            total++;
+                        }
+                    }
+                }
+            }
+
+            return total;
+        }
+
+        private string[] BuildSingleLevelFrame(string title, VectorArray<int, char> map)
+        {
+            List<string> result = [];
+
+            result.Add(title);
+            result.Add(string.Empty);
+
+            for (int y = 0; y < map.Height; y++)
+            {
+                StringBuilder sb = new();
+
+                for (int x = 0; x < map.Width; x++)
+                {
+                    sb.Append(map[y, x]);
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
+        }
+
+        private string[] BuildRecursiveFrame(
+            string title,
+            Dictionary<int, bool[,]> levels,
+            int visibleRadius = 5)
+        {
+            List<string> result = [];
+
+            int bugCount = this.CountBugs(levels);
+            int minLevel = levels.Keys.Min();
+            int maxLevel = levels.Keys.Max();
+
+            result.Add(title);
+            result.Add($"VISIBLE LEVELS {-visibleRadius:+000;-000;000} TO {visibleRadius:+000;-000;000} // ACTIVE LEVELS {minLevel:+000;-000;000} TO {maxLevel:+000;-000;000}");
+            result.Add(string.Empty);
+
+            for (int level = -visibleRadius; level <= visibleRadius; level++)
+            {
+                bool[,] map = levels.TryGetValue(level, out bool[,]? existing)
+                    ? existing
+                    : new bool[this.Map.Height, this.Map.Width];
+
+                result.Add($"LEVEL {level:+000;-000;000}");
+
+                for (int y = 0; y < this.Map.Height; y++)
+                {
+                    StringBuilder sb = new();
+
+                    for (int x = 0; x < this.Map.Width; x++)
+                    {
+                        if (x == 2 && y == 2)
+                        {
+                            sb.Append('?');
+                        }
+                        else
+                        {
+                            sb.Append(map[y, x] ? '#' : '.');
+                        }
+                    }
+
+                    result.Add(sb.ToString());
+                }
+
+                result.Add(string.Empty);
+            }
+
+            result.Add($"TOTAL BUGS {bugCount:0000}");
+
+            return [.. result];
+        }
+
+        private static bool LevelHasBugs(bool[,] level)
+        {
+            for (int y = 0; y < level.GetLength(0); y++)
+            {
+                for (int x = 0; x < level.GetLength(1); x++)
+                {
+                    if (level[y, x])
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        private void RenderPaddedFrames(List<string[]> frames)
+        {
+            int width = frames.SelectMany(frame => frame).Max(row => row.Length);
+            int height = frames.Max(frame => frame.Length);
+
+            foreach (string[] frame in frames)
+            {
+                this.Renderer?.RenderFrame(
+                    new Frame(PadFrame(frame, width, height)));
+            }
+        }
+
+        private static string[] PadFrame(string[] frame, int width, int height)
+        {
+            List<string> result = [];
+
+            foreach (string row in frame)
+            {
+                result.Add(row.PadRight(width, ' '));
+            }
+
+            while (result.Count < height)
+            {
+                result.Add(new string(' ', width));
+            }
+
+            return [.. result];
         }
     }
 }

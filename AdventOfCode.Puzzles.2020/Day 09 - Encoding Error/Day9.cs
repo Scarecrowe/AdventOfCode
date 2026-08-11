@@ -6,12 +6,15 @@
     public class Day9 : Puzzle, IPuzzle
     {
         public Day9()
+            : base(2020, 9, "Encoding Error")
         {
-            this.DayTitle = "Encoding Error";
-            this.GetPuzzleData(9, this.DayTitle);
         }
 
-        public Day9(string[] input) => this.Input = input;
+        public Day9(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new EncodingError(this.Input).FindInvalid()}";
 

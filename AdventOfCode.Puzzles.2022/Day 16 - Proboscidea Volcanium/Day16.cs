@@ -6,12 +6,15 @@
     public class Day16 : Puzzle, IPuzzle
     {
         public Day16()
+            : base(2022, 16, "Proboscidea Volcanium")
         {
-            this.DayTitle = "Proboscidea Volcanium";
-            this.GetPuzzleData(16, this.DayTitle);
         }
 
-        public Day16(string[] input) => this.Input = input;
+        public Day16(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ProboscideaVolcanium(this.Input).Single()}";
 

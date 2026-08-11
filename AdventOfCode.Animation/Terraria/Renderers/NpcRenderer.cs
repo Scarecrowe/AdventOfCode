@@ -2,8 +2,6 @@
 {
     using System.Drawing;
     using AdventOfCode.Animation.Terraria.Npcs;
-    using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class NpcRenderer
     {

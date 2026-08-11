@@ -84,5 +84,15 @@
 
             return turn;
         }
+
+        public void Turn(string turn)
+        {
+            this.Direction = turn switch
+            {
+                "L" => CardinalHelper.AntiClockwise[this.Direction],
+                "R" => CardinalHelper.Clockwise[this.Direction],
+                _ => this.Direction
+            };
+        }
     }
 }

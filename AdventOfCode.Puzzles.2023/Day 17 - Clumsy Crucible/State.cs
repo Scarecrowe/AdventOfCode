@@ -24,7 +24,7 @@
             => state?.GetHashCode() == this.GetHashCode();
 
         public override bool Equals(object? obj)
-            => this.Equals((State)(obj ?? new()));
+            => obj is State state && this.Equals(state);
 
         public State Next(VectorCell<int, int> cell)
             => new(cell.Point, cell.Direction, cell.Direction == this.Direction ? this.Distance + 1 : 1);

@@ -1,11 +1,16 @@
 ﻿namespace AdventOfCode.Puzzles._2018.Day_22___Mode_Maze
 {
     using System.Text;
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
 
     public class ModeMaze
     {
+        private const int ViewportWidth = 48;
+        private const int ViewportHeight = 32;
+        private const int HoldFrames = 24;
+
         public ModeMaze(string[] input, long xOffset, long yOffset)
         {
             this.Moves = new();
@@ -16,6 +21,18 @@
             this.BuildMoves();
         }
 
+        public ModeMaze(
+            string[] input,
+            long xOffset,
+            long yOffset,
+            IFrameRenderer renderer)
+            : this(input, xOffset, yOffset)
+        {
+            this.Renderer = renderer;
+        }
+
+        public IFrameRenderer? Renderer { get; }
+
         public int Depth { get; }
 
         public Vector<long> Target { get; }
@@ -25,6 +42,8 @@
         public VectorArray<long, MazeEntity> Map { get; }
 
         private Dictionary<MazeEntityType, Dictionary<MazeEntityType, Dictionary<MazeToolType, List<MazeMove>>>> Moves { get; set; }
+
+        private readonly record struct PathKey(Vector<long> Point, MazeToolType Tool);
 
         public ModeMaze BuildMap()
         {
@@ -64,6 +83,7 @@
             while (queue.Count > 0)
             {
                 MazeState walk = queue.Dequeue();
+
                 Vector<long> point = walk.Point.Clone();
                 MazeEntity entity = this.Map[point];
 
@@ -126,7 +146,375 @@
             return result;
         }
 
-        public ModeMaze Print()
+        public ModeMaze RenderSilver()
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            List<string[]> frames = [];
+            HashSet<Vector<long>> scanned = [];
+
+            long risk = 0;
+
+            for (long y = 0; y <= this.Target.Y; y++)
+            {
+                for (long x = 0; x <= this.Target.X; x++)
+                {
+                    Vector<long> point = new(x, y);
+                    scanned.Add(point);
+                    risk += (int)this.Map[y, x].Region;
+
+                    if ((x + y) % 3 == 0 || point == this.Target)
+                    {
+                        frames.Add(this.BuildRiskFrame(point, scanned, risk));
+                    }
+                }
+            }
+
+            for (int i = 0; i < HoldFrames; i++)
+            {
+                frames.Add(this.BuildRiskFrame(this.Target, scanned, risk));
+            }
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
+        }
+
+        public ModeMaze RenderGold(int renderEvery = 1)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            List<MazeState> path = this.WalkMazePath().ToList();
+
+            if (path.Count == 0)
+            {
+                return this;
+            }
+
+            List<string[]> frames = [];
+            HashSet<Vector<long>> trail = [];
+
+            for (int i = 0; i < path.Count; i++)
+            {
+                MazeState state = path[i];
+                trail.Add(state.Point);
+
+                if (i % renderEvery == 0 || i == path.Count - 1)
+                {
+                    frames.Add(this.BuildPathFrame(state, trail, i, path.Count));
+                }
+            }
+
+            MazeState last = path.Last();
+
+            for (int i = 0; i < HoldFrames; i++)
+            {
+                frames.Add(this.BuildPathFrame(last, trail, path.Count, path.Count));
+            }
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
+        }
+
+        public void Render()
+        {
+            this.RenderGold();
+        }
+
+        private IEnumerable<MazeState> WalkMazePath()
+        {
+            long result = long.MaxValue;
+
+            Queue<MazeState> queue = new();
+            queue.Enqueue(new(new(), MazeToolType.Torch, 0, -1));
+            queue.Enqueue(new(new(), MazeToolType.ClimbingGear, 1, -1));
+
+            Dictionary<PathKey, long> visited = new();
+            Dictionary<PathKey, PathKey> cameFrom = new();
+            Dictionary<PathKey, MazeState> states = new();
+
+            PathKey startTorch = new(new(), MazeToolType.Torch);
+            PathKey startGear = new(new(), MazeToolType.ClimbingGear);
+
+            visited[startTorch] = 0;
+            visited[startGear] = 7;
+            states[startTorch] = new(new(), MazeToolType.Torch, 0, -1);
+            states[startGear] = new(new(), MazeToolType.ClimbingGear, 1, -1);
+
+            PathKey? bestTarget = null;
+
+            while (queue.Count > 0)
+            {
+                MazeState walk = queue.Dequeue();
+
+                Vector<long> point = walk.Point.Clone();
+                MazeEntity entity = this.Map[point];
+
+                long score = walk.Score();
+
+                if (score >= result)
+                {
+                    continue;
+                }
+
+                if (point == this.Target)
+                {
+                    MazeState final = walk;
+
+                    if (walk.Tool != MazeToolType.Torch)
+                    {
+                        final = new(walk.Point, MazeToolType.Torch, walk.SwitchCount + 1, walk.MoveCount);
+                        score = final.Score();
+                    }
+
+                    if (score < result)
+                    {
+                        result = score;
+                        bestTarget = new(final.Point, final.Tool);
+
+                        PathKey oldKey = new(walk.Point, walk.Tool);
+                        PathKey finalKey = new(final.Point, final.Tool);
+
+                        states[finalKey] = final;
+
+                        if (oldKey != finalKey)
+                        {
+                            cameFrom[finalKey] = oldKey;
+                        }
+                    }
+
+                    continue;
+                }
+
+                foreach (VectorCell<long, MazeEntity> adjacent in this.Map.AdjacentCardinal(walk.Point))
+                {
+                    List<MazeMove> moves = this.Moves[entity.Region][adjacent.Value.Region][walk.Tool];
+
+                    foreach (MazeMove move in moves)
+                    {
+                        long switchCount = walk.SwitchCount + move.SwitchCount;
+                        long moveCount = walk.MoveCount + 1;
+
+                        MazeState next = new(new(adjacent.Point), move.Tool, switchCount, moveCount);
+                        long nextScore = next.Score();
+
+                        PathKey currentKey = new(walk.Point, walk.Tool);
+                        PathKey nextKey = new(next.Point, next.Tool);
+
+                        if (visited.TryGetValue(nextKey, out long previousScore) &&
+                            nextScore >= previousScore)
+                        {
+                            continue;
+                        }
+
+                        visited[nextKey] = nextScore;
+                        cameFrom[nextKey] = currentKey;
+                        states[nextKey] = next;
+
+                        queue.Enqueue(next);
+                    }
+                }
+            }
+
+            if (bestTarget == null)
+            {
+                yield break;
+            }
+
+            foreach (MazeState state in ReconstructPath(cameFrom, states, bestTarget.Value))
+            {
+                yield return state;
+            }
+        }
+
+        private string[] BuildRiskFrame(
+            Vector<long> current,
+            HashSet<Vector<long>> scanned,
+            long risk)
+        {
+            string title = $"MODE MAZE // RISK SCAN // RISK {risk:00000}";
+            return this.BuildFrame(
+                current,
+                MazeToolType.Torch,
+                scanned,
+                [],
+                title,
+                footer: $"TARGET {this.Target.X},{this.Target.Y} // DEPTH {this.Depth}");
+        }
+
+        private string[] BuildPathFrame(
+            MazeState state,
+            HashSet<Vector<long>> trail,
+            int step,
+            int totalSteps)
+        {
+            string title = $"MODE MAZE // RESCUE ROUTE // TIME {state.Score():0000} // TOOL {ToolName(state.Tool)}";
+            string footer = $"STEP {step:0000}/{totalSteps:0000} // SWITCHES {state.SwitchCount:000} // MOVES {state.MoveCount:0000}";
+
+            return this.BuildFrame(
+                state.Point,
+                state.Tool,
+                [],
+                trail,
+                title,
+                footer);
+        }
+
+        private string[] BuildFrame(
+            Vector<long> current,
+            MazeToolType tool,
+            HashSet<Vector<long>> scanned,
+            HashSet<Vector<long>> trail,
+            string title,
+            string footer)
+        {
+            Dictionary<MazeEntityType, char> display = new()
+            {
+                { MazeEntityType.Rocky, '.' },
+                { MazeEntityType.Wet, '=' },
+                { MazeEntityType.Narrow, '|' },
+            };
+
+            long mapWidth = this.Target.X + this.Offset.X + 1;
+            long mapHeight = this.Target.Y + this.Offset.Y + 1;
+
+            long startX = current.X - (ViewportWidth / 2);
+            long startY = current.Y - (ViewportHeight / 2);
+
+            startX = Math.Max(0, Math.Min(startX, Math.Max(0, mapWidth - ViewportWidth)));
+            startY = Math.Max(0, Math.Min(startY, Math.Max(0, mapHeight - ViewportHeight)));
+
+            List<string> result = [];
+            result.Add(title);
+            result.Add(new string('-', ViewportWidth));
+
+            StringBuilder sb = new(ViewportWidth);
+
+            for (long y = startY; y < startY + ViewportHeight; y++)
+            {
+                for (long x = startX; x < startX + ViewportWidth; x++)
+                {
+                    Vector<long> point = new(x, y);
+
+                    if (point == current)
+                    {
+                        sb.Append(GetToolCharacter(tool));
+                    }
+                    else if (point == this.Target)
+                    {
+                        sb.Append('X');
+                    }
+                    else if (x == 0 && y == 0)
+                    {
+                        sb.Append('M');
+                    }
+                    else if (trail.Contains(point))
+                    {
+                        sb.Append('*');
+                    }
+                    else if (scanned.Contains(point))
+                    {
+                        sb.Append('+');
+                    }
+                    else if (x < 0 || y < 0 || x >= mapWidth || y >= mapHeight)
+                    {
+                        sb.Append(' ');
+                    }
+                    else
+                    {
+                        sb.Append(display[this.Map[y, x].Region]);
+                    }
+                }
+
+                result.Add(sb.ToString());
+                sb.Clear();
+            }
+
+            result.Add(new string('-', ViewportWidth));
+            result.Add(footer);
+
+            return [.. result];
+        }
+
+        private void RenderPaddedFrames(List<string[]> frames)
+        {
+            int width = frames.SelectMany(frame => frame).Max(row => row.Length);
+            int height = frames.Max(frame => frame.Length);
+
+            foreach (string[] frame in frames)
+            {
+                this.Renderer?.RenderFrame(new Frame(PadFrame(frame, width, height)));
+            }
+        }
+
+        private static string[] PadFrame(string[] frame, int width, int height)
+        {
+            List<string> result = [];
+
+            foreach (string row in frame)
+            {
+                result.Add(row.PadRight(width, ' '));
+            }
+
+            while (result.Count < height)
+            {
+                result.Add(new string(' ', width));
+            }
+
+            return [.. result];
+        }
+
+        private static char GetToolCharacter(MazeToolType tool)
+        {
+            return tool switch
+            {
+                MazeToolType.Torch => 'T',
+                MazeToolType.ClimbingGear => 'C',
+                MazeToolType.Neither => 'N',
+                _ => '?'
+            };
+        }
+
+        private static string ToolName(MazeToolType tool)
+        {
+            return tool switch
+            {
+                MazeToolType.Torch => "TORCH",
+                MazeToolType.ClimbingGear => "GEAR",
+                MazeToolType.Neither => "NEITHER",
+                _ => "UNKNOWN"
+            };
+        }
+
+        private static IEnumerable<MazeState> ReconstructPath(
+            Dictionary<PathKey, PathKey> cameFrom,
+            Dictionary<PathKey, MazeState> states,
+            PathKey target)
+        {
+            Stack<MazeState> path = new();
+
+            PathKey current = target;
+
+            while (cameFrom.ContainsKey(current))
+            {
+                path.Push(states[current]);
+                current = cameFrom[current];
+            }
+
+            while (path.Count > 0)
+            {
+                yield return path.Pop();
+            }
+        }
+
+        private ModeMaze Print()
         {
             Dictionary<MazeEntityType, char> display = new()
             {

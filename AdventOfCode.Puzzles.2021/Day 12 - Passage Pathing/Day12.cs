@@ -6,12 +6,15 @@
     public class Day12 : Puzzle, IPuzzle
     {
         public Day12()
+            : base(2021, 12, "Passage Pathing")
         {
-            this.DayTitle = "Passage Pathing";
-            this.GetPuzzleData(12, this.DayTitle);
         }
 
-        public Day12(string[] input) => this.Input = input;
+        public Day12(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new PassagePathing(this.Input).UniquePathCount()}";
 

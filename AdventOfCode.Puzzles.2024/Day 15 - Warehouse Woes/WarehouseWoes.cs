@@ -1,7 +1,7 @@
 ﻿namespace AdventOfCode.Puzzles._2024.Day_15___Warehouse_Woes
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
-    using System.Drawing;
     using System.Text;
 
     public class WarehouseWoes
@@ -12,7 +12,9 @@
 
         public Vector<int> Robot { get; private set; }
 
-        public bool Wider { get; private set; } 
+        public bool Wider { get; private set; }
+
+        public IFrameRenderer? Renderer { get; }
 
         public WarehouseWoes(string[] input, bool wider = false)
         {
@@ -21,7 +23,13 @@
             this.Parse(input, wider);
             this.Robot = this.Map.AxisEnumerator().First(x => x.Value == '@').Point;
         }
-        
+
+        public WarehouseWoes(string[] input, IFrameRenderer renderer, bool wider = false)
+            : this(input, wider)
+        {
+            this.Renderer = renderer;
+        }
+
         private bool CanPush(Vector<int> point, Cardinal move)
         {
             while (true)
@@ -41,7 +49,7 @@
 
         private bool CanPushVertical(List<Vector<int>> group, Cardinal move)
         {
-            foreach(var point in group)
+            foreach (var point in group)
             {
                 var tmp = point.Clone().Transform(move);
 
@@ -66,7 +74,7 @@
             {
                 var state = queue.Dequeue();
 
-                foreach(var cell in this.Map.AdjacentCardinal(state))
+                foreach (var cell in this.Map.AdjacentCardinal(state))
                 {
                     if (cell.Direction == Cardinal.North
                         || cell.Direction == Cardinal.South
@@ -100,7 +108,8 @@
             {
                 result.Add(point.Clone() + Vector<int>.West);
                 queue.Enqueue(point.Clone() + Vector<int>.West);
-            } else
+            }
+            else
             {
                 result.Add(point.Clone() + Vector<int>.East);
                 queue.Enqueue(point.Clone() + Vector<int>.East);
@@ -157,23 +166,34 @@
         {
             foreach (Cardinal direction in this.Moves)
             {
-                Vector<int> point = CardinalHelper.Transform(this.Robot, direction);
+                this.ApplyMove(direction);
+            }
+        }
 
-                switch (this.Map[point])
-                {
-                    case '.':
-                        this.MoveRobot(point);
-                        break;
-                    case '#':
-                        break;
-                    case 'O':
-                        this.MoveSingle(point, direction);
-                        break;
-                    case '[':
-                    case ']':
-                        this.MoveGroup(point, direction);
-                        break;
-                }
+        public WarehouseWoes RenderSilver(int renderEvery = 12)
+            => this.RenderWarehouse(renderEvery, "WAREHOUSE WOES");
+
+        public WarehouseWoes RenderGold(int renderEvery = 12)
+            => this.RenderWarehouse(renderEvery, "WIDE WAREHOUSE WOES");
+
+        private void ApplyMove(Cardinal direction)
+        {
+            Vector<int> point = CardinalHelper.Transform(this.Robot, direction);
+
+            switch (this.Map[point])
+            {
+                case '.':
+                    this.MoveRobot(point);
+                    break;
+                case '#':
+                    break;
+                case 'O':
+                    this.MoveSingle(point, direction);
+                    break;
+                case '[':
+                case ']':
+                    this.MoveGroup(point, direction);
+                    break;
             }
         }
 
@@ -207,7 +227,7 @@
 
         private void MoveGroup(Vector<int> point, Cardinal direction)
         {
-            bool horizontal = (direction == Cardinal.West || direction == Cardinal.East);
+            bool horizontal = direction == Cardinal.West || direction == Cardinal.East;
             var group = horizontal
                         ? this.BoxGroupHorizontal(point.Clone())
                         : this.BoxGroupVertical(point.Clone(), direction);
@@ -246,6 +266,111 @@
                     this.MoveRobot(point);
                 }
             }
+        }
+
+        private WarehouseWoes RenderWarehouse(int renderEvery, string title)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            List<string[]> frames = [];
+
+            frames.Add(this.BuildFrame(title, 0, this.GpsTotal(), Cardinal.North));
+
+            for (int i = 0; i < this.Moves.Count; i++)
+            {
+                Cardinal move = this.Moves[i];
+
+                this.ApplyMove(move);
+
+                if (i % renderEvery == 0 || i == this.Moves.Count - 1)
+                {
+                    frames.Add(this.BuildFrame(title, i + 1, this.GpsTotal(), move));
+                }
+            }
+
+            for (int i = 0; i < 24; i++)
+            {
+                frames.Add(this.BuildFrame($"{title} COMPLETE", this.Moves.Count, this.GpsTotal(), Cardinal.North));
+            }
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
+        }
+
+        private int GpsTotal()
+        {
+            char value = this.Wider ? '[' : 'O';
+
+            return this.Map.AxisEnumerator()
+                .Where(x => x.Value == value)
+                .Sum(x => 100 * x.Point.Y + x.Point.X);
+        }
+
+        private string[] BuildFrame(string title, int moveNumber, int gpsTotal, Cardinal direction)
+        {
+            List<string> result = [];
+
+            result.Add($"{title} // MOVE {moveNumber:00000}/{this.Moves.Count:00000} // GPS {gpsTotal:0000000} // {this.DirectionName(direction)}");
+            result.Add(string.Empty);
+
+            for (int y = 0; y < this.Map.Height; y++)
+            {
+                StringBuilder sb = new();
+
+                for (int x = 0; x < this.Map.Width; x++)
+                {
+                    sb.Append(this.Map[y, x]);
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
+        }
+
+        private string DirectionName(Cardinal direction)
+        {
+            return direction switch
+            {
+                Cardinal.North => "NORTH",
+                Cardinal.South => "SOUTH",
+                Cardinal.West => "WEST",
+                Cardinal.East => "EAST",
+                _ => "WAIT"
+            };
+        }
+
+        private void RenderPaddedFrames(List<string[]> frames)
+        {
+            int width = frames.SelectMany(frame => frame).Max(row => row.Length);
+            int height = frames.Max(frame => frame.Length);
+
+            foreach (string[] frame in frames)
+            {
+                this.Renderer?.RenderFrame(
+                    new Frame(PadFrame(frame, width, height)));
+            }
+        }
+
+        private static string[] PadFrame(string[] frame, int width, int height)
+        {
+            List<string> result = [];
+
+            foreach (string row in frame)
+            {
+                result.Add(row.PadRight(width, ' '));
+            }
+
+            while (result.Count < height)
+            {
+                result.Add(new string(' ', width));
+            }
+
+            return [.. result];
         }
 
         private List<string> WiderMap(List<string> map)

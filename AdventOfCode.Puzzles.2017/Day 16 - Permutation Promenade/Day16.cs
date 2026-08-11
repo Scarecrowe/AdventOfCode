@@ -6,12 +6,15 @@
     public class Day16 : Puzzle, IPuzzle
     {
         public Day16()
+            : base(2017, 16, "Permutation Promenade")
         {
-            this.DayTitle = "Permutation Promenade";
-            this.GetPuzzleData(16, this.DayTitle);
         }
 
-        public Day16(string[] input) => this.Input = input;
+        public Day16(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new PermutationPromenade(this.Input).Sort(PermutationPromenade.InitialValue())}";
 

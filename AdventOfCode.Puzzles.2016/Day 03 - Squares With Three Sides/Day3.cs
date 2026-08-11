@@ -6,12 +6,15 @@
     public class Day3 : Puzzle, IPuzzle
     {
         public Day3()
+            : base(2016, 3, "Squares With Three Sides")
         {
-            this.DayTitle = "Squares With Three Sides";
-            this.GetPuzzleData(3, this.DayTitle);
         }
 
-        public Day3(string[] input) => this.Input = input;
+        public Day3(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{SquaresWithThreeSides.Valid(this.Input)}";
 

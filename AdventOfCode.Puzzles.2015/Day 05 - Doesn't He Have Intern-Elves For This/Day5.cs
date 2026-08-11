@@ -6,12 +6,15 @@
     public class Day5 : Puzzle, IPuzzle
     {
         public Day5()
+            : base(2015, 5, "Doesn't He Have Intern-Elves For This", StringSplitOptions.None)
         {
-            this.DayTitle = "Doesn't He Have Intern-Elves For This";
-            this.GetPuzzleData(5, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day5(string[] input) => this.Input = input;
+        public Day5(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new DoesntHeHaveInternElvesForThis(this.Input, ChristmasListModel.Normal).Nice}";
 

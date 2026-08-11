@@ -6,12 +6,15 @@
     public class Day6 : Puzzle, IPuzzle
     {
         public Day6()
+            : base(2017, 6, "Memory Reallocation")
         {
-            this.DayTitle = "Memory Reallocation";
-            this.GetPuzzleData(6, this.DayTitle);
         }
 
-        public Day6(string[] input) => this.Input = input;
+        public Day6(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new MemoryReallocation(this.Input).Redistribute()}";
 

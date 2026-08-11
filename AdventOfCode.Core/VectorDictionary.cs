@@ -312,6 +312,31 @@
             return result.ToString();
         }
 
+        public string[] ToStringArray()
+        {
+            List<string> result = new();
+
+            StringBuilder sb = new();
+
+            int row = 0;
+
+            foreach(VectorCell<TSize, TValue> cell in this.AxisEnumerator())
+            {
+                if (cell.Point.Y.ToInt() > row)
+                {
+                    row = cell.Point.Y.ToInt();
+                    result.Add(sb.ToString());
+                    sb.Clear();
+                }
+
+                sb.Append($"{cell.Value}");
+            }
+
+            result.Add(sb.ToString());
+
+            return [.. result];
+        }
+
         public IEnumerable<VectorCell<TSize, TValue>> AxisEnumerator()
         {
             for (long y = 0; y < this.Height.ToLong(); y++)

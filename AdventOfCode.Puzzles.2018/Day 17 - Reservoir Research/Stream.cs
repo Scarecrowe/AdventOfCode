@@ -1,5 +1,6 @@
 ﻿namespace AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research
 {
+    using AdventOfCode.Animation.Terraria;
     using AdventOfCode.Core;
 
     public class Stream

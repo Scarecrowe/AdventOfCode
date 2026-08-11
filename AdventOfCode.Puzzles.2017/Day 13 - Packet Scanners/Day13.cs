@@ -6,12 +6,15 @@
     public class Day13 : Puzzle, IPuzzle
     {
         public Day13()
+            : base(2017, 13, "Packet Scanners")
         {
-            this.DayTitle = "Packet Scanners";
-            this.GetPuzzleData(13, this.DayTitle);
         }
 
-        public Day13(string[] input) => this.Input = input;
+        public Day13(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new PacketScanners(this.Input).Severity()}";
 

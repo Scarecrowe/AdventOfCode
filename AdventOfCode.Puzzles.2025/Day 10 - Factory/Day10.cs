@@ -6,9 +6,14 @@
     public class Day10 : Puzzle, IPuzzle
     {
         public Day10()
+            : base(2025, 10, "Factory")
         {
-            this.DayTitle = "Factory";
-            this.GetPuzzleData(10, this.DayTitle);
+        }
+
+        public Day10(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new Factory(this.Input).TotalMinimumPresses()}";

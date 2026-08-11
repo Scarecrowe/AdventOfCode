@@ -6,12 +6,15 @@
     public class Day22 : Puzzle, IPuzzle
     {
         public Day22()
+            : base(2020, 22, "Crab Combat", StringSplitOptions.None)
         {
-            this.DayTitle = "Crab Combat";
-            this.GetPuzzleData(22, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day22(string[] input) => this.Input = input;
+        public Day22(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new CrabCombat(this.Input).Play()}";
 

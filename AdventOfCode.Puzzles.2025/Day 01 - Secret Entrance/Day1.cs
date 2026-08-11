@@ -6,9 +6,14 @@
     public class Day1 : Puzzle, IPuzzle
     {
         public Day1()
+            : base(2025, 1, "Secret Entrance")
         {
-            this.DayTitle = "Secret Entrance";
-            this.GetPuzzleData(1, this.DayTitle);
+        }
+
+        public Day1(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new SecretEntrance(this.Input).Password()}";

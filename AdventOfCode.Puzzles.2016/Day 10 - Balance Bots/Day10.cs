@@ -6,12 +6,15 @@
     public class Day10 : Puzzle, IPuzzle
     {
         public Day10()
+            : base(2016, 10, "Balance Bots")
         {
-            this.DayTitle = "Balance Bots";
-            this.GetPuzzleData(10, this.DayTitle);
         }
 
-        public Day10(string[] input) => this.Input = input;
+        public Day10(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new BalanceBot(this.Input).Process().ComparerBot(17, 61)}";
 

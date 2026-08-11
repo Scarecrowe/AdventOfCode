@@ -6,12 +6,15 @@
     public class Day17 : Puzzle, IPuzzle
     {
         public Day17()
+            : base(2020, 17, "Conway Cubes", StringSplitOptions.None)
         {
-            this.DayTitle = "Conway Cubes";
-            this.GetPuzzleData(17, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day17(string[] input) => this.Input = input;
+        public Day17(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{ConwayCubes.Simple(this.Input)}";
 

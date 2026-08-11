@@ -6,9 +6,14 @@
     public class Day15 : Puzzle, IPuzzle
     {
         public Day15()
+            : base(2023, 15, "Lens Library", StringSplitOptions.None)
         {
-            this.DayTitle = "Lens Library";
-            this.GetPuzzleData(15, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day15(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new LensLibrary(this.Input).InstructionHashSum}";

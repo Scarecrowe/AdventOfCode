@@ -6,15 +6,18 @@
     public class Day3 : Puzzle, IPuzzle
     {
         public Day3()
+            : base(2019, 3, "Crossed Wires")
         {
-            this.DayTitle = "Crossed Wires";
-            this.GetPuzzleData(3, this.DayTitle);
         }
 
-        public Day3(string[] input) => this.Input = input;
+        public Day3(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
-        public string Silver() => $"{CrossedWires.Nearest(this.Input)}";
+        public string Silver() => $"{new CrossedWires(this.Input).Nearest()}";
 
-        public string Gold() => $"{CrossedWires.StepsToIntersection(this.Input)}";
+        public string Gold() => $"{new CrossedWires(this.Input).StepsToIntersection()}";
     }
 }

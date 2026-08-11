@@ -6,6 +6,10 @@
 
         string DayTitle { get; }
 
+        int Year { get; }
+
+        int Day { get; }
+
         string[] Input { get; }
 
         string Silver();

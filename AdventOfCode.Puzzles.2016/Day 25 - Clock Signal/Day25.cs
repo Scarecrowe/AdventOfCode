@@ -6,12 +6,15 @@
     public class Day25 : Puzzle, IPuzzle
     {
         public Day25()
+            : base(2016, 25, "Clock Signal")
         {
-            this.DayTitle = "Clock Signal";
-            this.GetPuzzleData(25, this.DayTitle);
         }
 
-        public Day25(string[] input) => this.Input = input;
+        public Day25(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ClockSignal(this.Input).LowesetPositiveInt()}";
 

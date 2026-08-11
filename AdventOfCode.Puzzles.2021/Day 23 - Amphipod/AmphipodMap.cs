@@ -206,5 +206,80 @@
             }
             while (loop(corridorIndex, corridor));
         }
+
+        public IEnumerable<AmphipodMap> NextMaps()
+        {
+            PriorityQueue<AmphipodMap, int> queue = new();
+
+            this.ProcessCorridors(queue);
+            this.ProcessRooms(queue);
+
+            while (queue.TryDequeue(out AmphipodMap? map, out _))
+            {
+                yield return map;
+            }
+        }
+
+        public string[] ToFrame(string title, AmphipodMap? previous = null)
+        {
+            List<string> rows = [];
+
+            rows.Add(title);
+            rows.Add(string.Empty);
+            rows.Add("#############");
+
+            string corridor = new(this.Corridor.Select(c =>
+                c is AmphipodType.Empty or AmphipodType.Forbidden ? '.' : (char)c).ToArray());
+
+            rows.Add($"#{corridor}#");
+
+            for (int depth = 0; depth < this.RoomSize; depth++)
+            {
+                char[] roomValues = new char[4];
+
+                for (int room = 0; room < 4; room++)
+                {
+                    AmphipodType[] items = this.Rooms[room].ToArray();
+                    int empty = this.RoomSize - items.Length;
+
+                    roomValues[room] = depth < empty
+                        ? '.'
+                        : (char)items[depth - empty];
+                }
+
+                string line = depth == 0
+                    ? $"###{roomValues[0]}#{roomValues[1]}#{roomValues[2]}#{roomValues[3]}###"
+                    : $"  #{roomValues[0]}#{roomValues[1]}#{roomValues[2]}#{roomValues[3]}#";
+
+                rows.Add(line);
+            }
+
+            rows.Add("  #########");
+
+            if (previous != null)
+            {
+                HighlightMoved(rows, previous);
+            }
+
+            return [.. rows];
+        }
+
+        private void HighlightMoved(List<string> rows, AmphipodMap previous)
+        {
+            for (int y = 0; y < rows.Count; y++)
+            {
+                char[] chars = rows[y].ToCharArray();
+
+                for (int x = 0; x < chars.Length; x++)
+                {
+                    if ("ABCD".Contains(chars[x]))
+                    {
+                        chars[x] = char.ToLowerInvariant(chars[x]);
+                        rows[y] = new(chars);
+                        return;
+                    }
+                }
+            }
+        }
     }
 }

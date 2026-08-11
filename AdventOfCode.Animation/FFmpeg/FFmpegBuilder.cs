@@ -5,6 +5,7 @@
     using System.Drawing.Imaging;
     using System.Text;
     using AdventOfCode.Animation.FFmpeg.FilterComplex;
+    using AdventOfCode.Core;
 
     public class FFmpegBuilder
     {
@@ -36,6 +37,13 @@
         private Process? Process { get; set; }
 
         private BinaryWriter? StandardInputWriter { get; set; }
+
+        public FFmpegBuilder WithLogLevel(string level)
+        {
+            this.WithPair("-loglevel", level);
+
+            return this;
+        }
 
         public InputBuilder WithInput(string source)
         {
@@ -131,9 +139,33 @@
             return this;
         }
 
+        public FFmpegBuilder WithNullAudio()
+        {
+            this.WithSingle("-an");
+
+            return this;
+        }
+
+        public FFmpegBuilder WithSingle(string value)
+        {
+            this.EncodingArguments.Add(value);
+
+            return this;
+        }
+
+        public FFmpegBuilder WithPair(string key, string value)
+        {
+            this.EncodingArguments.Add(key);
+            this.EncodingArguments.Add(value);
+
+            return this;
+        }
+
         public FFmpegBuilder Run()
         {
-            Console.WriteLine("Starting FFMPEG");
+            PuzzleConsole.WriteLine("Starting FFMPEG...");
+            PuzzleConsole.WriteLine();
+            PuzzleConsole.Flush();
             this.Process = new();
             this.Process.StartInfo.FileName = "ffmpeg.exe";
             this.Process.StartInfo.Arguments = string.Join(" ", this.BuildArguments());
@@ -169,7 +201,11 @@
                 return;
             }
 
-            this.Process.StandardInput.Write("q");
+            this.Process.StandardInput.Close();
+
+            this.Process.WaitForExit();
+
+            this.Process.Dispose();
         }
 
         private void BuildInputArguments(List<string> arguments)

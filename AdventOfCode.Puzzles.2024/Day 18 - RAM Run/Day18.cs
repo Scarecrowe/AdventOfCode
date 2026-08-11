@@ -6,9 +6,14 @@
     public class Day18 : Puzzle, IPuzzle
     {
         public Day18()
+            : base(2024, 18, "RAM Run", StringSplitOptions.None)
         {
-            this.DayTitle = "RAM Run";
-            this.GetPuzzleData(18, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day18(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new RamRun(this.Input).ShortestPath()}";

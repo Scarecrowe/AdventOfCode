@@ -1,6 +1,7 @@
 ﻿namespace AdventOfCode.Puzzles._2019.Day_08___Space_Image_Format
 {
     using System.Text;
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
 
     public class SpaceImageFormat
@@ -15,6 +16,14 @@
             this.ParseLayers();
         }
 
+        public SpaceImageFormat(string image, int width, int height, IFrameRenderer renderer)
+            : this(image, width, height)
+        {
+            this.Renderer = renderer;
+        }
+
+        public IFrameRenderer? Renderer { get; }
+
         private string Image { get; }
 
         private List<List<string>> Layers { get; }
@@ -24,6 +33,42 @@
         private int Width { get; }
 
         private int Height { get; }
+
+        public void Render()
+        {
+            char[,] current = new char[this.Height, this.Width];
+
+            for (int y = 0; y < this.Height; y++)
+            {
+                for (int x = 0; x < this.Width; x++)
+                {
+                    current[y, x] = '2';
+                }
+            }
+
+            for (int layer = 0; layer < this.Layers.Count; layer++)
+            {
+                for (int y = 0; y < this.Height; y++)
+                {
+                    for (int x = 0; x < this.Width; x++)
+                    {
+                        if (current[y, x] != '2')
+                        {
+                            continue;
+                        }
+
+                        char pixel = this.Layers[layer][y][x];
+
+                        if (pixel != '2')
+                        {
+                            current[y, x] = pixel;
+                        }
+                    }
+                }
+
+                this.Renderer?.RenderFrame(new Frame(this.BuildFrame(current, layer)));
+            }
+        }
 
         public int FewestDigits()
         {
@@ -94,6 +139,34 @@
                     index += this.Width;
                 }
             }
+        }
+
+        private string[] BuildFrame(char[,] image, int layer)
+        {
+            List<string> result = [];
+
+            result.Add($"SPACE IMAGE FORMAT // LAYER {layer + 1:000}/{this.Layers.Count:000}");
+            result.Add(new string('-', this.Width));
+
+            for (int y = 0; y < this.Height; y++)
+            {
+                StringBuilder sb = new();
+
+                for (int x = 0; x < this.Width; x++)
+                {
+                    sb.Append(image[y, x] switch
+                    {
+                        '0' => ' ',
+                        '1' => '#',
+                        '2' => '·',
+                        _ => '?'
+                    });
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
         }
     }
 }

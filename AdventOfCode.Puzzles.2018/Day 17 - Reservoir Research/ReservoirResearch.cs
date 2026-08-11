@@ -1,10 +1,13 @@
 ﻿namespace AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research
 {
     using System.Text;
+    using AdventOfCode.Animation.Renderers;
+    using AdventOfCode.Animation.Terraria;
+    using AdventOfCode.Animation.Terraria.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
 
-    public class ReservoirResearch
+    public class ReservoirResearch : ITerrariaRenderer
     {
         public ReservoirResearch(string[] input)
         {
@@ -34,6 +37,12 @@
             this.Queue = new();
         }
 
+        public ReservoirResearch(string[] input, IFrameRenderer renderer)
+            : this(input)
+        {
+            this.Renderer = renderer;
+        }
+
         public Vector<long> ClayMin { get; }
 
         public Vector<long> ClayMax { get; }
@@ -41,6 +50,10 @@
         public VectorArray<long, EntityType> Map { get; private set; }
 
         private Queue<Stream> Queue { get; set; }
+
+        private WaterFallRenderer WaterFall { get; set; }
+
+        private IFrameRenderer? Renderer { get; }
 
         public long Settle(bool countWater = true)
         {
@@ -107,6 +120,167 @@
             }
 
             return new Vector<long>(-1, -1);
+        }
+
+        public ReservoirResearch RenderSilver(int renderEvery = 1)
+        {
+            return this.RenderWater(countWater: true, renderEvery: renderEvery);
+        }
+
+        public ReservoirResearch RenderGold(int renderEvery = 1)
+        {
+            return this.RenderWater(countWater: false, renderEvery: renderEvery);
+        }
+
+        private ReservoirResearch RenderWater(bool countWater, int renderEvery)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            List<string[]> frames = [];
+            Vector<long> furthest = new(500 - this.ClayMin.X, 1);
+            long furthestDistance = 0;
+            long step = 0;
+
+            frames.Add(this.BuildFrame(
+                furthest,
+                $"RESERVOIR RESEARCH // SCAN {this.Map.Width:0000}x{this.Map.Height:0000} // WATER {0:00000}"));
+
+            while (true)
+            {
+                Vector<long> current = this.Animate();
+
+                if (current == new Vector<long>(-1, -1))
+                {
+                    break;
+                }
+
+                step++;
+
+                long distance = this.DistanceFromSpring(current);
+
+                if (distance >= furthestDistance)
+                {
+                    furthest = current;
+                    furthestDistance = distance;
+                }
+
+                if (step % renderEvery == 0)
+                {
+                    frames.Add(this.BuildFrame(
+                        furthest,
+                        countWater
+                            ? $"RESERVOIR RESEARCH // STREAM {step:00000} // REACHED {this.WaterCount(true):00000}"
+                            : $"RESERVOIR RESEARCH // STREAM {step:00000} // RETAINED {this.WaterCount(false):00000}"));
+                }
+            }
+
+            frames.Add(this.BuildFrame(
+                furthest,
+                countWater
+                    ? $"WATER REACHED {this.WaterCount(true):00000} // FURTHEST STREAM MARKED"
+                    : $"WATER RETAINED {this.WaterCount(false):00000} // FURTHEST STREAM MARKED"));
+
+            for (int i = 0; i < 24; i++)
+            {
+                frames.Add(this.BuildFrame(
+                    furthest,
+                    countWater
+                        ? $"WATER REACHED {this.WaterCount(true):00000} // FURTHEST STREAM MARKED"
+                        : $"WATER RETAINED {this.WaterCount(false):00000} // FURTHEST STREAM MARKED"));
+            }
+
+            this.RenderPaddedFrames(frames);
+
+            return this;
+        }
+
+        private long DistanceFromSpring(Vector<long> point)
+        {
+            long springX = 500 - this.ClayMin.X;
+
+            return Math.Abs(point.X - springX) + point.Y;
+        }
+
+        private string[] BuildFrame(Vector<long> marker, string title)
+        {
+            List<string> result = [];
+
+            result.Add(title);
+            result.Add(string.Empty);
+
+            for (int y = 0; y < this.Map.Height; y++)
+            {
+                StringBuilder sb = new();
+
+                for (int x = 0; x < this.Map.Width; x++)
+                {
+                    Vector<long> point = new(x, y);
+
+                    if (point == marker)
+                    {
+                        sb.Append('@');
+                        continue;
+                    }
+
+                    if (point == new Vector<long>(500 - this.ClayMin.X, 0))
+                    {
+                        sb.Append('+');
+                        continue;
+                    }
+
+                    switch (this.Map[y, x])
+                    {
+                        case EntityType.Water:
+                            sb.Append('|');
+                            break;
+                        case EntityType.Air:
+                            sb.Append('.');
+                            break;
+                        case EntityType.Clay:
+                            sb.Append('#');
+                            break;
+                        case EntityType.Settled:
+                            sb.Append('~');
+                            break;
+                    }
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
+        }
+
+        private void RenderPaddedFrames(List<string[]> frames)
+        {
+            int width = frames.SelectMany(frame => frame).Max(row => row.Length);
+            int height = frames.Max(frame => frame.Length);
+
+            foreach (string[] frame in frames)
+            {
+                this.Renderer?.RenderFrame(
+                    new Frame(PadFrame(frame, width, height)));
+            }
+        }
+
+        private static string[] PadFrame(string[] frame, int width, int height)
+        {
+            List<string> result = [];
+
+            foreach (string row in frame)
+            {
+                result.Add(row.PadRight(width, ' '));
+            }
+
+            while (result.Count < height)
+            {
+                result.Add(new string(' ', width));
+            }
+
+            return [.. result];
         }
 
         private static List<(Vector<long> Min, Vector<long> Max)> Parse(string[] input)
@@ -219,6 +393,13 @@
             }
 
             PuzzleConsole.WriteLine();
+        }
+
+        public void Animate2D()
+        {
+            Console.Clear();
+            this.WaterFall = new WaterFallRenderer();
+            this.WaterFall.Render();
         }
     }
 }

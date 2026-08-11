@@ -3,7 +3,6 @@
     using System.Drawing;
     using AdventOfCode.Animation.Terraria.Basins;
     using AdventOfCode.Animation.Terraria.Random;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class OutroRenderer
     {
@@ -29,7 +28,7 @@
         {
             Console.WriteLine("Loading Outro");
 
-            string answer = new ReservoirResearch(Animation.GetInput(17, "Reservoir Research")).Settle(false).ToString();
+            string answer = Terraria.LoadPuzzle().Settle(false).ToString();
 
             Console.WriteLine($"Puzzle answer: {answer}");
 

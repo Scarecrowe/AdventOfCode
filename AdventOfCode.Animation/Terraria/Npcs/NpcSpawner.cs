@@ -5,7 +5,6 @@
     using AdventOfCode.Animation.Terraria.Npcs.Actions;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class NpcSpawner
     {

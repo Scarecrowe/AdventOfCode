@@ -88,5 +88,13 @@
 
             return this;
         }
+
+        public InputBuilder WithPair(string key, string value)
+        {
+            this.Arguments.Add(key);
+            this.Arguments.Add(value);
+
+            return this;
+        }
     }
 }

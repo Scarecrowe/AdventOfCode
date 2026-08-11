@@ -6,9 +6,14 @@
     public class Day19 : Puzzle, IPuzzle
     {
         public Day19()
+            : base(2023, 19, "Aplenty", StringSplitOptions.None)
         {
-            this.DayTitle = "Aplenty";
-            this.GetPuzzleData(19, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day19(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new Aplenty(this.Input).TotalRatings()}";

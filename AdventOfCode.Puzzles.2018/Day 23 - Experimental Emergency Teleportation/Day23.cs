@@ -6,12 +6,15 @@
     public class Day23 : Puzzle, IPuzzle
     {
         public Day23()
+            : base(2018, 23, "Experimental Emergency Teleportation")
         {
-            this.DayTitle = "Experimental Emergency Teleportation";
-            this.GetPuzzleData(23, this.DayTitle);
         }
 
-        public Day23(string[] input) => this.Input = input;
+        public Day23(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ExperimentalEmergencyTeleportation(this.Input).LargestRadius()}";
 

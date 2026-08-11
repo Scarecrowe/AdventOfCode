@@ -6,9 +6,14 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2023, 7, "Camel Cards")
         {
-            this.DayTitle = "Camel Cards";
-            this.GetPuzzleData(7, this.DayTitle);
+        }
+
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new CamelCards(this.Input).Play()}";

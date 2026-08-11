@@ -6,12 +6,15 @@
     public class Day3 : Puzzle, IPuzzle
     {
         public Day3()
+            : base(2015, 3, "Perfectly Spherical Houses in a Vacuum")
         {
-            this.DayTitle = "Perfectly Spherical Houses in a Vacuum";
-            this.GetPuzzleData(3, this.DayTitle);
         }
 
-        public Day3(string[] input) => this.Input = input;
+        public Day3(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new PerfectlySphericalHousesInAVacuum(this.Input).Deliver().Houses.Count}";
 

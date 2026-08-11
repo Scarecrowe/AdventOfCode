@@ -6,12 +6,15 @@
     public class Day25 : Puzzle, IPuzzle
     {
         public Day25()
+            : base(2015, 25, "Let It Snow", StringSplitOptions.None)
         {
-            this.DayTitle = "Let It Snow";
-            this.GetPuzzleData(25, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day25(string[] input) => this.Input = input;
+        public Day25(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new LetItSnow(this.Input).Generate()}";
 

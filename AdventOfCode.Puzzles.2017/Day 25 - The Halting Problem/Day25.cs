@@ -6,12 +6,15 @@
     public class Day25 : Puzzle, IPuzzle
     {
         public Day25()
+            : base(2017, 25, "The Halting Problem", StringSplitOptions.None)
         {
-            this.DayTitle = "The Halting Problem";
-            this.GetPuzzleData(25, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day25(string[] input) => this.Input = input;
+        public Day25(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new TuringMachine(this.Input).Run().CountOnes()}";
 

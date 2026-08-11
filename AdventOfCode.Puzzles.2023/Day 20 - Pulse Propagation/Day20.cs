@@ -6,9 +6,14 @@
     public class Day20 : Puzzle, IPuzzle
     {
         public Day20()
+            : base(2023, 20, "Pulse Propagation", StringSplitOptions.None)
         {
-            this.DayTitle = "Pulse Propagation";
-            this.GetPuzzleData(20, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day20(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new PulsePropagation(this.Input).LowAndHighMultiplied()}";

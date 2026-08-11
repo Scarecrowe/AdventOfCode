@@ -6,12 +6,15 @@
     public class Day5 : Puzzle, IPuzzle
     {
         public Day5()
+            : base(2022, 5, "Supply Stacks", StringSplitOptions.None)
         {
-            this.DayTitle = "Supply Stacks";
-            this.GetPuzzleData(5, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day5(string[] input) => this.Input = input;
+        public Day5(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{SupplyStacks.Single(this.Input)}";
 

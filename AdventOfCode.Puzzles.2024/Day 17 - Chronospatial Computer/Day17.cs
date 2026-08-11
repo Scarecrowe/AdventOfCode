@@ -6,9 +6,14 @@
     public class Day17 : Puzzle, IPuzzle
     {
         public Day17()
+            : base(2024, 17, "Chronospatial Computer", StringSplitOptions.None)
         {
-            this.DayTitle = "Chronospatial Computer";
-            this.GetPuzzleData(17, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day17(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new ChronospatialComputer(this.Input).FinalOutput()}";

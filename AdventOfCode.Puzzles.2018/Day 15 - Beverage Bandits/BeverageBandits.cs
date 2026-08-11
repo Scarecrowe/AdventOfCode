@@ -1,6 +1,9 @@
 ﻿namespace AdventOfCode.Puzzles._2018.Day_15___Beverage_Bandits
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
+    using System.ComponentModel;
+    using System.Text;
 
     public class BeverageBandits
     {
@@ -12,13 +15,27 @@
             this.Input = input;
         }
 
+        public BeverageBandits(string[] input, IFrameRenderer renderer)
+            : this(input)
+        {
+            this.Renderer = renderer;
+        }
+
         public string[] Input { get; }
+
+        public IFrameRenderer? Renderer { get; }
 
         public VectorDictionary<int, char> Map { get; private set; }
 
         public List<Vector<int>> Walls { get; private set; }
 
         public List<Bandit> Bandits { get; private set; }
+
+        private int CombatRound { get; set; }
+
+        private int TurnCount { get; set; }
+
+        private string LastAction { get; set; } = "INITIALISING";
 
         public string Battle()
         {
@@ -62,6 +79,85 @@
                 }
 
                 attackPoints++;
+            }
+        }
+
+        public BeverageBandits RenderSilver(int renderEveryTurn = 1)
+        {
+            this.RenderBattle(elfAttackPoints: 3, exitOnElfDeath: false, renderEveryTurn, title: "BEVERAGE BANDITS");
+            return this;
+        }
+
+        public BeverageBandits RenderGold(int renderEveryTurn = 1)
+        {
+            int attackPoints = 4;
+
+            while (true)
+            {
+                this.ParseInput(attackPoints);
+                this.CombatRound = 0;
+                this.TurnCount = 0;
+                this.LastAction = $"ELF ATTACK POWER {attackPoints:00}";
+
+                int round = 0;
+                this.RenderFrame($"BEVERAGE BANDITS // TECH {attackPoints:00}");
+
+                while (true)
+                {
+                    int result = this.Round(true, renderEveryTurn, $"BEVERAGE BANDITS // TECH {attackPoints:00}");
+
+                    if (result == -1)
+                    {
+                        break;
+                    }
+
+                    round += result;
+
+                    if (!this.Bandits.Any(x => x.Type == BanditType.Goblin))
+                    {
+                        this.LastAction = $"ELVES WIN // TECH {attackPoints:00} // OUTCOME {round * this.Bandits.Sum(x => x.HealthPoints)}";
+
+                        for (int i = 0; i < 24; i++)
+                        {
+                            this.RenderFrame($"BEVERAGE BANDITS // TECH {attackPoints:00}");
+                        }
+
+                        return this;
+                    }
+                }
+
+                attackPoints++;
+            }
+        }
+
+        private void RenderBattle(int elfAttackPoints, bool exitOnElfDeath, int renderEveryTurn, string title)
+        {
+            this.ParseInput(elfAttackPoints);
+            this.CombatRound = 0;
+            this.TurnCount = 0;
+            this.LastAction = "INITIAL POSITIONS";
+            this.RenderFrame(title);
+
+            int round = 0;
+
+            while (this.Bandits.Any(c => c.Type == BanditType.Elf) && this.Bandits.Any(c => c.Type == BanditType.Goblin))
+            {
+                int result = this.Round(exitOnElfDeath, renderEveryTurn, title);
+
+                if (result == -1)
+                {
+                    break;
+                }
+
+                round += result;
+                this.CombatRound = round;
+            }
+
+            this.LastAction = $"COMBAT ENDS // OUTCOME {round * this.Bandits.Sum(x => x.HealthPoints)}";
+
+            for (int i = 0; i < 24; i++)
+            {
+                this.RenderFrame(title);
             }
         }
 
@@ -183,12 +279,15 @@
             Bandit defender = GetDefender(defenders, adjacent);
             attacker.Attack(defender);
 
+            this.LastAction = $"{attacker.Letter} ATTACKS {defender.Letter} FOR {attacker.AttackPoints:00} // HP {Math.Max(defender.HealthPoints, 0):000}";
+
             if (defender.HealthPoints <= 0)
             {
                 int index = this.Bandits.IndexOf(defender);
                 this.Bandits.RemoveAt(index);
 
                 this.Map[defender.Point] = '.';
+                this.LastAction = $"{attacker.Letter} KILLS {defender.Letter}";
 
                 if (index < i)
                 {
@@ -202,6 +301,9 @@
         }
 
         private int Round(bool exitOnElfDeath = false)
+            => this.Round(exitOnElfDeath, 0, string.Empty);
+
+        private int Round(bool exitOnElfDeath, int renderEveryTurn, string title)
         {
             this.Bandits = this.Bandits.OrderBy(c => (c.Point.Y, c.Point.X)).ToList();
 
@@ -224,12 +326,17 @@
 
                     if (move == null)
                     {
+                        this.LastAction = $"{attacker.Letter} WAITS";
+                        this.RenderTurn(renderEveryTurn, title);
                         continue;
                     }
 
+                    Vector<int> from = new(attacker.Point.X, attacker.Point.Y);
                     this.Map[attacker.Point] = '.';
                     attacker.Move(new(move.X, move.Y));
                     this.Map[new(move.X, move.Y)] = attacker.Letter;
+
+                    this.LastAction = $"{attacker.Letter} MOVES {from.X:00},{from.Y:00} TO {move.X:00},{move.Y:00}";
 
                     adjacent = this.GetAdjacent(attacker);
                 }
@@ -240,12 +347,76 @@
 
                     if (exitOnElfDeath && dead && attacker.Type == BanditType.Goblin)
                     {
+                        this.RenderTurn(renderEveryTurn, title);
                         return -1;
                     }
                 }
+
+                this.RenderTurn(renderEveryTurn, title);
             }
 
+            this.CombatRound++;
             return 1;
+        }
+
+        private void RenderTurn(int renderEveryTurn, string title)
+        {
+            if (this.Renderer == null || renderEveryTurn <= 0)
+            {
+                return;
+            }
+
+            this.TurnCount++;
+
+            if (this.TurnCount % renderEveryTurn == 0)
+            {
+                this.RenderFrame(title);
+            }
+        }
+
+        private void RenderFrame(string title)
+        {
+            if (this.Renderer == null)
+            {
+                return;
+            }
+
+            this.Renderer.RenderFrame(new Frame(this.BuildFrame(title)));
+        }
+
+        private string[] BuildFrame(string title)
+        {
+            List<string> result = [];
+
+            int elves = this.Bandits.Count(c => c.Type == BanditType.Elf);
+            int goblins = this.Bandits.Count(c => c.Type == BanditType.Goblin);
+            int hp = this.Bandits.Sum(c => c.HealthPoints);
+
+            result.Add(title);
+            result.Add($"ROUND {this.CombatRound:000} // TURN {this.TurnCount:0000} // E {elves:00} // G {goblins:00} // HP {hp:0000}");
+            result.Add(this.LastAction);
+            result.Add(string.Empty);
+
+            for (int y = 0; y < this.Map.Height; y++)
+            {
+                StringBuilder map = new();
+
+                for (int x = 0; x < this.Map.Width; x++)
+                {
+                    map.Append(this.Map[new(x, y)]);
+                }
+
+                string hitPoints = string.Join(", ", this.Bandits
+                    .Where(c => c.Point.Y == y)
+                    .OrderBy(c => c.Point.X)
+                    .Select(c => $"{c.Letter}({c.HealthPoints:000})"));
+
+                result.Add(hitPoints.Length == 0
+                    ? map.ToString()
+                    : $"{map}   {hitPoints}");
+            }
+
+            return [.. result];
         }
 
         private void Print(int round)

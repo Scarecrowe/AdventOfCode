@@ -6,12 +6,15 @@
     public class Day9 : Puzzle, IPuzzle
     {
         public Day9()
+            : base(2015, 9, "All in a Single Night")
         {
-            this.DayTitle = "All in a Single Night";
-            this.GetPuzzleData(9, this.DayTitle);
         }
 
-        public Day9(string[] input) => this.Input = input;
+        public Day9(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new AllInASingleNight(this.Input).Shortest()}";
 

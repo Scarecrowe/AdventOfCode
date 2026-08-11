@@ -6,9 +6,14 @@
     public class Day3 : Puzzle, IPuzzle
     {
         public Day3()
+            : base(2025, 3, "Lobby")
         {
-            this.DayTitle = "Lobby";
-            this.GetPuzzleData(3, this.DayTitle);
+        }
+
+        public Day3(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new Lobby(this.Input).Joltage(2)}";

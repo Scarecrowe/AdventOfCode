@@ -6,12 +6,15 @@
     public class Day12 : Puzzle, IPuzzle
     {
         public Day12()
+            : base(2015, 12, "JSAbacusFramework.io")
         {
-            this.DayTitle = "JSAbacusFramework.io";
-            this.GetPuzzleData(12, this.DayTitle);
         }
 
-        public Day12(string[] input) => this.Input = input;
+        public Day12(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{JSAbacusFramework.SumAll(this.Input[0])}";
 

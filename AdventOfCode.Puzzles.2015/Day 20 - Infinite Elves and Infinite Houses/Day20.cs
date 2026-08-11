@@ -6,12 +6,15 @@
     public class Day20 : Puzzle, IPuzzle
     {
         public Day20()
+            : base(2015, 20, "Infinite Elves and Infinite Houses")
         {
-            this.DayTitle = "Infinite Elves and Infinite Houses";
-            this.GetPuzzleData(20, this.DayTitle);
         }
 
-        public Day20(string[] input) => this.Input = input;
+        public Day20(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new InfiniteElvesAndInfiniteHouses(this.Input).Lowest(false)}";
 

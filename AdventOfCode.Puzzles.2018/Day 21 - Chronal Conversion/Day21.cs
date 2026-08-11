@@ -6,12 +6,16 @@
     public class Day21 : Puzzle, IPuzzle
     {
         public Day21()
+            : base(2018, 21, "Chronal Conversion")
         {
-            this.DayTitle = "Chronal Conversion";
-            this.GetPuzzleData(21, this.DayTitle);
+
         }
 
-        public Day21(string[] input) => this.Input = input;
+        public Day21(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ChronalConversion(this.Input).LowestNonNegative()}";
 

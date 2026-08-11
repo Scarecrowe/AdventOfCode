@@ -6,12 +6,15 @@
     public class Day9 : Puzzle, IPuzzle
     {
         public Day9()
+            : base(2017, 9, "Stream Processing")
         {
-            this.DayTitle = "Stream Processing";
-            this.GetPuzzleData(9, this.DayTitle);
         }
 
-        public Day9(string[] input) => this.Input = input;
+        public Day9(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new StreamProcessing(this.Input[0]).TotalScore}";
 

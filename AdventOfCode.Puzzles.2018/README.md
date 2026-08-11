@@ -16,7 +16,7 @@ Part 1 finds final frequency.
 Part 2 finds first repeated frequency.
 Cycle detection with running totals.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2001%20-%20Chronal%20Calibration
 
 ---
 
@@ -26,7 +26,7 @@ Counts IDs with repeated letters.
 Part 2 finds nearly identical IDs.
 String comparison and counting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2002%20-%20Inventory%20Management%20System
 
 ---
 
@@ -36,7 +36,7 @@ Part 1 counts overlapping squares.
 Part 2 finds non-overlapping claim.
 Grid marking and collision detection.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2003%20-%20No%20Matter%20How%20You%20Slice%20It
 
 ---
 
@@ -46,7 +46,7 @@ Track sleep times across shifts.
 Part 2 changes selection criteria.
 Sorting and time tracking.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2004%20-%20Repose%20Record
 
 ---
 
@@ -56,7 +56,7 @@ Chain reactions reduce string.
 Part 2 tests removing each unit type.
 Stack-based string reduction.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2005%20-%20Alchemical%20Reduction
 
 ---
 
@@ -66,7 +66,7 @@ Part 1 finds largest finite area.
 Part 2 counts safe region size.
 Distance calculations and grid scanning.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2006%20-%20Chronal%20Coordinates
 
 ---
 
@@ -76,7 +76,7 @@ Part 1 finds execution order.
 Part 2 simulates multiple workers.
 Topological sorting and scheduling.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2007%20-%20The%20Sum%20of%20Its%20Parts
 
 ---
 
@@ -86,7 +86,7 @@ Sum metadata entries.
 Part 2 evaluates node values.
 Recursive tree processing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2008%20-%20Memory%20Maneuver
 
 ---
 
@@ -96,7 +96,7 @@ Insert and remove marbles in circle.
 Part 2 scales to large inputs.
 Linked list or deque optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2009%20-%20Marble%20Mania
 
 ---
 
@@ -106,7 +106,7 @@ Detect when points converge.
 Render message visually.
 Coordinate simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2010%20-%20The%20Stars%20Align
 
 ---
 
@@ -116,7 +116,7 @@ Find best square region.
 Part 2 varies square size.
 Grid scanning with optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2011%20-%20Chronal%20Charge
 
 ---
 
@@ -126,7 +126,7 @@ Track pattern changes over generations.
 Part 2 extrapolates long-term growth.
 Pattern detection.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2012%20-%20Subterranean%20Sustainability
 
 ---
 
@@ -136,7 +136,7 @@ Handle turns and intersections.
 Detect first crash location.
 Part 2 finds last remaining cart.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2013%20-%20Mine%20Cart%20Madness
 
 ---
 
@@ -146,7 +146,7 @@ Find pattern in sequence.
 Part 1 extracts scores after index.
 Part 2 finds first occurrence of pattern.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2014%20-%20Chocolate%20Charts
 
 ---
 
@@ -156,7 +156,7 @@ Units move and attack by rules.
 Part 2 adjusts attack power.
 Pathfinding and combat simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2015%20-%20Beverage%20Bandits
 
 ---
 
@@ -166,7 +166,7 @@ Match samples to operations.
 Part 2 executes program.
 Reverse engineering instruction set.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2016%20-%20Chronal%20Classification
 
 ---
 
@@ -176,7 +176,7 @@ Track flowing and settled water.
 Count reachable water tiles.
 Grid simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2017%20-%20Reservoir%20Research
 
 ---
 
@@ -186,7 +186,7 @@ Rules based on adjacent tiles.
 Part 2 detects cycles.
 Cellular automaton with optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2018%20-%20Settlers%20of%20The%20North%20Pole
 
 ---
 
@@ -196,7 +196,7 @@ Execute register-based instructions.
 Part 2 optimises heavy computation.
 Interpreter with optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2019%20-%20Go%20With%20The%20Flow
 
 ---
 
@@ -206,7 +206,7 @@ Build map of rooms and doors.
 Find longest shortest path.
 Graph construction and traversal.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2020%20-%20A%20Regular%20Map
 
 ---
 
@@ -216,7 +216,7 @@ Track register comparisons.
 Part 2 finds longest-running value.
 Program analysis.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2021%20-%20Chronal%20Conversion
 
 ---
 
@@ -226,7 +226,7 @@ Calculate risk level.
 Part 2 finds shortest path with tools.
 Pathfinding with state.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2022%20-%20Mode%20Maze
 
 ---
 
@@ -236,7 +236,7 @@ Part 1 finds bots in strongest range.
 Part 2 finds optimal position.
 Spatial search problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2023%20-%20Experimental%20Emergency%20Teleportation
 
 ---
 
@@ -246,7 +246,7 @@ Units attack based on rules.
 Part 2 boosts one side.
 Combat simulation with targeting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2024%20-%20Immune%20System%20Simulator%2020XX
 
 ---
 
@@ -256,7 +256,7 @@ Points connect within distance threshold.
 Count resulting groups.
 Clustering in 4D space.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2018/Day%2025%20-%20Four-Dimensional%20Adventure
 
 ---
 

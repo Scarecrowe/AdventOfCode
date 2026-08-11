@@ -1,7 +1,9 @@
 ﻿namespace AdventOfCode.Puzzles._2017.Day_22___Sporifica_Virus
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
+    using System.Text;
 
     public class SporificaVirus
     {
@@ -56,6 +58,14 @@
             this.Position = new(this.Map.Width / 2, this.Map.Height / 2);
         }
 
+        public SporificaVirus(string[] input, IFrameRenderer renderer)
+            : this(input)
+        {
+            this.Renderer = renderer;
+        }
+
+        public IFrameRenderer? Renderer { get; }
+
         public int InfectedCount { get; private set; }
 
         private VectorDictionary<int, EntityType> Map { get; }
@@ -76,9 +86,50 @@
                 {
                     this.Burst();
                 }
+
+                this.RenderFrame();
             }
 
             return this;
+        }
+
+        private void RenderFrame()
+        {
+            List<string> result = [];
+
+            StringBuilder sb = new();
+
+            int row = 0;
+
+            foreach (VectorCell<int, EntityType> cell in this.Map.AxisEnumerator())
+            {
+                if (cell.Point.Y.ToInt() > row)
+                {
+                    row = cell.Point.Y.ToInt();
+                    result.Add(sb.ToString());
+                    sb.Clear();
+                }
+
+                ////if (cell.Point == point)
+                ////{
+                ////    sb.Append($"O");
+                ////}
+                ////else if (visited.Contains(cell.Point))
+                ////{
+                ////    sb.Append($".");
+                ////}
+                ////else if (cell.Value == '.')
+                ////{
+                ////    sb.Append($" ");
+                ////}
+                ////else
+                ////{
+                    sb.Append(cell.Value);
+                ////}
+            }
+
+            result.Add(sb.ToString());
+            this.Renderer?.RenderFrame(new Frame([.. result]));
         }
 
         private void Move()

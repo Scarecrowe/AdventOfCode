@@ -6,12 +6,15 @@
     public class Day11 : Puzzle, IPuzzle
     {
         public Day11()
+            : base(2015, 11, "Corporate Policy")
         {
-            this.DayTitle = "Corporate Policy";
-            this.GetPuzzleData(11, this.DayTitle);
         }
 
-        public Day11(string[] input) => this.Input = input;
+        public Day11(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{CooperatePolicy.Generate(this.Input[0])}";
 

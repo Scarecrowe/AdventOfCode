@@ -6,12 +6,15 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2017, 7, "Recursive Circus")
         {
-            this.DayTitle = "Recursive Circus";
-            this.GetPuzzleData(7, this.DayTitle);
         }
 
-        public Day7(string[] input) => this.Input = input;
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new RecursiveCircus(this.Input).BottomProgram()}";
 

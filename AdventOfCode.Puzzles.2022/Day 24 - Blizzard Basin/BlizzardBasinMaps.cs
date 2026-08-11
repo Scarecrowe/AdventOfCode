@@ -18,6 +18,8 @@
 
         public Vector<int> Point { get; }
 
+        public int Period => this.Maps.Count;
+
         private List<VectorArray<int, BlizzardBasinType>> Maps { get; }
 
         public static VectorArray<int, BlizzardBasinType> Build(string[] input, List<Blizzard> blizzards)
@@ -46,6 +48,6 @@
            && point.X < this.Point.X;
 
         public BlizzardBasinType GetMap(int time, Vector<int> point)
-            => this.IsValid(point) ? this.Maps[time % this.Maps.Count][(int)point.Y, (int)point.X] : BlizzardBasinType.Rock;
+            => this.IsValid(point) ? this.Maps[time % this.Maps.Count][point.Y, point.X] : BlizzardBasinType.Rock;
     }
 }

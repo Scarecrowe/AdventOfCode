@@ -6,9 +6,8 @@
     public class Day24 : Puzzle, IPuzzle
     {
         public Day24()
+            : base(2024, 24, "Crossed Wires", StringSplitOptions.None)
         {
-            this.DayTitle = "Crossed Wires";
-            this.GetPuzzleData(24, this.DayTitle, StringSplitOptions.None);
         }
 
         public string Silver() => $"{new CrossedWires(this.FilePath).ZOutput()}";

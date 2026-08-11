@@ -1,78 +1,116 @@
 ﻿namespace AdventOfCode.Runner.The_Toymakers_Workshop
 {
-    using System.Threading.Tasks;
+    using System;
     using AdventOfCode.Core;
-    using AdventOfCode.Runner.Menus;
+    using AdventOfCode.Core.ConsoleMenu;
     using AdventOfCode.Runner.North_Pole_Operations;
 
-    public class TheToyMakersWorkshopMenu : Menu, IMenu
+    public class TheToyMakersWorkshopMenu : ConsoleMenu, IConsoleMenu
     {
-        public TheToyMakersWorkshopMenu(int year, int day)
+        public TheToyMakersWorkshopMenu(IPuzzle puzzle)
            : base("The Toymaker's Workshop")
         {
-            this.Year = year;
-            this.Day = day;
+            this.Puzzle = puzzle;
             this.Executions = 1;
+
+            this.AddMenuItems();
         }
 
-        public int Year { get; private set; }
-
-        public int Day { get; private set; }
+        public IPuzzle Puzzle { get; private set; }
 
         private int Executions { get; set; }
 
-        public async Task<IMenu> Execute()
+        public async Task<IConsoleMenu> Execute()
         {
             while (true)
             {
+                this.SetSubTitle($"{this.Puzzle.Year} Day {this.Puzzle.Day} - {this.Puzzle.DayTitle ?? string.Empty}");
                 this.Reset();
 
-                IPuzzle? puzzle = Puzzle.GetPuzzle(this.Year, this.Day);
-                this.PrintSubTitle($"{this.Year} Day {this.Day} - {puzzle?.DayTitle ?? string.Empty}");
-                PuzzleConsole.WriteLine();
+                this.AddMenuItems();
 
-                PuzzleConsole.WriteLine("1. Run Silver Solution");
-                PuzzleConsole.WriteLine("2. Run Gold Solution");
-                PuzzleConsole.WriteLine("3. Run Both Parts");
-                PuzzleConsole.WriteLine($"4. Set Execution Count ({this.Executions})");
-                PuzzleConsole.WriteLine($"5. Choose Another Puzzle");
-                PuzzleConsole.WriteLine($"6. Return to North Pole Operations");
-                PuzzleConsole.WriteLine($"7. Santa's Calling It a Day (Exit)");
-                PuzzleConsole.WriteLine();
-                PuzzleConsole.Flush();
+                IConsoleMenuItem? item = await this.WriteMenu();
 
-                int option = PromptInt("Select an option: ", 1);
-
+                this.SetSubTitle($"{this.Puzzle.Year} Day {this.Puzzle.Day} - {this.Puzzle.DayTitle ?? string.Empty}");
                 this.Reset();
-                this.PrintSubTitle($"{this.Year} Day {this.Day} - {puzzle?.DayTitle ?? string.Empty}");
-                PuzzleConsole.WriteLine();
-                PuzzleConsole.Flush();
 
-                switch ((TheToyMakersWorkshop)option)
+                switch (item?.Key)
                 {
-                    case TheToyMakersWorkshop.RunSilverSolution:
-                        await PuzzleRunner.RunSilverAsync(this.Year, this.Day, this.Executions);
+                    case TheToyMakersWorkshopMenuType.RunSilverSolution:
+                        {
+                            string result = await PuzzleRunner.RunSilverAsync(this.Puzzle, this.Executions);
+                            this.SaveRun("Silver", result);
+                            this.WaitForUser();
+                            break;
+                        }
+
+                    case TheToyMakersWorkshopMenuType.RunGoldSolution:
+                        {
+                            string result = await PuzzleRunner.RunGoldAsync(this.Puzzle, this.Executions);
+                            this.SaveRun("Gold", result);
+                            this.WaitForUser();
+                            break;
+                        }
+
+                    case TheToyMakersWorkshopMenuType.RunBothParts:
+                        await PuzzleRunner.RunAsync(this.Puzzle, this.Executions, false);
                         this.WaitForUser();
                         break;
-                    case TheToyMakersWorkshop.RunGoldSolution:
-                        await PuzzleRunner.RunGoldAsync(this.Year, this.Day, this.Executions);
-                        this.WaitForUser();
-                        break;
-                    case TheToyMakersWorkshop.RunBothParts:
-                        await PuzzleRunner.RunAsync(this.Year, this.Day, this.Executions, false);
-                        this.WaitForUser();
-                        break;
-                    case TheToyMakersWorkshop.SetExecutionCount:
+
+                    case TheToyMakersWorkshopMenuType.SetExecutionCount:
                         this.Executions = PromptInt("Executions", 1);
                         break;
-                    case TheToyMakersWorkshop.ChooseAnotherPuzzle:
+
+                    case GenericMenu.Back:
                         return await new TheToyMakersWorkshopSelectorMenu().Execute();
-                    case TheToyMakersWorkshop.ReturnToMainMenu:
-                        return await new NorthPoleOperationsMenu().Execute();
-                    case TheToyMakersWorkshop.Exit:
+
+                    case GenericMenu.MainMenu:
+                        this.GotoMainMenu();
+                        return new NorthPoleOperationsMenu();
+
+                    case GenericMenu.Exit:
                         return await new ExitMenu().Execute();
                 }
             }
+        }
+
+        private void SaveRun(
+            string solution,
+            string result)
+        {
+            string path = Path.Combine(AppContext.BaseDirectory, "Runs");
+
+            Directory.CreateDirectory(path);
+
+            string fileName =
+                $"toymakers-workshop-{this.Puzzle.Year}-day-{this.Puzzle.Day:00}-{solution.ToLower()}-{DateTime.Now:yyyyMMdd-HHmmss}.txt";
+
+            string filePath = Path.Combine(path, fileName);
+
+            List<string> lines =
+            [
+                "The Toymaker's Workshop",
+                $"Run       : {DateTime.Now:yyyy-MM-dd HH:mm:ss}",
+                $"Puzzle    : {this.Puzzle.Year} Day {this.Puzzle.Day:00}",
+                $"Title     : {this.Puzzle.DayTitle}",
+                $"Solution  : {solution}",
+                $"Executions: {this.Executions}",
+                $"Result    : {result}"
+            ];
+
+            File.WriteAllLines(filePath, lines);
+        }
+
+        private void AddMenuItems()
+        {
+            this.Items.Clear();
+
+            this.Items.Add(TheToyMakersWorkshopMenuType.RunSilverSolution, "Run Silver Solution", "Run the silver solution");
+            this.Items.Add(TheToyMakersWorkshopMenuType.RunGoldSolution, "Run Gold Solution", "Run the gold solution");
+            this.Items.Add(TheToyMakersWorkshopMenuType.RunBothParts, "Run Both Parts", "Run silver and gold");
+            this.Items.Add(TheToyMakersWorkshopMenuType.SetExecutionCount, "Set Execution Count", $"Currently {this.Executions}");
+
+            this.AddGenericMenuItems("Choose another puzzle");
         }
     }
 }

@@ -1,19 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <Platforms>AnyCPU;x64</Platforms>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Terraria\Assets\Vines\**" />
-    <EmbeddedResource Remove="Terraria\Assets\Vines\**" />
-    <None Remove="Terraria\Assets\Vines\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Remove="Terraria\Assets\Audio\hallowed.mp3" />
@@ -23,7 +17,6 @@
     <None Remove="Terraria\Assets\Audio\overworld.mp3" />
     <None Remove="Terraria\Assets\Audio\title-screen.mp3" />
     <None Remove="Terraria\Assets\Audio\underground.mp3" />
-    <None Remove="Terraria\Assets\background.png" />
     <None Remove="Terraria\Assets\Backgrounds\background.png" />
     <None Remove="Terraria\Assets\Backgrounds\Background_0.png" />
     <None Remove="Terraria\Assets\Backgrounds\Background_112.png" />
@@ -52,20 +45,6 @@
     <None Remove="Terraria\Assets\Backgrounds\Background_87.png" />
     <None Remove="Terraria\Assets\Backgrounds\cloud.png" />
     <None Remove="Terraria\Assets\Backgrounds\Splash_9_0.png" />
-    <None Remove="Terraria\Assets\Background_118.png" />
-    <None Remove="Terraria\Assets\Background_119.png" />
-    <None Remove="Terraria\Assets\Background_120.png" />
-    <None Remove="Terraria\Assets\Background_125.png" />
-    <None Remove="Terraria\Assets\Background_127.png" />
-    <None Remove="Terraria\Assets\Background_147.png" />
-    <None Remove="Terraria\Assets\Background_149.png" />
-    <None Remove="Terraria\Assets\Background_156.png" />
-    <None Remove="Terraria\Assets\Background_251.png" />
-    <None Remove="Terraria\Assets\Background_63.png" />
-    <None Remove="Terraria\Assets\Background_65.png" />
-    <None Remove="Terraria\Assets\Background_67.png" />
-    <None Remove="Terraria\Assets\Background_74.png" />
-    <None Remove="Terraria\Assets\Background_87.png" />
     <None Remove="Terraria\Assets\Blocks\Tiles_0.png" />
     <None Remove="Terraria\Assets\Blocks\Tiles_1.png" />
     <None Remove="Terraria\Assets\Blocks\Tiles_107.png" />
@@ -95,8 +74,6 @@
     <None Remove="Terraria\Assets\Blocks\Tiles_65.png" />
     <None Remove="Terraria\Assets\Blocks\Tiles_70.png" />
     <None Remove="Terraria\Assets\Blocks\Tiles_76.png" />
-    <None Remove="Terraria\Assets\Clay.png" />
-    <None Remove="Terraria\Assets\ClayTiles.png" />
     <None Remove="Terraria\Assets\Clouds\Cloud_0.png" />
     <None Remove="Terraria\Assets\Clouds\Cloud_1.png" />
     <None Remove="Terraria\Assets\Clouds\Cloud_10.png" />
@@ -134,17 +111,10 @@
     <None Remove="Terraria\Assets\Clouds\Cloud_7.png" />
     <None Remove="Terraria\Assets\Clouds\Cloud_8.png" />
     <None Remove="Terraria\Assets\Clouds\Cloud_9.png" />
-    <None Remove="Terraria\Assets\flowers.png" />
-    <None Remove="Terraria\Assets\grass-wall.png" />
-    <None Remove="Terraria\Assets\grass.png" />
-    <None Remove="Terraria\Assets\hallowed-wall.png" />
-    <None Remove="Terraria\Assets\hell-wall.png" />
-    <None Remove="Terraria\Assets\ice-wall.png" />
     <None Remove="Terraria\Assets\Liquids\Liquid_0.png" />
     <None Remove="Terraria\Assets\Liquids\Liquid_1.png" />
     <None Remove="Terraria\Assets\Liquids\Liquid_4.png" />
     <None Remove="Terraria\Assets\Liquids\Liquid_5.png" />
-    <None Remove="Terraria\Assets\Liquids\Liquid_9.png" />
     <None Remove="Terraria\Assets\Liquids\Waterfall_0.png" />
     <None Remove="Terraria\Assets\Liquids\Waterfall_1.png" />
     <None Remove="Terraria\Assets\Liquids\Waterfall_5.png" />
@@ -153,9 +123,6 @@
     <None Remove="Terraria\Assets\Liquids\water_1.png" />
     <None Remove="Terraria\Assets\Liquids\water_4.png" />
     <None Remove="Terraria\Assets\Liquids\water_5.png" />
-    <None Remove="Terraria\Assets\mud-wall.png" />
-    <None Remove="Terraria\Assets\mushroom-wall.png" />
-    <None Remove="Terraria\Assets\mushroom.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_102.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_104.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_137.png" />
@@ -170,7 +137,6 @@
     <None Remove="Terraria\Assets\Npcs\NPC_159.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_160.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_210.png" />
-    <None Remove="Terraria\Assets\Npcs\NPC_216.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_22.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_230.png" />
     <None Remove="Terraria\Assets\Npcs\NPC_230_blue.png" />
@@ -206,7 +172,6 @@
     <None Remove="Terraria\Assets\Npcs\SkeletonMerchant.png" />
     <None Remove="Terraria\Assets\Npcs\SkeletonMerchant_Default_Party.png" />
     <None Remove="Terraria\Assets\Npcs\Wizard_Default.png" />
-    <None Remove="Terraria\Assets\overworld.mp3" />
     <None Remove="Terraria\Assets\Random\NPC_105.png" />
     <None Remove="Terraria\Assets\Random\NPC_106.png" />
     <None Remove="Terraria\Assets\Random\NPC_123.png" />
@@ -226,25 +191,6 @@
     <None Remove="Terraria\Assets\Random\Tiles_83.png" />
     <None Remove="Terraria\Assets\Random\Tiles_84.png" />
     <None Remove="Terraria\Assets\Random\Tiles_85.png" />
-    <None Remove="Terraria\Assets\Sand.png" />
-    <None Remove="Terraria\Assets\Settled.png" />
-    <None Remove="Terraria\Assets\Splash_9_1.png" />
-    <None Remove="Terraria\Assets\Tiles_108.png" />
-    <None Remove="Terraria\Assets\Tiles_109.png" />
-    <None Remove="Terraria\Assets\Tiles_181.png" />
-    <None Remove="Terraria\Assets\Tiles_182.png" />
-    <None Remove="Terraria\Assets\Tiles_183.png" />
-    <None Remove="Terraria\Assets\Tiles_23.png" />
-    <None Remove="Terraria\Assets\Tiles_59.png" />
-    <None Remove="Terraria\Assets\Tiles_70.png" />
-    <None Remove="Terraria\Assets\underground-tiles.png" />
-    <None Remove="Terraria\Assets\Underground_background_7.png" />
-    <None Remove="Terraria\Assets\Walls\hallowed-wall.png" />
-    <None Remove="Terraria\Assets\Walls\hell-wall.png" />
-    <None Remove="Terraria\Assets\Walls\ice-wall.png" />
-    <None Remove="Terraria\Assets\Walls\mushroom-wall.png" />
-    <None Remove="Terraria\Assets\Walls\overworld-wall.png" />
-    <None Remove="Terraria\Assets\Walls\underground-wall.png" />
     <None Remove="Terraria\Assets\Walls\Wall_1.png" />
     <None Remove="Terraria\Assets\Walls\Wall_110.png" />
     <None Remove="Terraria\Assets\Walls\Wall_127.png" />
@@ -281,11 +227,6 @@
     <None Remove="Terraria\Assets\Walls\Wall_94.png" />
     <None Remove="Terraria\Assets\Walls\Wall_95.png" />
     <None Remove="Terraria\Assets\Walls\Wall_96.png" />
-    <None Remove="Terraria\Assets\Water.png" />
-    <None Remove="Terraria\Assets\WaterTop.png" />
-    <None Remove="Terraria\Assets\water_0.png" />
-    <None Remove="Animations\2018\Day 17 - Reservoir Research\input.txt" />
-    <None Remove="ffmpeg.exe" />
   </ItemGroup>
 
   <ItemGroup>
@@ -631,6 +572,9 @@
     <Content Include="Terraria\Assets\Npcs\NPC_102.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_104.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_137.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -643,6 +587,12 @@
     <Content Include="Terraria\Assets\Npcs\NPC_145.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_148.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_149.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_150.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -652,7 +602,16 @@
     <Content Include="Terraria\Assets\Npcs\NPC_158.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_159.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_160.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_210.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_22.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_230.png">
@@ -679,6 +638,9 @@
     <Content Include="Terraria\Assets\Npcs\NPC_241.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_26.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_297.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -686,6 +648,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_299.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_311.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_338.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_360.png">
@@ -730,10 +698,22 @@
     <Content Include="Terraria\Assets\Npcs\NPC_75.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Terraria\Assets\Npcs\NPC_78.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_85.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Terraria\Assets\Npcs\NPC_93.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\SkeletonMerchant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\SkeletonMerchant_Default_Party.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Npcs\Wizard_Default.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Terraria\Assets\Random\NPC_105.png">
@@ -775,7 +755,22 @@
     <Content Include="Terraria\Assets\Random\Tiles_337.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Terraria\Assets\Random\Tiles_35.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Terraria\Assets\Random\Tiles_71.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Random\Tiles_82.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Random\Tiles_83.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Random\Tiles_84.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Terraria\Assets\Random\Tiles_85.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Terraria\Assets\Walls\Wall_1.png">
@@ -886,111 +881,6 @@
     <Content Include="Terraria\Assets\Walls\Wall_96.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Terraria\Assets\Backgrounds\background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_112.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_118.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_119.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_120.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_125.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_127.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_147.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_149.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_156.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_251.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_63.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_65.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_67.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_74.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Terraria\Assets\Backgrounds\Background_87.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="Terraria\Assets\Npcs\NPC_104.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_148.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_149.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_159.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_160.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_22.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_26.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_311.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_338.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\NPC_78.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\SkeletonMerchant.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\SkeletonMerchant_Default_Party.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Npcs\Wizard_Default.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Random\Tiles_35.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Random\Tiles_82.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Random\Tiles_83.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Random\Tiles_84.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Terraria\Assets\Random\Tiles_85.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ffmpeg.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -1003,16 +893,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2015\AdventOfCode.Puzzles.2015.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2016\AdventOfCode.Puzzles.2016.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2017\AdventOfCode.Puzzles.2017.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2018\AdventOfCode.Puzzles.2018.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2019\AdventOfCode.Puzzles.2019.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2020\AdventOfCode.Puzzles.2020.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2021\AdventOfCode.Puzzles.2021.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2022\AdventOfCode.Puzzles.2022.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2023\AdventOfCode.Puzzles.2023.csproj" />
-    <ProjectReference Include="..\AdventOfCode.Puzzles.2024\AdventOfCode.Puzzles.2024.csproj" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

@@ -6,9 +6,14 @@
     public class Day1 : Puzzle, IPuzzle
     {
         public Day1()
+            : base(2023, 1, "Trebuchet?!")
         {
-            this.DayTitle = "Trebuchet?!";
-            this.GetPuzzleData(1, this.DayTitle);
+        }
+
+        public Day1(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new Trebuchet(this.Input, false).Sum()}";

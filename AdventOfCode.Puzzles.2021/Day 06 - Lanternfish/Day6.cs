@@ -6,12 +6,15 @@
     public class Day6 : Puzzle, IPuzzle
     {
         public Day6()
+            : base(2021, 6, "Lanternfish")
         {
-            this.DayTitle = "Lanternfish";
-            this.GetPuzzleData(6, this.DayTitle);
         }
 
-        public Day6(string[] input) => this.Input = input;
+        public Day6(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new LanternFishSpawner(this.Input).Run(80).TotalFish()}";
 

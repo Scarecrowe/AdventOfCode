@@ -1,6 +1,9 @@
 ﻿namespace AdventOfCode.Puzzles._2016.Day_18___Like_a_Rogue
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
+    using AdventOfCode.Core.Extensions;
+    using System.Text;
 
     public class LikeARogue
     {

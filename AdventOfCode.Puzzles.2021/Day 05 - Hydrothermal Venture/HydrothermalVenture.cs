@@ -1,16 +1,29 @@
 ﻿namespace AdventOfCode.Puzzles._2021.Day_05___Hydrothermal_Venture
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
+    using System.Text;
 
     public class HydrothermalVenture
     {
         public HydrothermalVenture(string[] input, bool includeDiagional)
         {
+            this.Input = input;
             (List<HydrothermalVent> vents, Vector<int> point) = Parse(input);
             this.Map = new (point.X + 1, point.Y + 1);
             this.MapVents(vents, includeDiagional);
         }
+
+        public HydrothermalVenture(string[] input, bool includeDiagional, IFrameRenderer renderer)
+            : this(input, includeDiagional)
+        {
+            this.Renderer = renderer;
+        }
+
+        public string[] Input { get; }
+
+        public IFrameRenderer? Renderer { get; }
 
         public VectorArray<int, int> Map { get; }
 
@@ -56,6 +69,66 @@
                     this.MoveNorthWest(x, y, vent);
                     return;
             }
+        }
+
+        public HydrothermalVenture RenderSilver(int renderEvery = 1000)
+            => this.Render(false, renderEvery);
+
+        public HydrothermalVenture RenderGold(int renderEvery = 2000)
+            => this.Render(true, renderEvery);
+
+        private HydrothermalVenture Render(bool includeDiagional, int renderEvery)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            (List<HydrothermalVent> vents, Vector<int> max) = Parse(this.Input);
+
+            VectorArray<int, int> map = new(max.X + 1, max.Y + 1);
+
+            int plotted = 0;
+            int danger = 0;
+
+            int scale = Math.Max(1, Math.Max(map.Width, map.Height) / 120);
+
+            foreach (HydrothermalVent vent in vents)
+            {
+                if (!vent.IsHorizontal &&
+                    !vent.IsVertical &&
+                    (!includeDiagional || !vent.IsDiagional))
+                {
+                    continue;
+                }
+
+                foreach (Vector<int> point in PointsOnLine(vent))
+                {
+                    map[point.Y, point.X]++;
+
+                    if (map[point.Y, point.X] == 2)
+                    {
+                        danger++;
+                    }
+
+                    plotted++;
+
+                    if (plotted % renderEvery == 0)
+                    {
+                        this.Renderer.RenderFrame(
+                            new Frame(
+                                this.BuildFrame(
+                                    map,
+                                    point,
+                                    scale,
+                                    includeDiagional
+                                        ? $"HYDROTHERMAL VENTURE // ALL LINES // DANGER {danger:00000}"
+                                        : $"HYDROTHERMAL VENTURE // STRAIGHT LINES // DANGER {danger:00000}")));
+                    }
+                }
+            }
+
+            return this;
         }
 
         private static (List<HydrothermalVent> Vents, Vector<int> Point) Parse(string[] input)
@@ -143,6 +216,106 @@
                 y--;
                 this.Map[y, x]++;
             }
+        }
+
+        private static IEnumerable<Vector<int>> PointsOnLine(HydrothermalVent vent)
+        {
+            int x = vent.Origin.X;
+            int y = vent.Origin.Y;
+
+            int dx = Math.Sign(vent.Destination.X - vent.Origin.X);
+            int dy = Math.Sign(vent.Destination.Y - vent.Origin.Y);
+
+            yield return new(x, y);
+
+            while (x != vent.Destination.X || y != vent.Destination.Y)
+            {
+                x += dx;
+                y += dy;
+
+                yield return new(x, y);
+            }
+        }
+
+        private static int CountDanger(VectorArray<int, int> map)
+            => map.AxisEnumerator().Count(cell => cell.Value >= 2);
+
+        private string[] BuildFrame(
+            VectorArray<int, int> map,
+            Vector<int> current,
+            int scale,
+            string title)
+        {
+            List<string> result = [];
+
+            result.Add(title);
+            result.Add(string.Empty);
+
+            for (int y = 0; y < map.Height; y += scale)
+            {
+                StringBuilder sb = new();
+
+                for (int x = 0; x < map.Width; x += scale)
+                {
+                    if (current.X >= x &&
+                        current.X < x + scale &&
+                        current.Y >= y &&
+                        current.Y < y + scale)
+                    {
+                        sb.Append('@');
+                        continue;
+                    }
+
+                    int max = 0;
+
+                    for (int yy = y; yy < Math.Min(y + scale, map.Height); yy++)
+                    {
+                        for (int xx = x; xx < Math.Min(x + scale, map.Width); xx++)
+                        {
+                            max = Math.Max(max, map[yy, xx]);
+                        }
+                    }
+
+                    sb.Append(max switch
+                    {
+                        0 => '.',
+                        >= 10 => '+',
+                        _ => (char)('0' + Math.Min(max, 9))
+                    });
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
+        }
+
+        private void RenderPaddedFrames(List<string[]> frames)
+        {
+            int width = frames.SelectMany(frame => frame).Max(row => row.Length);
+            int height = frames.Max(frame => frame.Length);
+
+            foreach (string[] frame in frames)
+            {
+                this.Renderer?.RenderFrame(new Frame(PadFrame(frame, width, height)));
+            }
+        }
+
+        private static string[] PadFrame(string[] frame, int width, int height)
+        {
+            List<string> result = [];
+
+            foreach (string row in frame)
+            {
+                result.Add(row.PadRight(width, ' '));
+            }
+
+            while (result.Count < height)
+            {
+                result.Add(new string(' ', width));
+            }
+
+            return [.. result];
         }
     }
 }

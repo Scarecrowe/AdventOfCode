@@ -6,9 +6,14 @@
     public class Day25 : Puzzle, IPuzzle
     {
         public Day25()
+            : base(2023, 25, "Snowverload", StringSplitOptions.None)
         {
-            this.DayTitle = "Snowverload";
-            this.GetPuzzleData(25, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day25(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new Snowverload(this.Input).BigRedReset()}";

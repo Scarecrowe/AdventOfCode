@@ -6,9 +6,14 @@
     public class Day22 : Puzzle, IPuzzle
     {
         public Day22()
+            : base(2023, 22, "Sand Slabs", StringSplitOptions.None)
         {
-            this.DayTitle = "Sand Slabs";
-            this.GetPuzzleData(22, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day22(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new SandSlabs(this.Input).Fall()}";

@@ -7,9 +7,14 @@
     {
 
         public Day21()
+            : base(2024, 21, "Keypad Conundrum", StringSplitOptions.None)
         {
-            this.DayTitle = "Keypad Conundrum";
-            this.GetPuzzleData(21, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day21(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new KeypadConundrum(this.Input).Complexity(2)}";

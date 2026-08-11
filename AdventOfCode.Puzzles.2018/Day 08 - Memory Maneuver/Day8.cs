@@ -6,12 +6,15 @@
     public class Day8 : Puzzle, IPuzzle
     {
         public Day8()
+            : base(2018, 8, "Memory Maneuver")
         {
-            this.DayTitle = "Memory Maneuver";
-            this.GetPuzzleData(8, this.DayTitle);
         }
 
-        public Day8(string[] input) => this.Input = input;
+        public Day8(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new MemoryManeuver(this.Input[0]).BuildTree().MetadataSum}";
 

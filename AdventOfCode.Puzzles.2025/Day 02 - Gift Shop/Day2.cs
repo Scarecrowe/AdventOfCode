@@ -6,9 +6,14 @@
     public class Day2 : Puzzle, IPuzzle
     {
         public Day2()
+            : base(2025, 2, "Gift Shop")
         {
-            this.DayTitle = "Gift Shop";
-            this.GetPuzzleData(2, this.DayTitle);
+        }
+
+        public Day2(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new GiftShop(this.Input).SumInvalidIds()}";

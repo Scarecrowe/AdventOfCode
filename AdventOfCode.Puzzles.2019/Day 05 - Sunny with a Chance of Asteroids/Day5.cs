@@ -6,12 +6,15 @@
     public class Day5 : Puzzle, IPuzzle
     {
         public Day5()
+            : base(2019, 5, "Sunny with a Chance of Asteroids")
         {
-            this.DayTitle = "Sunny with a Chance of Asteroids";
-            this.GetPuzzleData(5, this.DayTitle);
         }
 
-        public Day5(string[] input) => this.Input = input;
+        public Day5(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new SunnyWithAChanceOfAsteroids(this.Input[0]).AirConditionerDiagnostics()}";
 

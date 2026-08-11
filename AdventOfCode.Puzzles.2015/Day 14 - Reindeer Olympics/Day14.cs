@@ -6,12 +6,15 @@
     public class Day14 : Puzzle, IPuzzle
     {
         public Day14()
+            : base(2015, 14, "Reindeer Olympics")
         {
-            this.DayTitle = "Reindeer Olympics";
-            this.GetPuzzleData(14, this.DayTitle);
         }
 
-        public Day14(string[] input) => this.Input = input;
+        public Day14(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ReindeerOlympics(this.Input, 2503).RaceByDistance()}";
 

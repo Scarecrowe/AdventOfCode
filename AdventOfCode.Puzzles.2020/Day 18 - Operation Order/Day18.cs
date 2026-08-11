@@ -6,12 +6,15 @@
     public class Day18 : Puzzle, IPuzzle
     {
         public Day18()
+            : base(2020, 18, "Operation Order")
         {
-            this.DayTitle = "Operation Order";
-            this.GetPuzzleData(18, this.DayTitle);
         }
 
-        public Day18(string[] input) => this.Input = input;
+        public Day18(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{OperationOrder.Simple(this.Input)}";
 

@@ -7,7 +7,6 @@
     using AdventOfCode.Animation.Terraria.Clouds;
     using AdventOfCode.Animation.Terraria.Liquids;
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class IntroRenderer
     {
@@ -55,7 +54,7 @@
             Bitmap frame,
             Bitmap scene,
             FFmpegBuilder ffmpeg,
-            ReservoirResearch puzzle)
+            ITerrariaRenderer puzzle)
         {
             Vector<long> stream = new(WaterFallRenderer.ReservoirSourceX - puzzle.ClayMin.X, (WaterFallRenderer.IntroLength + 260) / 16);
             int center = ((int)(stream.X * 16) - (int)this.Screen.Point.X) - (this.Cloud.Width / 2);

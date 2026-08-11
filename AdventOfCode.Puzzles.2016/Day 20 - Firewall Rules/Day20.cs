@@ -6,12 +6,15 @@
     public class Day20 : Puzzle, IPuzzle
     {
         public Day20()
+            : base(2016, 20, "Firewall Rules")
         {
-            this.DayTitle = "Firewall Rules";
-            this.GetPuzzleData(20, this.DayTitle);
         }
 
-        public Day20(string[] input) => this.Input = input;
+        public Day20(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new FirewallRules(this.Input).LowesetValuedIP()}";
 

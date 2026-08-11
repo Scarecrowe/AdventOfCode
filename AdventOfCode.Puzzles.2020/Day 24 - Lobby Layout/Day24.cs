@@ -6,12 +6,15 @@
     public class Day24 : Puzzle, IPuzzle
     {
         public Day24()
+            : base(2020, 24, "Lobby Layout")
         {
-            this.DayTitle = "Lobby Layout";
-            this.GetPuzzleData(24, this.DayTitle);
         }
 
-        public Day24(string[] input) => this.Input = input;
+        public Day24(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{LobbyLayout.BlackSideUp(this.Input)}";
 

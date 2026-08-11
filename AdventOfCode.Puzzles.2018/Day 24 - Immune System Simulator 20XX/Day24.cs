@@ -6,12 +6,15 @@
     public class Day24 : Puzzle, IPuzzle
     {
         public Day24()
+            : base(2018, 24, "Immune System Simulator 20XX", StringSplitOptions.None)
         {
-            this.DayTitle = "Immune System Simulator 20XX";
-            this.GetPuzzleData(24, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day24(string[] input) => this.Input = input;
+        public Day24(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ImmuneSystemSimulator20XX(this.Input).Battle()}";
 

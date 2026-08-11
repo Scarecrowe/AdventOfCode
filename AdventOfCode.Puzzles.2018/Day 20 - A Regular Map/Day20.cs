@@ -6,12 +6,15 @@
     public class Day20 : Puzzle, IPuzzle
     {
         public Day20()
+            : base(2018, 20, "A Regular Map")
         {
-            this.DayTitle = "A Regular Map";
-            this.GetPuzzleData(20, this.DayTitle);
         }
 
-        public Day20(string[] input) => this.Input = input;
+        public Day20(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ARegularMap(this.Input).BuildMap().Furthest()}";
 

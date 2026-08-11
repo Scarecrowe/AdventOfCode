@@ -6,12 +6,15 @@
     public class Day16 : Puzzle, IPuzzle
     {
         public Day16()
+            : base(2020, 16, "Ticket Translation", StringSplitOptions.None)
         {
-            this.DayTitle = "Ticket Translation";
-            this.GetPuzzleData(16, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day16(string[] input) => this.Input = input;
+        public Day16(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{TicketTranslation.ErrorRate(this.Input)}";
 

@@ -6,9 +6,14 @@
     public class Day6 : Puzzle, IPuzzle
     {
         public Day6()
+            : base(2023, 6, "Wait For It")
         {
-            this.DayTitle = "Wait For It";
-            this.GetPuzzleData(6, this.DayTitle);
+        }
+
+        public Day6(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new WaitForIt(this.Input).Race()}";

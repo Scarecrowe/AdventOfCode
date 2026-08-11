@@ -6,12 +6,15 @@
     public class Day19 : Puzzle, IPuzzle
     {
         public Day19()
+            : base(2020, 19, "Monster Messages", StringSplitOptions.None)
         {
-            this.DayTitle = "Monster Messages";
-            this.GetPuzzleData(19, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day19(string[] input) => this.Input = input;
+        public Day19(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new MonsterMessages(this.Input).Simple()}";
 

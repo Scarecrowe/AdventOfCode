@@ -6,9 +6,14 @@
     public class Day9 : Puzzle, IPuzzle
     {
         public Day9()
+            : base(2023, 9, "Mirage Maintenance")
         {
-            this.DayTitle = "Mirage Maintenance";
-            this.GetPuzzleData(9, this.DayTitle);
+        }
+
+        public Day9(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new MirageMaintenance(this.Input).End()}";

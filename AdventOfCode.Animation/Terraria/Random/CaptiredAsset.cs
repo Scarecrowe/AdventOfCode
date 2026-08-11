@@ -2,9 +2,7 @@
 {
     using System.Drawing;
     using AdventOfCode.Animation.Extensions;
-    using AdventOfCode.Animation.Terraria.Renderers;
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class CapturedAsset : RandomAsset, IRandomAsset
     {

@@ -6,12 +6,15 @@
     public class Day13 : Puzzle, IPuzzle
     {
         public Day13()
+            : base(2022, 13, "Distress Signal")
         {
-            this.DayTitle = "Distress Signal";
-            this.GetPuzzleData(13, this.DayTitle);
         }
 
-        public Day13(string[] input) => this.Input = input;
+        public Day13(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new DistressSignal(this.Input).SumOfIndices()}";
 

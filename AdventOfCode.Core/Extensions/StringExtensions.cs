@@ -345,5 +345,29 @@
 
             return !expression.IsMatch(value);
         }
+
+        public static string SplitCamelCase(this string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+
+            StringBuilder sb = new();
+
+            sb.Append(value[0]);
+
+            for (int i = 1; i < value.Length; i++)
+            {
+                if (char.IsUpper(value[i]))
+                {
+                    sb.Append(' ');
+                }
+
+                sb.Append(value[i]);
+            }
+
+            return sb.ToString();
+        }
     }
 }

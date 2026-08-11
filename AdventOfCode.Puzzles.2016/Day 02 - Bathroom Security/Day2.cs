@@ -6,12 +6,15 @@
     public class Day2 : Puzzle, IPuzzle
     {
         public Day2()
+            : base(2016, 2, "Bathroom Security")
         {
-            this.DayTitle = "Bathroom Security";
-            this.GetPuzzleData(2, this.DayTitle);
         }
 
-        public Day2(string[] input) => this.Input = input;
+        public Day2(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new BathroomSecurity(this.Input, KeyPadMode.Simple).KeyCode()}";
 

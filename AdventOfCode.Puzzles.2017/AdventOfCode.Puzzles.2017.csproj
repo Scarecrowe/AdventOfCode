@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <RootNamespace>AdventOfCode.Puzzles._2017</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -115,6 +115,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode.Animation\AdventOfCode.Animation.csproj" />
     <ProjectReference Include="..\AdventOfCode.Core\AdventOfCode.Core.csproj" />
   </ItemGroup>
 

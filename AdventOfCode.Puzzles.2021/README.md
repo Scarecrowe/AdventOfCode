@@ -16,7 +16,7 @@ Count increases between readings.
 Part 2 uses sliding window sums.
 Simple iteration.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2001%20-%20Sonar%20Sweep
 
 ---
 
@@ -26,7 +26,7 @@ Track horizontal and depth positions.
 Part 2 introduces aim variable.
 State-based movement.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2002%20-%20Dive
 
 ---
 
@@ -36,7 +36,7 @@ Compute gamma and epsilon rates.
 Part 2 filters values iteratively.
 Bitwise operations.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2003%20-%20Binary%20Diagnostic
 
 ---
 
@@ -46,7 +46,7 @@ Mark numbers as called.
 Find first and last winning boards.
 Grid tracking.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2004%20-%20Giant%20Squid
 
 ---
 
@@ -56,7 +56,7 @@ Count overlapping points.
 Part 2 includes diagonal lines.
 Coordinate mapping.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2005%20-%20Hydrothermal%20Venture
 
 ---
 
@@ -66,7 +66,7 @@ Efficiently track counts per state.
 Part 2 scales to large days.
 State aggregation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2006%20-%20Lanternfish
 
 ---
 
@@ -76,7 +76,7 @@ Part 1 uses linear cost.
 Part 2 uses increasing cost.
 Optimisation problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2007%20-%20The%20Treachery%20of%20Whales
 
 ---
 
@@ -86,7 +86,7 @@ Count unique digit patterns.
 Part 2 fully decodes output.
 Pattern recognition.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2008%20-%20Seven%20Segment%20Search
 
 ---
 
@@ -96,7 +96,7 @@ Calculate basin sizes.
 Part 2 multiplies largest basins.
 Grid traversal.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2009%20-%20Smoke%20Basin
 
 ---
 
@@ -106,7 +106,7 @@ Detect corrupted lines.
 Part 2 scores incomplete lines.
 Stack-based parsing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2010%20-%20Syntax%20Scoring
 
 ---
 
@@ -116,7 +116,7 @@ Track flashing chain reactions.
 Count flashes over steps.
 Grid simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2011%20-%20Dumbo%20Octopus
 
 ---
 
@@ -126,7 +126,7 @@ Small caves limited visits.
 Part 2 allows one revisit.
 Graph traversal.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2012%20-%20Passage%20Pathing
 
 ---
 
@@ -136,7 +136,7 @@ Track dot positions.
 Render final pattern.
 Coordinate transformation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2013%20-%20Transparent%20Origami
 
 ---
 
@@ -146,7 +146,7 @@ Track growth efficiently.
 Part 2 uses frequency counting.
 String expansion optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2014%20-%20Extended%20Polymerization
 
 ---
 
@@ -156,7 +156,7 @@ Use Dijkstra or similar.
 Part 2 expands grid size.
 Pathfinding.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2015%20-%20Chiton
 
 ---
 
@@ -166,7 +166,7 @@ Evaluate nested packet values.
 Handle different operations.
 Bit-level parsing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2016%20-%20Packet%20Decoder
 
 ---
 
@@ -176,7 +176,7 @@ Find trajectories hitting target.
 Part 1 finds max height.
 Part 2 counts valid velocities.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2017%20-%20Trick%20Shot
 
 ---
 
@@ -186,7 +186,7 @@ Apply explode and split rules.
 Calculate magnitude.
 Tree manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2018%20-%20Snailfish
 
 ---
 
@@ -196,7 +196,7 @@ Match overlapping beacon sets.
 Determine positions and distances.
 3D transformation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2019%20-%20Beacon%20Scanner
 
 ---
 
@@ -206,7 +206,7 @@ Track infinite grid behaviour.
 Apply multiple iterations.
 Grid transformation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2020%20-%20Trench%20Map
 
 ---
 
@@ -216,7 +216,7 @@ Part 2 explores quantum outcomes.
 Count winning universes.
 State branching.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2021%20-%20Dirac%20Dice
 
 ---
 
@@ -226,7 +226,7 @@ Part 1 limits region size.
 Part 2 handles large space.
 Spatial partitioning.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2022%20-%20Reactor%20Reboot
 
 ---
 
@@ -236,7 +236,7 @@ Minimise energy cost.
 Uses search with state tracking.
 Complex pathfinding.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2023%20-%20Amphipod
 
 ---
 
@@ -246,7 +246,7 @@ Find valid input producing zero.
 Optimise via pattern analysis.
 Constraint solving.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2024%20-%20Arithmetic%20Logic%20Unit
 
 ---
 
@@ -256,7 +256,7 @@ Apply step rules until stable.
 Track grid changes.
 Grid simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2021/Day%2025%20-%20Sea%20Cucumber
 
 ---
 

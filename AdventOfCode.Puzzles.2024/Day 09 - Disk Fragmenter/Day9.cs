@@ -6,9 +6,14 @@
     public class Day9 : Puzzle, IPuzzle
     {
         public Day9()
+            : base(2024, 9, "Disk Fragmenter")
         {
-            this.DayTitle = "Disk Fragmenter";
-            this.GetPuzzleData(9, this.DayTitle);
+        }
+
+        public Day9(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new DiskFragmenter(this.Input).FilesystemChecksum()}";

@@ -7,7 +7,6 @@
     using AdventOfCode.Animation.Terraria.Biomes;
     using AdventOfCode.Animation.Terraria.Npcs;
     using AdventOfCode.Core;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class WaterFallRenderer
     {
@@ -47,7 +46,7 @@
 
         private int Height { get; }
 
-        private ReservoirResearch Puzzle { get; }
+        private ITerrariaRenderer Puzzle { get; }
 
         private SceneRenderer SceneRenderer { get; }
 
@@ -109,7 +108,7 @@
 
             input.Add($"y=1, x=510..520");
 
-            ReservoirResearch puzzle = new(input.ToArray());
+            ITerrariaRenderer puzzle = Terraria.LoadPuzzle(input.ToArray());
 
             Basin.AddFinalBasin(puzzle, input);
 
@@ -123,7 +122,7 @@
 
         public void Render()
         {
-            this.Scene = this.SceneRenderer.Render(Animation.GetRenderPath(), this.OutroRenderer);
+            this.Scene = this.SceneRenderer.Render(Animation.GetRenderPath(2018, 17, "Reservoir Research"), this.OutroRenderer);
             this.RenderFullScene();
 
             Console.WriteLine($"Frames: {this.Parameters.Frames}");
@@ -194,11 +193,11 @@
             return new(this.Width, this.Height, this.Biomes);
         }
 
-        private ReservoirResearch LoadPuzzle()
+        private ITerrariaRenderer LoadPuzzle()
         {
             Console.WriteLine("Loading Puzzle");
 
-            return new(LoadPuzzleInput(true, this.Parameters.Screen));
+            return Terraria.LoadPuzzle(LoadPuzzleInput(true, this.Parameters.Screen));
         }
 
         private List<Basin> LoadBasins()
@@ -372,7 +371,7 @@
 
             graphics.DrawRectangle(new Pen(new SolidBrush(Color.White), 5), new Rectangle((int)this.Parameters.Screen.Point.X, (int)this.Parameters.Screen.Point.Y, this.Screen.Width, this.Screen.Height));
 
-            string renderPath = $"{Animation.GetRenderPath()}\\{RandomGenerator.Seed}-liquid.jpg";
+            string renderPath = $"{Animation.GetRenderPath(2018, 17, "Reservoir Research")}\\{RandomGenerator.Seed}-liquid.jpg";
 
             bitmap.Save(renderPath, ImageFormat.Jpeg);
 

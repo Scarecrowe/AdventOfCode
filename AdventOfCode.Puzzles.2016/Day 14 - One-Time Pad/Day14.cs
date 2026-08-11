@@ -6,12 +6,15 @@
     public class Day14 : Puzzle, IPuzzle
     {
         public Day14()
+            : base(2016, 14, "One-Time Pad")
         {
-            this.DayTitle = "One-Time Pad";
-            this.GetPuzzleData(14, this.DayTitle);
         }
 
-        public Day14(string[] input) => this.Input = input;
+        public Day14(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new OneTimePad(this.Input[0]).Generate()}";
 

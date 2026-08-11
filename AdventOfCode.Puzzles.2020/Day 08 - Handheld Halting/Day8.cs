@@ -6,12 +6,15 @@
     public class Day8 : Puzzle, IPuzzle
     {
         public Day8()
+            : base(2020, 8, "Handheld Halting")
         {
-            this.DayTitle = "Handheld Halting";
-            this.GetPuzzleData(8, this.DayTitle);
         }
 
-        public Day8(string[] input) => this.Input = input;
+        public Day8(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new HandheldHalting(this.Input).Execute().Accumulator}";
 

@@ -6,12 +6,15 @@
     public class Day24 : Puzzle, IPuzzle
     {
         public Day24()
+            : base(2015, 24, "It Hangs in the Balance")
         {
-            this.DayTitle = "It Hangs in the Balance";
-            this.GetPuzzleData(24, this.DayTitle);
         }
 
-        public Day24(string[] input) => this.Input = input;
+        public Day24(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ItHangsInTheBalance(this.Input).IdealConfiguration(3)}";
 

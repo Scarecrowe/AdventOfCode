@@ -6,12 +6,15 @@
     public class Day14 : Puzzle, IPuzzle
     {
         public Day14()
+            : base(2019, 14, "Space Stoichiometry")
         {
-            this.DayTitle = "Space Stoichiometry";
-            this.GetPuzzleData(14, this.DayTitle);
         }
 
-        public Day14(string[] input) => this.Input = input;
+        public Day14(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new SpaceStoichiometry(this.Input).GetRequiredOre()}";
 

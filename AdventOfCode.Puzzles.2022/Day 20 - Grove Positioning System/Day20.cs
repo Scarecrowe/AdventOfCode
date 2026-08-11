@@ -6,12 +6,15 @@
     public class Day20 : Puzzle, IPuzzle
     {
         public Day20()
+            : base(2022, 20, "Grove Positioning System")
         {
-            this.DayTitle = "Grove Positioning System";
-            this.GetPuzzleData(2, this.DayTitle);
         }
 
-        public Day20(string[] input) => this.Input = input;
+        public Day20(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new GrovePositioningSystem(this.Input).Cycle().Sum()}";
 

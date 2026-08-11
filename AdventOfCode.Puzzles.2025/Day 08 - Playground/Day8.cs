@@ -6,9 +6,14 @@
     public class Day8 : Puzzle, IPuzzle
     {
         public Day8()
+            : base(2025, 8, "Playground")
         {
-            this.DayTitle = "Playground";
-            this.GetPuzzleData(8, this.DayTitle);
+        }
+
+        public Day8(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new Playground(this.Input).MultiplyTopThreeCircuit()}";

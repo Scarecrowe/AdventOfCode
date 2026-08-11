@@ -1,6 +1,8 @@
 ﻿namespace AdventOfCode.Puzzles._2022.Day_17___Pyroclastic_Flow
 {
+    using AdventOfCode.Animation.Renderers;
     using AdventOfCode.Core;
+    using System.Text;
 
     public class PyroclasticFlow
     {
@@ -23,6 +25,14 @@
                 };
             }
         }
+
+        public PyroclasticFlow(string[] input, IFrameRenderer renderer)
+            : this(input)
+        {
+            this.Renderer = renderer;
+        }
+
+        public IFrameRenderer? Renderer { get; }
 
         public VectorArray<int, StateType> Map { get; private set; }
 
@@ -162,6 +172,168 @@
             }
 
             return this.Map.Height - rock.Map.Height - 1;
+        }
+
+        public PyroclasticFlow RenderSilver(int rocks = 2022, int renderEvery = 1, int viewportHeight = 42)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            this.StackAnimated(rocks, renderEvery, viewportHeight);
+
+            return this;
+        }
+
+        public PyroclasticFlow RenderGold(int rocks = 6000, int renderEvery = 3, int viewportHeight = 42)
+        {
+            if (this.Renderer == null)
+            {
+                return this;
+            }
+
+            this.StackAnimated(rocks, renderEvery, viewportHeight);
+
+            return this;
+        }
+
+        private void StackAnimated(int count, int renderEvery, int viewportHeight)
+        {
+            Rock rock = this.Formations[this.NextFormation()];
+            this.ResizeMap(rock.Map.Height);
+            rock.AddToMap(new(3, this.GetStart(rock)), this.Map);
+
+            this.RenderFrame(rock, 0, "SPAWN", viewportHeight);
+
+            for (int rockIndex = 0; rockIndex < count; rockIndex++)
+            {
+                while (true)
+                {
+                    this.NextJetDirection();
+
+                    JetDirection jet = this.JetDirections[this.JetIndex];
+                    bool moved = false;
+
+                    if (jet == JetDirection.Left && !rock.IsCollision(this.Map, new(rock.Point.X - 1, rock.Point.Y)))
+                    {
+                        rock.Move(jet, this.Map);
+                        moved = true;
+                    }
+                    else if (jet == JetDirection.Right && !rock.IsCollision(this.Map, new(rock.Point.X + 1, rock.Point.Y)))
+                    {
+                        rock.Move(jet, this.Map);
+                        moved = true;
+                    }
+
+                    if (rockIndex % renderEvery == 0)
+                    {
+                        this.RenderFrame(
+                            rock,
+                            rockIndex + 1,
+                            moved
+                                ? $"JET {(jet == JetDirection.Left ? '<' : '>')}"
+                                : $"JET {(jet == JetDirection.Left ? '<' : '>')} BLOCKED",
+                            viewportHeight);
+                    }
+
+                    if (rock.IsCollision(this.Map, new(rock.Point.X, rock.Point.Y + 1)))
+                    {
+                        if (rockIndex % renderEvery == 0)
+                        {
+                            this.RenderFrame(rock, rockIndex + 1, "REST", viewportHeight);
+                        }
+
+                        break;
+                    }
+
+                    rock.Fall(this.Map);
+
+                    if (rockIndex % renderEvery == 0)
+                    {
+                        this.RenderFrame(rock, rockIndex + 1, "FALL", viewportHeight);
+                    }
+                }
+
+                this.Rocks.Add(rock);
+
+                if (rockIndex == count - 1)
+                {
+                    break;
+                }
+
+                rock = this.Formations[this.NextFormation()];
+                this.ResizeMap(rock.Map.Height);
+                rock.AddToMap(new(3, this.GetStart(rock)), this.Map);
+
+                if (rockIndex % renderEvery == 0)
+                {
+                    this.RenderFrame(rock, rockIndex + 2, "SPAWN", viewportHeight);
+                }
+            }
+        }
+
+        private void RenderFrame(Rock activeRock, int rockNumber, string action, int viewportHeight)
+        {
+            this.Renderer?.RenderFrame(new Frame(this.BuildFrame(activeRock, rockNumber, action, viewportHeight)));
+        }
+
+        private string[] BuildFrame(Rock activeRock, int rockNumber, string action, int viewportHeight)
+        {
+            List<string> result = [];
+
+            int towerHeight = this.Map.Height - this.Top() - 1;
+
+            result.Add($"PYROCLASTIC FLOW // ROCK {rockNumber:0000} // HEIGHT {towerHeight:0000} // {action}");
+            result.Add($"JET {this.JetIndex:0000} // FORMATION {this.FormationIndex}");
+            result.Add(string.Empty);
+
+            int top = Math.Max(0, this.Top() - 4);
+            int bottom = Math.Min(this.Map.Height, top + viewportHeight);
+
+            if (bottom - top < viewportHeight)
+            {
+                top = Math.Max(0, bottom - viewportHeight);
+            }
+
+            for (int y = top; y < bottom; y++)
+            {
+                StringBuilder sb = new();
+
+                for (int x = 0; x < this.Map.Width; x++)
+                {
+                    Vector<int> point = new(x, y);
+
+                    if (this.IsActiveRock(activeRock, point))
+                    {
+                        sb.Append('@');
+                    }
+                    else
+                    {
+                        sb.Append(this.CharMap[this.Map[y, x]]);
+                    }
+                }
+
+                result.Add(sb.ToString());
+            }
+
+            return [.. result];
+        }
+
+        private bool IsActiveRock(Rock rock, Vector<int> point)
+        {
+            int localX = point.X - rock.Point.X;
+            int localY = point.Y - rock.Point.Y;
+
+            if (localX < 0 ||
+                localY < 0 ||
+                localX >= rock.Map.Width ||
+                localY >= rock.Map.Height)
+            {
+                return false;
+            }
+
+            return rock.Map[localY, localX] == StateType.Rock;
         }
 
         private static Dictionary<int, JetDirection> CreateJetDirections(string input)

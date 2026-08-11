@@ -2,14 +2,14 @@
 {
     public class OrigamiFold
     {
-        public OrigamiFold(bool isHorizontal, int value, int dots)
+        public OrigamiFold(char axis, int value)
         {
-            this.IsHorizontal = isHorizontal;
+            this.Axis = axis;
             this.Value = value;
-            this.Dots = dots;
+            this.Dots = 0;
         }
 
-        public bool IsHorizontal { get; }
+        public char Axis { get; }
 
         public int Value { get; }
 

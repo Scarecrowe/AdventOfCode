@@ -6,12 +6,15 @@
     public class Day19 : Puzzle, IPuzzle
     {
         public Day19()
+            : base(2018, 19, "Go With The Flow")
         {
-            this.DayTitle = "Go With The Flow";
-            this.GetPuzzleData(19, this.DayTitle);
         }
 
-        public Day19(string[] input) => this.Input = input;
+        public Day19(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new GoWithTheFlow(this.Input).Run()}";
 

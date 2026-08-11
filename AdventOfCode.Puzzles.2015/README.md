@@ -16,7 +16,7 @@ Part 1 finds the final floor after all moves.
 Part 2 finds the first position entering the basement.
 Simple cumulative counting problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day01%2001%20-%20Not%20Quite%20Lisp
 
 ---
 
@@ -26,7 +26,7 @@ Uses dimensions to compute surface area and slack.
 Part 2 focuses on ribbon and bow length.
 Basic geometry and sorting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2002%20-%20I%20Was%20Told%20There%20Would%20Be%20No%20Math
 
 ---
 
@@ -36,7 +36,7 @@ Track visited houses using directional input.
 Part 2 alternates moves between Santa and Robo-Santa.
 Set tracking and coordinate movement.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2003%20-%20Perfectly%20Spherical%20Houses%20in%20a%20Vacuum
 
 ---
 
@@ -46,7 +46,7 @@ Brute-force search by incrementing values.
 Part 2 increases required zero count.
 Hashing and performance-heavy loop.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2004%20-%20The%20Ideal%20Stocking%20Stuffer
 
 ---
 
@@ -56,7 +56,7 @@ Checks for patterns like vowels and repeated letters.
 Part 2 introduces new rule set with pairs and repeats.
 String pattern matching.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2005%20-%20Doesn't%20He%20Have%20Intern-Elves%20For%20This
 
 ---
 
@@ -66,7 +66,7 @@ Part 1 uses binary states.
 Part 2 tracks brightness levels.
 Grid manipulation and instruction parsing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2006%20-%20Probably%20a%20Fire%20Hazard
 
 ---
 
@@ -76,7 +76,7 @@ Resolve dependencies between signals.
 Supports AND, OR, NOT, shifts.
 Recursive evaluation and caching.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2007%20-%20Some%20Assembly%20Required
 
 ---
 
@@ -86,7 +86,7 @@ Handles escape sequences.
 Part 2 encodes strings differently.
 String parsing and encoding logic.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2008%20-%20Matchsticks
 
 ---
 
@@ -96,7 +96,7 @@ Uses permutations of paths.
 Part 1 minimises distance, Part 2 maximises.
 Travelling salesman style problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2009%20-%20All%20in%20a%20Single%20Night
 
 ---
 
@@ -106,7 +106,7 @@ Each iteration compresses consecutive digits.
 Part 2 increases iteration count.
 String expansion problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2010%20-%20Elves%20Look%2C%20Elves%20Say
 
 ---
 
@@ -116,7 +116,7 @@ Must include sequences and avoid invalid characters.
 Requires incrementing string logic.
 Validation and iteration.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2011%20-%20Corporate%20Policy
 
 ---
 
@@ -126,7 +126,7 @@ Part 2 ignores objects containing "red".
 Requires parsing nested structures.
 JSON traversal and filtering.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2012%20-%20JSAbacusFramework.io
 
 ---
 
@@ -136,7 +136,7 @@ Uses pairwise relationship scores.
 Part 2 adds yourself to the table.
 Permutation optimisation problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2013%20-%20Knights%20of%20the%20Dinner%20Table
 
 ---
 
@@ -146,7 +146,7 @@ Part 1 finds max distance after time.
 Part 2 awards points per second leader.
 Time-based simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2014%20-%20Reindeer%20Olympics
 
 ---
 
@@ -156,7 +156,7 @@ Evaluate combinations under constraints.
 Part 2 adds calorie restriction.
 Brute-force optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2015%20-%20Science%20for%20Hungry%20People
 
 ---
 
@@ -166,7 +166,7 @@ Compare attributes against known values.
 Part 2 modifies comparison rules.
 Filtering and conditional logic.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2016%20-%20Aunt%20Sue
 
 ---
 
@@ -176,7 +176,7 @@ Part 1 counts all valid combinations.
 Part 2 finds minimal container usage.
 Subset and combination problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2017%20-%20No%20Such%20Thing%20as%20Too%20Much
 
 ---
 
@@ -186,7 +186,7 @@ Part 2 keeps corners always on.
 Iterative grid updates.
 Cellular automaton.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2018%20-%20Like%20a%20GIF%20For%20Your%20Yard
 
 ---
 
@@ -196,7 +196,7 @@ Part 1 counts unique outcomes.
 Part 2 reduces molecule to base form.
 String replacement and reverse logic.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2019%20-%20Medicine%20for%20Rudolph
 
 ---
 
@@ -206,7 +206,7 @@ Based on divisor sums.
 Part 2 limits delivery count per elf.
 Number theory problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2020%20-%20Infinite%20Elves%20and%20Infinite%20Houses
 
 ---
 
@@ -216,7 +216,7 @@ Find cheapest win and most expensive loss.
 Iterate gear loadouts.
 Turn-based simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2021%20-%20RPG%20Simulator%2020XX
 
 ---
 
@@ -226,7 +226,7 @@ Track mana, health, and active spells.
 Part 2 increases difficulty.
 State simulation and search.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2022%20-%20Wizard%20Simulator%2020XX
 
 ---
 
@@ -236,7 +236,7 @@ Registers manipulated via jumps and operations.
 Simulates program execution.
 Interpreter-style logic.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2023%20-%20Opening%20the%20Turing%20Lock
 
 ---
 
@@ -246,7 +246,7 @@ Optimise for smallest first group.
 Part 2 increases group count.
 Combinatorial optimisation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2024%20-%20It%20Hangs%20in%20the%20Balance
 
 ---
 
@@ -256,7 +256,7 @@ Sequence derived mathematically.
 Compute value at given coordinates.
 Pattern and formula-based solution.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2015/Day%2025%20-%20Let%20It%20Snow
 
 ---
 

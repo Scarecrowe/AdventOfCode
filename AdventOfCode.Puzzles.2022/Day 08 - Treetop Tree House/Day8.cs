@@ -6,12 +6,15 @@
     public class Day8 : Puzzle, IPuzzle
     {
         public Day8()
+            : base(2022, 8, "Treetop Tree House")
         {
-            this.DayTitle = "Treetop Tree House";
-            this.GetPuzzleData(8, this.DayTitle);
         }
 
-        public Day8(string[] input) => this.Input = input;
+        public Day8(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new TreetopTreeHouse(this.Input).VisibleTrees()}";
 

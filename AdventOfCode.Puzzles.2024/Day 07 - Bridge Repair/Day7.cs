@@ -6,9 +6,14 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2024, 7, "Bridge Repair")
         {
-            this.DayTitle = "Bridge Repair";
-            this.GetPuzzleData(7, this.DayTitle);
+        }
+
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new BridgeRepair(this.Input).Calibrate()}";

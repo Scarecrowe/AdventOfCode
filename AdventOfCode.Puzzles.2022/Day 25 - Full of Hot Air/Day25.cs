@@ -6,12 +6,15 @@
     public class Day25 : Puzzle, IPuzzle
     {
         public Day25()
+            : base(2022, 25, "Full of Hot Air")
         {
-            this.DayTitle = "Full of Hot Air";
-            this.GetPuzzleData(25, this.DayTitle);
         }
 
-        public Day25(string[] input) => this.Input = input;
+        public Day25(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{FullOfHotAir.Snafu(this.Input)}";
 

@@ -6,12 +6,15 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2019, 7, "Amplification Circuit")
         {
-            this.DayTitle = "Amplification Circuit";
-            this.GetPuzzleData(7, this.DayTitle);
         }
 
-        public Day7(string[] input) => this.Input = input;
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new AmplificationCircuit(this.Input).HighestThrusterSignal()}";
 

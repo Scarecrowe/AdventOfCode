@@ -164,7 +164,8 @@
             {
                 this.X = (TSize)(object)Convert.ToInt32(coords[0]);
                 this.Y = (TSize)(object)Convert.ToInt32(coords[1]);
-                this.Z = (TSize)(object)Convert.ToInt32(coords[2]);
+                this.Z = coords.Length > 2 ? (TSize)(object)Convert.ToInt32(coords[2]) : 0.ToGeneric<TSize>();
+                
                 this.T = 0.ToGeneric<TSize>();
 
                 return;
@@ -226,7 +227,7 @@
 
             this.X = (TSize)(object)Convert.ToInt64(coords[0]);
             this.Y = (TSize)(object)Convert.ToInt64(coords[1]);
-            this.Z = (TSize)(object)Convert.ToInt64(coords[2]);
+            this.Z = coords.Length > 2 ? (TSize)(object)Convert.ToInt64(coords[2]) : 0.ToGeneric<TSize>();
             this.T = 0.ToGeneric<TSize>();
         }
 

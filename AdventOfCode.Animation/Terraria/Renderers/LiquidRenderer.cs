@@ -6,14 +6,13 @@
     using AdventOfCode.Animation.Terraria.Liquids;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class LiquidRenderer
     {
         public const double TransitionSpeed = 0.007;
         public const float Opacity = 0.6f;
 
-        public LiquidRenderer(ReservoirResearch puzzle, Screen screen, Dictionary<BiomeType, Biome> biomes)
+        public LiquidRenderer(ITerrariaRenderer puzzle, Screen screen, Dictionary<BiomeType, Biome> biomes)
         {
             this.Puzzle = puzzle;
             this.Screen = screen;
@@ -26,7 +25,7 @@
             this.IntroLiquid = new(LiquidType.Water, new(Terraria.GetImage("Liquids\\water_0.png"), 16, 16), new(Terraria.GetImage("Liquids\\liquid_0.png"), 16, 16, new(2, 0)), Opacity);
         }
 
-        private ReservoirResearch Puzzle { get; }
+        private ITerrariaRenderer Puzzle { get; }
 
         private Screen Screen { get; }
 

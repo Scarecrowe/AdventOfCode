@@ -74,7 +74,7 @@
                 .WithAsync(1)
                 .WithShortest()
                 .WithConstantQuality(34)
-                .WithOutput($"{Animation.GetRenderPath()}\\{RandomGenerator.Seed}.mp4")
+                .WithOutput($"{Animation.GetRenderPath(2018, 17, "Reservoir Research")}\\{RandomGenerator.Seed}.mp4")
                     .WithFramerate(WaterFallRenderer.Fps)
                 .Build();
         }

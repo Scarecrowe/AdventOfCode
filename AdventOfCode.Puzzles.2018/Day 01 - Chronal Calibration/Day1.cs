@@ -6,12 +6,15 @@
     public class Day1 : Puzzle, IPuzzle
     {
         public Day1()
+            : base(2018, 1, "Inverse Captcha")
         {
-            this.DayTitle = "Inverse Captcha";
-            this.GetPuzzleData(1, this.DayTitle);
         }
 
-        public Day1(string[] input) => this.Input = input;
+        public Day1(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ChronalCalibration(this.Input).Run().Frequency}";
 

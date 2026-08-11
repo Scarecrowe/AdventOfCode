@@ -7,11 +7,17 @@
     {
 
         public Day12()
+            : base(2024, 12,  "Garden Groups")
         {
-            this.DayTitle = "Garden Groups";
-            this.GetPuzzleData(12, this.DayTitle);
+            ////TODO - sort this
             var x = new D12P02();
             x.Process(this.Input);
+        }
+
+        public Day12(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new GardenGroups(this.Input).Cost()}";

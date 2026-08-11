@@ -7,12 +7,15 @@
     public class Day17 : Puzzle, IPuzzle
     {
         public Day17()
+            : base(2017, 17, "Spinlock")
         {
-            this.DayTitle = "Spinlock";
-            this.GetPuzzleData(17, this.DayTitle);
         }
 
-        public Day17(string[] input) => this.Input = input;
+        public Day17(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{SpinLock.Run(2017, this.Input[0].ToInt(), 2017)}";
 

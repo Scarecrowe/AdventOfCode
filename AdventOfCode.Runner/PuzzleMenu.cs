@@ -1,5 +1,6 @@
 ﻿namespace AdventOfCode.Runner
 {
+    using AdventOfCode.Core.ConsoleMenu;
     using AdventOfCode.Runner.Menus;
     using AdventOfCode.Runner.North_Pole_Operations;
 
@@ -7,24 +8,15 @@
     {
         public PuzzleMenu()
         {
-            this.Menu = new NorthPoleOperationsMenu();
         }
-
-        private IMenu Menu { get; set; }
 
         public async void Execute()
         {
             while(true)
             {
-                IMenu menu = await this.Menu.Execute();
+                IConsoleMenu menu = new NorthPoleOperationsMenu();
 
-                if (menu is ExitMenu)
-                {
-                    await menu.Execute();
-                    break;
-                }
-
-                this.Menu = menu;
+                await menu.Execute();
             }
         }
     }

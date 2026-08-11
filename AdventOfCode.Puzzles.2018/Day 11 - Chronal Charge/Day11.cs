@@ -6,12 +6,15 @@
     public class Day11 : Puzzle, IPuzzle
     {
         public Day11()
+            : base(2018, 11, "Chronal Charge")
         {
-            this.DayTitle = "Chronal Charge";
-            this.GetPuzzleData(11, this.DayTitle);
         }
 
-        public Day11(string[] input) => this.Input = input;
+        public Day11(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ChronalCharger(this.Input[0]).MaxPowerLevel3x3()}";
 

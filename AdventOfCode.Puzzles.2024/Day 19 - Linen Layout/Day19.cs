@@ -6,9 +6,14 @@
     public class Day19 : Puzzle, IPuzzle
     {
         public Day19()
+            : base(2024, 19, "Linen Layout", StringSplitOptions.None)
         {
-            this.DayTitle = "Linen Layout";
-            this.GetPuzzleData(19, this.DayTitle, StringSplitOptions.None);
+        }
+
+        public Day19(string[] input)
+            : this()
+        {
+            this.Input = input;
         }
 
         public string Silver() => $"{new LinenLayout(this.Input).Possible()}";

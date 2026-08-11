@@ -4,12 +4,13 @@
 
     public class Blizzard
     {
-        public Blizzard(Vector<int> point, Vector<int> direction, int row, int column)
+        public Blizzard(Vector<int> point, Vector<int> direction, int row, int column, char symbol)
         {
             this.Point = point;
             this.Direction = direction;
             this.Row = row;
             this.Column = column;
+            this.Symbol = symbol;
         }
 
         public static Dictionary<char, Vector<int>> Directions { get; } = new()
@@ -30,6 +31,8 @@
 
         public int Column { get; }
 
+        public char Symbol { get; }
+
         public static List<Blizzard> Parse(string[] input)
         {
             int y = input.Length;
@@ -43,7 +46,7 @@
                 {
                     if (Directions[input[i][j]] != new Vector<int>(0, 0))
                     {
-                        result.Add(new Blizzard(new(j, i), Directions[input[i][j]], y, x));
+                        result.Add(new Blizzard(new(j, i), Directions[input[i][j]], y, x, input[i][j]));
                     }
                 }
             }

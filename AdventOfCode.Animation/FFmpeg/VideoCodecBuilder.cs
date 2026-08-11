@@ -26,5 +26,13 @@
 
             return new Libx264Builder(this);
         }
+
+        public FFmpegBuilder WithGif()
+        {
+            this.Arguments.Add("-c:v");
+            this.Arguments.Add("gif");
+
+            return this.FFmpegBuilder;
+        }
     }
 }

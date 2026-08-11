@@ -6,12 +6,15 @@
     public class Day15 : Puzzle, IPuzzle
     {
         public Day15()
+            : base(2015, 15, "Science for Hungry People", StringSplitOptions.None)
         {
-            this.DayTitle = "Science for Hungry People";
-            this.GetPuzzleData(15, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day15(string[] input) => this.Input = input;
+        public Day15(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new ScienceForHungryPeople(this.Input).HighestRankingMixture(100)}";
 

@@ -6,12 +6,15 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2020, 7, "Handy Haversacks")
         {
-            this.DayTitle = "Handy Haversacks";
-            this.GetPuzzleData(7, this.DayTitle);
         }
 
-        public Day7(string[] input) => this.Input = input;
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new HandyHaversacks(this.Input).ShinyGoldCount()}";
 

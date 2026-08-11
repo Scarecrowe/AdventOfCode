@@ -2,9 +2,37 @@
 {
     using System.Drawing;
     using System.Drawing.Imaging;
+    using System.Reflection;
 
     public class Terraria
     {
+        public static ITerrariaRenderer LoadPuzzle(string[]? input = null)
+        {
+            Assembly assembly = Assembly.Load($"AdventOfCode.Puzzles.2018");
+
+            Type? type = assembly
+                .GetTypes()
+                .FirstOrDefault(t =>
+                    typeof(ITerrariaRenderer).IsAssignableFrom(t) &&
+                    !t.IsInterface &&
+                    !t.IsAbstract);
+
+            if (type == null)
+            {
+                throw new InvalidOperationException(
+                    "No ITerrariaRenderer implementation found.");
+            }
+
+            object[] args =
+            [
+                input == null ? Animation.GetInput(17, "Reservoir Research") : input
+            ];
+
+            ITerrariaRenderer renderer = (ITerrariaRenderer)Activator.CreateInstance(type, args)!;
+
+            return renderer;
+        }
+
         public static string GetAssetPath(string path) => $"Terraria\\Assets\\{path}";
 
         public static Image GetImage(string file) => Image.FromFile(GetAssetPath(file));

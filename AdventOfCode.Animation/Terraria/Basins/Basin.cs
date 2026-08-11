@@ -5,7 +5,6 @@
     using AdventOfCode.Animation.Terraria.Renderers;
     using AdventOfCode.Core;
     using AdventOfCode.Core.Extensions;
-    using AdventOfCode.Puzzles._2018.Day_17___Reservoir_Research;
 
     public class Basin
     {
@@ -36,7 +35,7 @@
         public (Vector<long> Left, Vector<long> Right) Bottom { get; private set; }
 
         public static void AddAnswerBasin(
-            ReservoirResearch puzzle,
+            ITerrariaRenderer puzzle,
             List<string> input,
             Screen screen)
         {
@@ -55,7 +54,7 @@
             }
         }
 
-        public static void AddFinalBasin(ReservoirResearch puzzle, List<string> input)
+        public static void AddFinalBasin(ITerrariaRenderer puzzle, List<string> input)
         {
             int clayMaxY = puzzle.ClayMax.Y.ToInt();
             int clayMinX = puzzle.ClayMin.X.ToInt() + 2;

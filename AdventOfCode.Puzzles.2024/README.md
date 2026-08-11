@@ -16,7 +16,7 @@ Part 1 sums absolute differences after sorting.
 Part 2 counts similarity using frequency matching.
 Sorting and counting.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day01
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2001%20-%20Historian%20Hysteria
 
 ---
 
@@ -26,7 +26,7 @@ Check increasing/decreasing patterns.
 Part 2 allows one bad level removal.
 Sequence validation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day02
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2002%20-%20Red-Nosed%20Reports
 
 ---
 
@@ -36,7 +36,7 @@ Extract valid multiplication operations.
 Part 2 respects do/don't toggles.
 String parsing.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day03
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2003%20-%20Mull%20It%20Over
 
 ---
 
@@ -46,7 +46,7 @@ Match in multiple directions.
 Part 2 finds X-shaped patterns.
 Grid scanning.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day04
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2004%20-%20Ceres%20Search
 
 ---
 
@@ -56,7 +56,7 @@ Identify incorrect updates.
 Part 2 fixes ordering before summing.
 Ordering and constraints.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day05
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2005%20-%20Print%20Queue
 
 ---
 
@@ -66,7 +66,7 @@ Track visited positions.
 Part 2 detects loops with obstacles.
 Path simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day06
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2006%20-%20Guard%20Gallivant
 
 ---
 
@@ -76,7 +76,7 @@ Try combinations to reach target.
 Part 2 adds concatenation.
 Search problem.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day07
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2007%20-%20Bridge%20Repair
 
 ---
 
@@ -86,7 +86,7 @@ Extend lines between matching symbols.
 Part 2 extends infinitely.
 Grid geometry.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day08
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2008%20-%20Resonant%20Collinearity
 
 ---
 
@@ -96,7 +96,7 @@ Move file blocks efficiently.
 Part 2 moves whole files.
 Array manipulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day09
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2009%20-%20Disk%20Fragmenter
 
 ---
 
@@ -106,7 +106,7 @@ Count reachable peaks.
 Part 2 counts all distinct paths.
 Grid traversal.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day10
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2010%20-%20Hoof%20It
 
 ---
 
@@ -116,7 +116,7 @@ Split or multiply values.
 Track counts over iterations.
 Part 2 scales massively.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day11
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2011%20-%20Plutonian%20Pebbles
 
 ---
 
@@ -126,7 +126,7 @@ Calculate area and perimeter.
 Part 2 uses side counting.
 Flood fill.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day12
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2012%20-%20Garden%20Groups
 
 ---
 
@@ -136,7 +136,7 @@ Use linear equations for prizes.
 Part 2 scales values massively.
 Math and solving systems.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day13
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2013%20-%20Claw%20Contraption
 
 ---
 
@@ -146,7 +146,7 @@ Track positions over time.
 Part 2 detects pattern formation.
 Movement simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day14
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2014%20-%20Restroom%20Redoubt
 
 ---
 
@@ -156,7 +156,7 @@ Handle chain pushing.
 Part 2 expands grid width.
 Grid simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day15
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2015%20-%20Warehouse%20Woes
 
 ---
 
@@ -166,7 +166,7 @@ Penalise direction changes.
 Part 2 counts optimal tiles.
 Weighted pathfinding.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day16
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2016%20-%20Reindeer%20Maze
 
 ---
 
@@ -176,7 +176,7 @@ Produce output sequence.
 Part 2 reverse engineers input.
 Interpreter and search.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day17
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2017%20-%20Chronospatial%20Computer
 
 ---
 
@@ -186,7 +186,7 @@ Avoid blocked cells over time.
 Part 2 finds blocking byte.
 Pathfinding with time.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day18
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2018%20-%20RAM%20Run
 
 ---
 
@@ -196,7 +196,7 @@ Count valid constructions.
 Part 2 counts all combinations.
 Recursive matching.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day19
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2019%20-%20Linen%20Layout
 
 ---
 
@@ -206,7 +206,7 @@ Compare path lengths.
 Part 2 increases shortcut allowance.
 Grid path analysis.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day20
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2020%20-%20Race%20Condition
 
 ---
 
@@ -216,7 +216,7 @@ Minimise button presses.
 Part 2 expands recursion depth.
 Pathfinding with layers.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day21
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2021%20-%20Keypad%20Conundrum
 
 ---
 
@@ -226,7 +226,7 @@ Apply transformations repeatedly.
 Part 2 tracks best price pattern.
 Sequence analysis.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day22
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2022%20-%20Monkey%20Market
 
 ---
 
@@ -236,7 +236,7 @@ Find interconnected groups.
 Part 2 finds largest clique.
 Graph theory.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day23
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2023%20-%20LAN%20Party
 
 ---
 
@@ -246,7 +246,7 @@ Resolve wire dependencies.
 Part 2 identifies swapped wires.
 Circuit simulation.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day24
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2024%20-%20Crossed%20Wires
 
 ---
 
@@ -256,7 +256,7 @@ Compare shapes and compatibility.
 Count valid pairings.
 Pattern matching.
 
-🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day25
+🔗 https://github.com/Scarecrowe/AdventOfCode/tree/develop/AdventOfCode.Puzzles.2024/Day%2025%20-%20Code%20Chronicle
 
 ---
 

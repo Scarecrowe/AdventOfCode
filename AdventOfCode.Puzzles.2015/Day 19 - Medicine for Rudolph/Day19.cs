@@ -6,12 +6,15 @@
     public class Day19 : Puzzle, IPuzzle
     {
         public Day19()
+            : base(2015, 19, "Medicine for Rudolph", StringSplitOptions.None)
         {
-            this.DayTitle = "Medicine for Rudolph";
-            this.GetPuzzleData(19, this.DayTitle, StringSplitOptions.None);
         }
 
-        public Day19(string[] input) => this.Input = input;
+        public Day19(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new MedicineForRudolph(this.Input).CreateMolecules().Count}";
 

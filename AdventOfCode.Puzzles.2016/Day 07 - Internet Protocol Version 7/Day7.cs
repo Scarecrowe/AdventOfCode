@@ -6,12 +6,15 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2016, 7, "Internet Protocol Version 7")
         {
-            this.DayTitle = "Internet Protocol Version 7";
-            this.GetPuzzleData(7, this.DayTitle);
         }
 
-        public Day7(string[] input) => this.Input = input;
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new InternetProtocolVersion7(this.Input).SupportsTls()}";
 

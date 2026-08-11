@@ -6,12 +6,15 @@
     public class Day7 : Puzzle, IPuzzle
     {
         public Day7()
+            : base(2018, 7, "The Sum of Its Parts")
         {
-            this.DayTitle = "The Sum of Its Parts";
-            this.GetPuzzleData(7, this.DayTitle);
         }
 
-        public Day7(string[] input) => this.Input = input;
+        public Day7(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new TheSumOfItsParts(this.Input).AssembleyOrder()}";
 

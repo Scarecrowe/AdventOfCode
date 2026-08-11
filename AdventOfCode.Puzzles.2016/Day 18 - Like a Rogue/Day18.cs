@@ -6,12 +6,15 @@
     public class Day18 : Puzzle, IPuzzle
     {
         public Day18()
+            : base(2016, 18, "Like a Rogue")
         {
-            this.DayTitle = "Like a Rogue";
-            this.GetPuzzleData(18, this.DayTitle);
         }
 
-        public Day18(string[] input) => this.Input = input;
+        public Day18(string[] input)
+            : this()
+        {
+            this.Input = input;
+        }
 
         public string Silver() => $"{new LikeARogue(this.Input[0]).BuildMap(40).SafeTileCount}";
 
